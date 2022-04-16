@@ -8,7 +8,7 @@ const Home: NextPage = () => {
         <title>{`Robert Adams' Portfolio Home`}</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      Home Page
+      <div>Main</div>
     </>
   );
 };
