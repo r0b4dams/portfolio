@@ -27,12 +27,12 @@ const NavOverlay: React.FC<MenuProps> = ({ active, toggleActive }) => {
           Portfolio
         </a>
       </Link>
-      <Link href='/About'>
+      <Link href='/about'>
         <a onClick={toggleActive} className={styles.anchor}>
           About
         </a>
       </Link>
-      <Link href='/Contact'>
+      <Link href='/contact'>
         <a onClick={toggleActive} className={styles.anchor}>
           Contact
         </a>

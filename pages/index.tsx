@@ -1,72 +1,46 @@
-import type { NextPage } from 'next/types';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAllProjectData } from '../lib/projects';
+import type { GetStaticProps, NextPage } from 'next/types';
+import type { ProjectData } from '../@types/projects';
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const projects = getAllProjectData();
+  return {
+    props: {
+      projects,
+    },
+  };
+};
+
+const Home: NextPage<{
+  projects: ProjectData;
+}> = ({ projects }) => {
   return (
     <>
       <Head>
-        <title>{`Robert Adams' Portfolio Home`}</title>
+        <title>{`Robert Adams' Portfolio`}</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
       <section id='intro'>
         <Image src='/images/avatar.jpg' alt='avatar' height={144} width={144} />
         <h1>Salutation!</h1>
         <p>Some additional intro text!</p>
         <p>Welcome to my portfolio!</p>
       </section>
-      <section id='projects'>
-        <Link href='/'>
-          <a>
-            <Image
-              src='/images/traductora-demo.gif'
-              alt='console log demo'
-              height={180}
-              width={320}
-            />
-          </a>
-        </Link>
-        <Link href='/'>
-          <a>
-            <Image
-              src='/images/console-log-demo.gif'
-              alt='console log demo'
-              height={180}
-              width={320}
-            />
-          </a>
-        </Link>
-        <Link href='/'>
-          <a>
-            <Image
-              src='/images/pantrimonium-demo.gif'
-              alt='console log demo'
-              height={180}
-              width={320}
-            />
-          </a>
-        </Link>
-        <Link href='/'>
-          <a>
-            <Image
-              src='/images/vedomy-demo.gif'
-              alt='console log demo'
-              height={180}
-              width={320}
-            />
-          </a>
-        </Link>
-        <Link href='/'>
-          <a>
-            <Image
-              src='/images/dad-jokes-demo.gif'
-              alt='console log demo'
-              height={180}
-              width={320}
-            />
-          </a>
-        </Link>
+
+      <section>
+        {projects.map((project) => {
+          return (
+            <li key={project.id}>
+              <Link href={`/projects/${project.id}`}>
+                <a>{project.id}</a>
+              </Link>
+            </li>
+          );
+        })}
       </section>
     </>
   );
