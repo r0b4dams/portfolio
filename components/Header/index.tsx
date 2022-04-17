@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../Nav';
+import Navbar from '../Navbar';
 
 const styles = {
   height: 'h-[10vh]',
@@ -10,7 +10,7 @@ const styles = {
 const Header: React.FC = (): JSX.Element => {
   return (
     <header className={`${styles.height} ${styles.flex} ${styles.color}`}>
-      <Nav />
+      <Navbar />
     </header>
   );
 };
