@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import NavBurger from '../NavBurger';
-import NavOverlay from '../NavOverlay';
+import NavBurger from './NavBurger';
+import NavOverlay from './NavOverlay';
 
 const Navbar: React.FC = (): JSX.Element => {
   const [active, setActive] = useState(false);
