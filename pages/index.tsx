@@ -36,7 +36,7 @@ const Home: NextPage<{
           return (
             <li key={project.id}>
               <Link href={`/projects/${project.id}`}>
-                <a>{project.id}</a>
+                <a>{project.name}</a>
               </Link>
             </li>
           );

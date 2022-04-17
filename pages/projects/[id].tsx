@@ -24,7 +24,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
   return (
     <>
       <section>
-        <h1>{project.id}</h1>
+        <h1>{project.name}</h1>
         <p>{project.desc}</p>
       </section>
       <section>
