@@ -8,7 +8,7 @@ const Layout: React.FC<{
   return (
     <>
       <Header />
-      <main>{page}</main>
+      <main className='m-auto pt-[10vh] pb-[5vh]'>{page}</main>
       <Footer />
     </>
   );
