@@ -22,7 +22,7 @@ const NavOverlay: React.FC<MenuProps> = ({ active, toggleActive }) => {
       id='nav-overlay'
       className={active ? `${base} ${styles.show}` : `${base} ${styles.hide}`}
     >
-      <Link href='/'>
+      <Link href='/portfolio'>
         <a onClick={toggleActive} className={styles.anchor}>
           Portfolio
         </a>
