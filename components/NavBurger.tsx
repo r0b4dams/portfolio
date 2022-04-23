@@ -9,8 +9,8 @@ const styles = {
     mid: 'opacity-0',
     bot: '-rotate-45 translate-y-[-9px]',
   },
-  bar: 'w-[36px] h-[3px] transition duration-500 bg-slate-500',
-  burger: 'space-y-[6px] cursor-pointer z-[999]',
+  bar: 'w-[36px] h-[3px] transition duration-500 bg-slate-50',
+  burger: 'space-y-[6px] cursor-pointer z-[999] px-[30px]',
 };
 
 const NavBurger: React.FC<MenuProps> = ({ active, toggleActive }) => {
