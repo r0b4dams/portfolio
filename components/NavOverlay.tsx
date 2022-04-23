@@ -6,7 +6,7 @@ type MenuProps = {
 };
 
 const styles = {
-  anchor: 'text-slate-50',
+  anchor: 'text-slate-50 text-5xl py-[10px]',
   overlay: 'fixed top-0 w-full z-10 overflow-hidden bg-slate-900',
   transition: 'transition-all duration-500',
   flex: 'flex flex-col justify-center items-center',
@@ -16,29 +16,27 @@ const styles = {
 
 const base = `${styles.overlay} ${styles.flex} ${styles.transition}`;
 
-const NavOverlay: React.FC<MenuProps> = ({ active, toggleActive }) => {
-  return (
-    <nav
-      id='nav-overlay'
-      className={active ? `${base} ${styles.show}` : `${base} ${styles.hide}`}
-    >
-      <Link href='/portfolio'>
-        <a onClick={toggleActive} className={styles.anchor}>
-          Portfolio
-        </a>
-      </Link>
-      <Link href='/about'>
-        <a onClick={toggleActive} className={styles.anchor}>
-          About
-        </a>
-      </Link>
-      <Link href='/contact'>
-        <a onClick={toggleActive} className={styles.anchor}>
-          Contact
-        </a>
-      </Link>
-    </nav>
-  );
-};
+const NavOverlay: React.FC<MenuProps> = ({ active, toggleActive }) => (
+  <nav
+    id='nav-overlay'
+    className={active ? `${base} ${styles.show}` : `${base} ${styles.hide}`}
+  >
+    <Link href='/portfolio'>
+      <a onClick={toggleActive} className={styles.anchor}>
+        Portfolio
+      </a>
+    </Link>
+    <Link href='/about'>
+      <a onClick={toggleActive} className={styles.anchor}>
+        About
+      </a>
+    </Link>
+    <Link href='/contact'>
+      <a onClick={toggleActive} className={styles.anchor}>
+        Contact
+      </a>
+    </Link>
+  </nav>
+);
 
 export default NavOverlay;
