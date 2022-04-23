@@ -3,8 +3,7 @@ import Image from 'next/image';
 import { getProjectIds, getProjectData } from '../../lib/projects';
 import type { GetStaticProps, GetStaticPaths, NextPage } from 'next/types';
 import type { Project } from '../../@types/projects';
-import FaGitHubIcon from '../../components/icons/FaGitHub';
-import FaDeployLinkIcon from '../../components/icons/FaDeploy';
+import Icon from '../../components/Icon';
 
 export const getStaticPaths: GetStaticPaths = () => {
   const paths = getProjectIds();
@@ -44,12 +43,12 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
         <ul>
           <li>
             <a href={project.appURL} target='_blank' rel='noreferrer'>
-              Deployed App <FaDeployLinkIcon />
+              Deployed App <Icon src={'/icons/deploy.svg'} className={''} />
             </a>
           </li>
           <li>
             <a href={project.repoURL} target='_blank' rel='noreferrer'>
-              GitHub Repo <FaGitHubIcon />
+              GitHub Repo <Icon src={'/icons/github.svg'} className={''} />
             </a>
           </li>
         </ul>
