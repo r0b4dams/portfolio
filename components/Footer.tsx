@@ -1,35 +1,27 @@
 import React from 'react';
-import FaGitHubIcon from './icons/FaGitHub';
-import FaLinkedInIcon from './icons/FaLinkedIn';
+import Icon from '../components/Icon';
 
 const year = new Date().getFullYear();
 
 const Footer: React.FC = (): JSX.Element => {
   return (
-    <footer className='portfolio-footer'>
+    <footer className='portfolio-footer px-[30px] h-min-[30px]'>
       <div>Robert Adams ©{year}</div>
-      <div>
-        <a href='https://github.com/comatosino'>
-          <FaGitHubIcon />
+
+      <span className='flex'>
+        <a href='https://github.com/comatosino' className='px-[10px]'>
+          <Icon
+            src='/icons/github.svg'
+            className='bg-slate-50 rounded-md flex'
+          />
         </a>
         <a href='https://www.linkedin.com/in/robert-adams-comatosino'>
-          <FaLinkedInIcon />
+          <Icon
+            src='/icons/linkedin.svg'
+            className='bg-slate-50 rounded-md flex'
+          />
         </a>
-      </div>
-      <div>
-        <span>Built with</span>
-        <a href='https://nextjs.org/' className='underline'>
-          {' '}
-          Next.js
-        </a>
-      </div>
-      <div>
-        <span>Styled with</span>
-        <a href='https://tailwindcss.com/' className='underline'>
-          {' '}
-          TailwindCSS
-        </a>
-      </div>
+      </span>
     </footer>
   );
 };
