@@ -1,8 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Logo: React.FC = () => (
   <Link href='/'>
-    <a className='text-slate-50 text-2xl px-[30px] relative z-[9999]'>RA</a>
+    <a className='h-[50px] w-[50px] px-[30px] relative'>
+      <Image src='/icons/logo.svg' alt='' layout='fill' />
+    </a>
   </Link>
 );
 
