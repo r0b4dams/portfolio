@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Helvetica", Sans-Serif;
+  }
+}
 
 @layer components {
   html {
@@ -47,13 +55,5 @@
   /* Hide scrollbar for Chrome, Safari and Opera */
   body::-webkit-scrollbar {
     display: none;
-  }
-
-  .portfolio-header {
-    @apply h-[10vh] w-full flex items-center fixed z-50 bg-slate-900 text-slate-50;
-  }
-
-  .portfolio-footer {
-    @apply h-[5.25vh] fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between bg-slate-900 text-slate-50;
   }
 }
