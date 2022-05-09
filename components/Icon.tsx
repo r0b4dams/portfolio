@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 const Icon: React.FC<{
   src: string;
-  className: string;
+  className?: string;
   height?: number;
   width?: number;
-}> = ({ src, className, height = 30, width = 30 }): JSX.Element => {
+}> = ({ src, className = '', height = 30, width = 30 }): JSX.Element => {
   return (
-    <div className='flex'>
+    <div className='flex p-1'>
       <Image
         src={src}
         alt=''
