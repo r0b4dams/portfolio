@@ -8,7 +8,7 @@ const Layout: React.FC<{
   return (
     <>
       <Header />
-      <main className='m-auto h-screen pt-[10vh] pb-[5vh] hide-scrollbar'>
+      <main className='hide-scrollbar'>
         {page}
       </main>
       <Footer />
