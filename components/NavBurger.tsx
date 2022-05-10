@@ -9,7 +9,7 @@ const styles = {
     mid: 'opacity-0',
     bot: '-rotate-45 translate-y-[-9px]',
   },
-  bar: 'w-[36px] h-[3px] transition duration-500 bg-slate-50',
+  bar: 'w-[36px] h-[3px] transition duration-500 bg-black',
   burger: 'space-y-[6px] cursor-pointer z-[999] px-[30px]',
 };
 
