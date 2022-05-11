@@ -2,7 +2,7 @@ const projectData = [
   {
     id: 'traductora',
     name: 'Traductora',
-    desc: 'Speak a phrase in one language and hear its translation in another.',
+    desc: 'A full-stack speech-to-speech translator application.',
     role: 'Sole Developer',
     tech: 'React, React-Redux, MaterialUI, Node, Express, MongoDB',
     appURL: 'https://traductora.herokuapp.com/',
