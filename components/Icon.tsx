@@ -1,21 +1,34 @@
-import Image from 'next/image';
+import { CSSProperties } from 'react';
+import icons from '../lib/icons';
 
 const Icon: React.FC<{
-  src: string;
+  size?: number;
+  color?: string;
+  icon: string; // name of icon
   className?: string;
-  height?: number;
-  width?: number;
-}> = ({ src, className = '', height = 30, width = 30 }): JSX.Element => {
+  style?: CSSProperties;
+  viewBox?: string;
+}> = ({
+  size = 16,
+  icon = '',
+  color,
+  className = '',
+  style = {},
+  viewBox = '0 0 24 24',
+}) => {
+  const data = icons[icon];
   return (
-    <div className='flex p-1'>
-      <Image
-        src={src}
-        alt=''
-        className={className}
-        height={height}
-        width={width}
-      />
-    </div>
+    <svg
+      className={className}
+      style={style}
+      viewBox={viewBox}
+      width={`${size}px`}
+      height={`${size}px`}
+      xmlns='http://www.w3.org/2000/svg'
+      xmlnsXlink='http://www.w3.org/1999/xlink'
+    >
+      <path fill={color ? color : data.color} d={data.path} />
+    </svg>
   );
 };
 
