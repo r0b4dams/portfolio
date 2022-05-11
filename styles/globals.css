@@ -1,55 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    font-family: "Helvetica", Sans-Serif;
-  }
-}
-
-@layer components {
-  html {
+    font-family: 'Helvetica', Sans-Serif;
     scroll-behavior: smooth;
   }
-
   body {
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-
-    /*
-    Graph Paper Background
-    Author: Mathew stephen via StackOverflow
-    https://stackoverflow.com/questions/3540194/how-to-make-a-grid-like-graph-paper-grid-with-just-css/25709375#25709375
-    */
-    background: linear-gradient(
-        -90deg,
-        rgba(0, 0, 0, 0.05) 1px,
-        transparent 1px
-      ),
-      linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-      linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-      linear-gradient(
-        transparent 3px,
-        #f2f2f2 3px,
-        #f2f2f2 78px,
-        transparent 78px
-      ),
-      linear-gradient(-90deg, #aaa 1px, transparent 1px),
-      linear-gradient(
-        -90deg,
-        transparent 3px,
-        #f2f2f2 3px,
-        #f2f2f2 78px,
-        transparent 78px
-      ),
-      linear-gradient(#aaa 1px, transparent 1px), #f2f2f2;
-    background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px,
-      80px 80px, 80px 80px, 80px 80px;
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
