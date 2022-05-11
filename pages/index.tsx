@@ -12,12 +12,12 @@ const pageStyles = getStyles({
 });
 
 const buttonStyles = getStyles({
+  height: 'h-12',
   fontSize: 'text-l md:text-xl',
   width: 'w-8/12',
   display: 'flex items-center justify-center',
-  border: 'rounded border-2 border-dashed border-blue-500',
+  border: 'rounded border-2 border-yellow-300',
   bgColor: 'bg-white',
-  margin: 'mr-4',
   shadows: 'shadow-xl',
   onHover: 'hover:drop-shadow-xl',
 });
@@ -35,39 +35,24 @@ const Intro = () => {
           <div className='w-full md:w-1/2'>
             <div className='m-auto w-[90%] px-4'>
               <h1 className='text-5xl my-4 md:text-8xl'>{"Hi, I'm Robert!"}</h1>
-              <h2 className='text-2xl my-4 md:text-5xl'>{'Software Engineer'}</h2>
+              <h2 className='text-2xl my-4 md:text-5xl'>
+                {'Software Engineer'}
+              </h2>
             </div>
 
-            <div className='m-auto w-[90%] flex my-4'>
-              <Link href='/portfolio'>
+            <div className='m-auto w-[90%] flex my-4 space-x-5 items-center'>
+              <Link href='/projects'>
                 <a className={buttonStyles}>View Portfolio</a>
               </Link>
-              <div className='bg-white rounded mx-1 flex items-center justify-center shadow-xl border-2 border-dashed border-blue-500 hover:drop-shadow-xl'>
-                <a>
-                  <Icon
-                    src='/icons/githubAlt.svg'
-                    className='flex'
-                    height={50}
-                    width={50}
-                  />
-                </a>
-              </div>
-              <div className='bg-white rounded mx-1 flex items-center justify-center shadow-xl border-2 border-dashed border-blue-500 hover:drop-shadow-xl'>
-                <a>
-                  <Icon
-                    src='/icons/linkedinAlt.svg'
-                    className='flex'
-                    height={50}
-                    width={50}
-                  />
-                </a>
-              </div>
+              <Icon icon={'gmail'} size={36} />
+              <Icon icon={'linkedin'} size={36} />
+              <Icon icon={'github'} size={36} />
             </div>
           </div>
 
           <div className='w-full md:w-1/2 hidden md:block'>
             <Image
-              src={`/images/cone_cylinder_sphere_alt.png`}
+              src={`/icons/drawing-1.svg`}
               alt=''
               height={600}
               width={600}
