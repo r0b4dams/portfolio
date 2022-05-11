@@ -4,11 +4,10 @@ import Link from 'next/link';
 import { Project } from '../@types/projects';
 
 const Project: React.FC<{ project: Project }> = ({ project }) => (
-  <div className='w-fit p-1 m-1 border-2 border-dashed border-blue-500 rounded-md shadow-lg'>
+  <div className='w-fit lg:w-1/2 p-4'>
     <Link href={`/projects/${project.id}`}>
       <a className='flex'>
         <Image
-          className='rounded-lg shadow'
           src={`/images/${project.id}-demo.gif`}
           alt=''
           layout='intrinsic'
@@ -17,6 +16,17 @@ const Project: React.FC<{ project: Project }> = ({ project }) => (
         />
       </a>
     </Link>
+    <div className='p-5 border-x-2 border-b-2 rounded-md border-gray-100'>
+      <h1 className='mb-3 text-2xl font-bold leading-8 tracking-tight'>
+        {project.name}
+      </h1>
+      <p className='prose mb-3 max-w-none'>{project.desc}</p>
+      <Link href={`/projects/${project.id}`}>
+        <a className='text-base font-medium leading-6 text-blue-500'>
+          Learn more →
+        </a>
+      </Link>
+    </div>
   </div>
 );
 
