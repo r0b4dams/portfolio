@@ -3,19 +3,18 @@ import Project from './Project';
 import { ProjectData } from '../@types/projects';
 
 const styles = {
-  flex: 'flex flex-col lg:flex-row flex-wrap',
-  container: 'container m-auto',
+  flex: 'flex flex-col items-center justify-center lg:flex-row lg:flex-wrap',
 };
 
 const ProjectContainer: React.FC<{ projects: ProjectData }> = ({
   projects,
 }): JSX.Element => {
   return (
-    <section id='portfolio' className={`${styles.container} ${styles.flex}`}>
+    <div id='portfolio' className={`${styles.flex}`}>
       {projects.map((project) => (
         <Project key={project.id} project={project} />
       ))}
-    </section>
+    </div>
   );
 };
 
