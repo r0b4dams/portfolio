@@ -7,6 +7,7 @@ const Layout: React.FC<{
 }> = ({ page }) => {
   return (
     <>
+      <a id="top"></a>
       <Header />
       <main className='hide-scrollbar'>
         {page}
