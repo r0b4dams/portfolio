@@ -16,7 +16,7 @@ const Project: React.FC<{ project: Project }> = ({ project }) => (
         />
       </a>
     </Link>
-    <div className='p-5 border-x-2 border-b-2 rounded-md border-gray-100'>
+    <div className='p-5 border-x-2 border-b-2 rounded-md border-gray-100 xl:hidden'>
       <h1 className='mb-3 text-2xl font-bold leading-8 tracking-tight'>
         {project.name}
       </h1>
