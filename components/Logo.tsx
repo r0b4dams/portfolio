@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const Logo: React.FC = () => (
   <Link href='/'>
-    <a className='h-[50px] px-[30px] relative lg:h-[100px]'>
-      <Image src='/icons/logo.svg' alt='' layout='fill' />
+    <a className='h-[50px] aspect-square relative lg:h-[100px]'>
+      <Image src={`/icons/drawing-1.svg`} alt='' layout='fill' />
     </a>
   </Link>
 );
