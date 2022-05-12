@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const headerStyles = getStyles({
   width: 'w-[90%] md:w-full',
-  padding: 'p-2 ',
+  padding: 'pl-10 ',
   margin: 'm-auto my-5',
   border: 'border-b-2 border-gray-100',
   fontSize: 'text-3xl sm:text-4xl md:text-6xl',
