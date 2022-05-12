@@ -7,12 +7,13 @@ const Layout: React.FC<{
 }> = ({ page }) => {
   return (
     <>
-      <a id="top"></a>
-      <Header />
-      <main className='hide-scrollbar'>
-        {page}
-      </main>
-      <Footer />
+      <div className='flex flex-col min-h-screen justify-between'>
+        <div>
+          <Header />
+          <main className='hide-scrollbar'>{page}</main>
+        </div>
+        <Footer />
+      </div>
     </>
   );
 };
