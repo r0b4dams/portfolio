@@ -10,7 +10,7 @@ const styles = {
     bot: '-rotate-45 translate-y-[-9px]',
   },
   bar: 'w-[36px] h-[3px] transition duration-500 bg-black',
-  burger: 'space-y-[6px] cursor-pointer z-[999] px-[30px] md:hidden',
+  burger: 'space-y-[6px] cursor-pointer z-[999] md:hidden',
 };
 
 const NavBurger: React.FC<MenuProps> = ({ active, toggleActive }) => {
