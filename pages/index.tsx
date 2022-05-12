@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import Icon from '../components/Icon';
 import { getStyles } from '../utils';
 
 const pageStyles = getStyles({
@@ -14,12 +13,10 @@ const pageStyles = getStyles({
 const buttonStyles = getStyles({
   height: 'h-12',
   fontSize: 'text-l md:text-xl',
-  width: 'w-8/12',
+  width: 'w-6/12',
   display: 'flex items-center justify-center',
-  border: 'rounded border-2 border-yellow-300',
+  border: 'rounded border-2 border-gray-100',
   bgColor: 'bg-white',
-  shadows: 'shadow-xl',
-  onHover: 'hover:drop-shadow-xl',
 });
 
 const Intro = () => {
@@ -44,9 +41,6 @@ const Intro = () => {
               <Link href='/projects'>
                 <a className={buttonStyles}>View Portfolio</a>
               </Link>
-              <Icon icon={'gmail'} size={36} />
-              <Icon icon={'linkedin'} size={36} />
-              <Icon icon={'github'} size={36} />
             </div>
           </div>
 
