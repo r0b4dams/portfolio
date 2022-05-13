@@ -1,10 +1,6 @@
-import { useRouter } from 'next/router';
 import Nav from './Nav';
-import { getStyles } from '../utils';
 
 const Header: React.FC = (): JSX.Element => {
-  const router = useRouter();
-  console.log(router.route);
   return (
     <>
       <header>
