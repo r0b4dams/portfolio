@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Logo from './Logo';
+import NavBurger from './NavBurger';
 import NavList from './NavList';
+import NavOverlay from './NavOverlay';
 
 const Nav: React.FC = (): JSX.Element => {
   const [active, setActive] = useState(false);
@@ -9,10 +11,12 @@ const Nav: React.FC = (): JSX.Element => {
   return (
     <div
       id='nav-bar'
-      className='container flex items-center justify-between h-full'
+      className='container flex items-center justify-between'
     >
       <Logo />
       <NavList />
+      <NavBurger active={active} toggleActive={toggleActive} />
+      <NavOverlay active={active} toggleActive={toggleActive} />
     </div>
   );
 };
