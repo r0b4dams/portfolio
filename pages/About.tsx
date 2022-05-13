@@ -5,10 +5,7 @@ import Icon from '../components/Icon';
 import { getStyles } from '../utils';
 
 const headerStyles = getStyles({
-  width: 'w-[90%] md:w-full',
-  padding: 'pl-10 ',
-  margin: 'm-auto my-5',
-  border: 'border-b-2 border-gray-100',
+  margin: 'my-5',
   fontSize: 'text-3xl sm:text-4xl md:text-6xl',
   fontWeight: 'font-bold',
 });
@@ -32,10 +29,10 @@ const About: NextPage = () => {
               width={300}
               className='rounded-full '
             />
-            <h2 className='pt-4 pb-2 text-5xl font-bold leading-8 tracking-tight'>
+            <h2 className='pt-4 pb-2 text-3xl font-bold leading-8 tracking-tight'>
               Robert Adams
             </h2>
-            <p className='pb-8 lg:col-span-2 text-xl'>Software Engineer</p>
+            <p className='pb-8 lg:col-span-2 text-lg'>Software Engineer</p>
           </div>
 
           <div className='space-y-10'>
