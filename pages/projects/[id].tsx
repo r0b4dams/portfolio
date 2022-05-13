@@ -1,10 +1,10 @@
+import ProjectImage from '../../components/ProjectImage';
+import Icon from '../../components/Icon';
 import { getProjectIds, getProjectData } from '../../lib/projects';
+import { getStyles } from '../../utils';
+
 import type { GetStaticProps, GetStaticPaths, NextPage } from 'next/types';
 import type { Project } from '../../@types/projects';
-import ProjectImage from '../../components/ProjectImage';
-import { getStyles } from '../../utils';
-import Icon from '../../components/Icon';
-import Projects from '../projects';
 
 export const getStaticPaths: GetStaticPaths = () => {
   const paths = getProjectIds();
@@ -90,7 +90,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
           <div className='w-full md:w-1/2 p-10'>
             <h2 className='mb-3 text-2xl font-bold'>Successes</h2>
             <div className='space-y-2 p-2'>
-              {project.challenges.map((desc, idx) => (
+              {project.successes.map((desc, idx) => (
                 <p key={idx}>{desc}</p>
               ))}
             </div>
