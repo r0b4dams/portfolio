@@ -8,7 +8,7 @@ const Layout: React.FC<{
 }> = ({ page }) => {
   return (
     <>
-      <div className='flex flex-col min-h-screen justify-between'>
+      <div className='flex flex-col min-h-screen justify-between w-[95%] m-auto lg:w-full'>
         <div>
           <Header />
           <main className='hide-scrollbar'>{page}</main>
