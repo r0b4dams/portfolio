@@ -37,7 +37,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
     <>
       <section className='container'>
         <h1 className={headerStyles}>{project.name}</h1>
-        <p className='w-[90%] mx-auto border-b-2 border-gray-100 p-2 lg:w-1/2 lg:m-0'>
+        <p className='w-[90%] mx-auto border-b-2 p-2 lg:w-1/2 lg:m-0'>
           {project.desc}
         </p>
         <div className='space-y-5'>
@@ -53,7 +53,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
 
         <div className=' flex flex-col justify-center md:flex-row-reverse md:flex-wrap'>
           <ProjectImage source={`/images/${project.id}-demo.gif`} />
-          <div className='w-full md:w-1/2 p-10 bg-gray-100'>
+          <div className='w-full md:w-1/2 p-10'>
             <h2 className='mb-3 text-2xl font-bold'>Technologies</h2>
             <div className='flex flex-wrap space-x-5 p-5'>
               {project.tech.map((icon) => (
