@@ -25,9 +25,10 @@ const About: NextPage = () => {
             <Image
               src='/images/avatar.jpg'
               alt='avatar'
-              height={300}
-              width={300}
-              className='rounded-full '
+              layout='intrinsic'
+              height={192}
+              width={192}
+              className='rounded-full'
             />
             <h2 className='pt-4 pb-2 text-3xl font-bold leading-8 tracking-tight'>
               Robert Adams
