@@ -34,14 +34,12 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
   return (
     <>
       <section className='container'>
-        <div className=''>
-          <h1 className={headerStyles}>{project.name}</h1>
-          <p className=''>{project.desc}</p>
-        </div>
+        <h1 className={headerStyles}>{project.name}</h1>
 
         <div className='flex flex-col md:flex-row-reverse md:flex-wrap'>
           <ProjectImage source={`/images/${project.id}-demo.gif`} />
           <div className='w-full md:w-1/2 space-y-10 flex flex-col justify-evenly'>
+            <p className=''>{project.desc}</p>
             {project.features.map((feature, idx) => (
               <p key={idx}>{feature}</p>
             ))}
@@ -50,18 +48,15 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
 
         <div className='flex flex-col justify-center md:flex-row md:flex-wrap'>
           <ProjectImage source={`/images/${project.id}-demo.gif`} />
-          <div className='w-full md:w-1/2 border-gray-500 border-2 '>
-            <h2 className=''>Technologies</h2>
-            <div className='flex flex-wrap space-x-5'>
-              {project.tech.map((icon) => (
-                <Icon key={icon} size={48} icon={icon} />
-              ))}
-            </div>
+          <div className='w-full md:w-1/2 flex flex-wrap justify-center space-x-5'>
+            {project.tech.map((icon) => (
+              <Icon key={icon} size={48} icon={icon} />
+            ))}
           </div>
         </div>
 
         {project.role && (
-          <div className='p-2 flex flex-col justify-center md:flex-row md:flex-wrap'>
+          <div className='flex flex-col justify-center md:flex-row md:flex-wrap'>
             <ProjectImage source={`/images/${project.id}-demo.gif`} />
             <div className='w-full md:w-1/2 border-gray-500 border-2 '>
               <h2 className=''>My Role</h2>
