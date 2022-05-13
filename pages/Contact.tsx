@@ -1,14 +1,11 @@
 import Head from 'next/head';
 import type { NextPage } from 'next/types';
 import Icon from '../components/Icon';
-import NewtonsCradle from '../components/newtonsCradle';
+import NewtonsCradle from '../components/NewtonsCradle';
 import { getStyles } from '../utils';
 
 const headerStyles = getStyles({
-  width: 'w-[90%] md:w-full',
-  padding: 'pl-10 ',
-  margin: 'm-auto my-5',
-  border: 'border-b-2 border-gray-100',
+  margin: 'my-5',
   fontSize: 'text-3xl sm:text-4xl md:text-6xl',
   fontWeight: 'font-bold',
 });
