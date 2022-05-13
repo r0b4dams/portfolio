@@ -41,8 +41,16 @@ const projectData = [
       'Designed database and built RESTful API',
       'Managed GitHub repository, led code reviews, and approved pull requests',
     ],
-    challenges: ['Lorem Ipsum'],
-    successes: ['Ipsum Lorem'],
+    challenges: [
+      'Delectus velit veniam, harum debitis quam fugiat iure, magni, vitae veritatis voluptatibus asperiores alias nesciunt at!',
+      'Harum deserunt iusto aliquid accusamus dignissimos autem',
+      'Quia dolor aliquid eveniet aliquam, obcaecati nulla delenitiimpedit cum, quis ea distinctio.',
+    ],
+    successes: [
+      'Delectus velit veniam, harum debitis quam fugiat iure, magni, vitae veritatis voluptatibus asperiores alias nesciunt at!',
+      'Harum deserunt iusto aliquid accusamus dignissimos autem',
+      'Quia dolor aliquid eveniet aliquam, obcaecati nulla delenitiimpedit cum, quis ea distinctio.',
+    ],
   },
   {
     id: 'vedomý',
