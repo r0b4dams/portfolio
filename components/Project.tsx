@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Project } from '../@types/projects';
 
 const Project: React.FC<{ project: Project }> = ({ project }) => (
-  <div className='w-fit lg:w-1/2 p-4'>
+  <div className='w-fit lg:w-1/2 p-1'>
     <Link href={`/projects/${project.id}`}>
       <a className='flex'>
         <Image
@@ -20,7 +20,7 @@ const Project: React.FC<{ project: Project }> = ({ project }) => (
       <h1 className='mb-3 text-2xl font-bold leading-8 tracking-tight'>
         {project.name}
       </h1>
-      <p className='prose mb-3 max-w-none'>{project.desc}</p>
+      <p className='prose mb-3 max-w-none truncate'>{project.desc}</p>
       <Link href={`/projects/${project.id}`}>
         <a className='text-base font-medium leading-6 text-blue-500'>
           Learn more →
