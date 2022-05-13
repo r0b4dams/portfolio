@@ -4,7 +4,7 @@ const ProjectImage: React.FC<{ source: string }> = ({
   source,
 }): JSX.Element => {
   return (
-    <div className='w-full md:w-1/2 p-2'>
+    <div className='w-full md:w-1/2'>
       <div className='flex'>
         <Image
           src={source}
