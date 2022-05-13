@@ -4,23 +4,24 @@ import Link from 'next/link';
 import { Project } from '../@types/projects';
 
 const Project: React.FC<{ project: Project }> = ({ project }) => (
-  <div className='w-fit lg:w-1/2 p-1'>
+  <div className='w-full lg:w-1/2 p-1'>
     <Link href={`/projects/${project.id}`}>
-      <a className='flex'>
+      <a className='flex justify-center'>
         <Image
           src={`/images/${project.id}-demo.gif`}
           alt=''
           layout='intrinsic'
           height={360}
           width={640}
+          className='rounded'
         />
       </a>
     </Link>
-    <div className='p-5 border-x-2 border-b-2 rounded-md border-gray-100 xl:hidden'>
-      <h1 className='mb-3 text-2xl font-bold leading-8 tracking-tight'>
+    <div className='p-5 xl:hidden'>
+      <h1 className='mb-3 font-bold'>
         {project.name}
       </h1>
-      <p className='prose mb-3 max-w-none truncate'>{project.desc}</p>
+      <p className='min-h-[48px] mb-3 max-w-none'>{project.desc}</p>
       <Link href={`/projects/${project.id}`}>
         <a className='text-base font-medium leading-6 text-blue-500'>
           Learn more →
