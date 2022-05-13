@@ -24,10 +24,8 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
 };
 
 const headerStyles = getStyles({
-  width: 'w-[90%] md:w-full',
-  padding: 'pl-10 ',
-  margin: 'mx-auto mt-5',
-  border: 'border-b-2 border-gray-100',
+  width: 'w-1/2',
+  margin: 'mt-5',
   fontSize: 'text-3xl sm:text-4xl md:text-6xl',
   fontWeight: 'font-bold',
 });
@@ -36,26 +34,25 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
   return (
     <>
       <section className='container'>
-        <h1 className={headerStyles}>{project.name}</h1>
-        <p className='w-[90%] mx-auto border-b-2 p-2 lg:w-1/2 lg:m-0'>
-          {project.desc}
-        </p>
-        <div className='space-y-5'>
-          <div className='flex flex-col md:flex-row md:flex-wrap'>
-            <ProjectImage source={`/images/${project.id}-demo.gif`} />
-            <div className='w-full flex flex-col justify-center md:w-1/2 p-5 space-y-5 text-sm sm:text-base md:text:xl lg:text-xl'>
-              {project.features.map((feature, idx) => (
-                <p key={idx}>{feature}</p>
-              ))}
-            </div>
+        <div className=''>
+          <h1 className={headerStyles}>{project.name}</h1>
+          <p className=''>{project.desc}</p>
+        </div>
+
+        <div className='flex flex-col md:flex-row-reverse md:flex-wrap'>
+          <ProjectImage source={`/images/${project.id}-demo.gif`} />
+          <div className='w-full md:w-1/2 space-y-10 flex flex-col justify-evenly'>
+            {project.features.map((feature, idx) => (
+              <p key={idx}>{feature}</p>
+            ))}
           </div>
         </div>
 
-        <div className=' flex flex-col justify-center md:flex-row-reverse md:flex-wrap'>
+        <div className='flex flex-col justify-center md:flex-row md:flex-wrap'>
           <ProjectImage source={`/images/${project.id}-demo.gif`} />
-          <div className='w-full md:w-1/2 p-10'>
-            <h2 className='mb-3 text-2xl font-bold'>Technologies</h2>
-            <div className='flex flex-wrap space-x-5 p-5'>
+          <div className='w-full md:w-1/2 border-gray-500 border-2 '>
+            <h2 className=''>Technologies</h2>
+            <div className='flex flex-wrap space-x-5'>
               {project.tech.map((icon) => (
                 <Icon key={icon} size={48} icon={icon} />
               ))}
@@ -64,36 +61,30 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
         </div>
 
         {project.role && (
-          <div className='flex flex-col justify-center md:flex-row md:flex-wrap'>
+          <div className='p-2 flex flex-col justify-center md:flex-row md:flex-wrap'>
             <ProjectImage source={`/images/${project.id}-demo.gif`} />
-            <div className='w-full md:w-1/2 p-10 bg-gray-50'>
-              <h2 className='mb-3 text-2xl font-bold'>My Role</h2>
-              <div className='p-5 space-y-5 text-sm sm:text-base md:text:xl lg:text-xl'>
-                {project.role.map((desc, idx) => (
-                  <p key={idx}>{desc}</p>
-                ))}
-              </div>
+            <div className='w-full md:w-1/2 border-gray-500 border-2 '>
+              <h2 className=''>My Role</h2>
+              {project.role.map((desc, idx) => (
+                <p key={idx}>{desc}</p>
+              ))}
             </div>
           </div>
         )}
 
         <div className='flex flex-wrap'>
-          <div className='w-full md:w-1/2 p-10'>
-            <h2 className='mb-3 text-2xl font-bold'>Challenges</h2>
-            <div className='space-y-2 p-2'>
-              {project.challenges.map((desc, idx) => (
-                <p key={idx}>{desc}</p>
-              ))}
-            </div>
+          <div className='w-full md:w-1/2 border-gray-500 border-2 '>
+            <h2 className=''>Challenges</h2>
+            {project.challenges.map((desc, idx) => (
+              <p key={idx}>{desc}</p>
+            ))}
           </div>
 
-          <div className='w-full md:w-1/2 p-10'>
-            <h2 className='mb-3 text-2xl font-bold'>Successes</h2>
-            <div className='space-y-2 p-2'>
-              {project.successes.map((desc, idx) => (
-                <p key={idx}>{desc}</p>
-              ))}
-            </div>
+          <div className='w-full md:w-1/2 border-gray-500 border-2 '>
+            <h2 className=''>Successes</h2>
+            {project.successes.map((desc, idx) => (
+              <p key={idx}>{desc}</p>
+            ))}
           </div>
         </div>
       </section>
