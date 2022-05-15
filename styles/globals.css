@@ -20,3 +20,9 @@
     display: none;
   }
 }
+
+@layer components {
+  .project-wrapper:hover > * {
+    transform: translateY(0px);
+  }
+}
