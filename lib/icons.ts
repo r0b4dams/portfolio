@@ -67,6 +67,12 @@ const icons: IconsLib = {
     fills: ['#E34F26'],
     url: 'https://html.spec.whatwg.org',
   },
+  es: {
+    name: 'Spanish',
+    paths: [],
+    fills: ['#E34F26'],
+    url: '',
+  },
 
   // frontend
   react: {
