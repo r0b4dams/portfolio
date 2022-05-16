@@ -2,11 +2,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import type { NextPage } from 'next/types';
 import Icon from '../components/Icon';
+import SkillBadge from '../components/SkillBadge';
+import SpanishBadge from '../components/SpanishBadge';
 import { getStyles } from '../utils';
 
 const headerStyles = getStyles({
   margin: 'my-5',
-  fontSize: 'text-3xl sm:text-4xl md:text-6xl',
+  fontSize: 'text-3xl sm:text-5xl md:text-7xl',
   fontWeight: 'font-bold',
 });
 
@@ -20,8 +22,9 @@ const About: NextPage = () => {
 
       <section className='container'>
         <h1 className={headerStyles}>About</h1>
-        <div className='items-start space-y-2 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-0'>
-          <div className='flex flex-col items-center space-x-2 pt-8'>
+
+        <div className='md:flex'>
+          <div className='flex flex-col items-center pt-8 md:w-1/3'>
             <Image
               src='/images/avatar.jpg'
               alt='avatar'
@@ -30,30 +33,37 @@ const About: NextPage = () => {
               width={192}
               className='rounded-full'
             />
-            <h2 className='pt-4 pb-2 text-3xl font-bold leading-8 tracking-tight'>
+            <h2 className='py-4 pb-1 text-xl font-bold lg:text-3xl'>
               Robert Adams
             </h2>
-            <p className='pb-8 lg:col-span-2 text-lg'>Software Engineer</p>
+            <p className='text-gray-600'>Software Engineer</p>
           </div>
 
-          <div className='space-y-10'>
-            <p>
+          <div className='md:w-2/3'>
+            <p className='text-sm py-3 md:text-base text-gray-600'>
+              Ducimus facere similique ea quis? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Architecto alias consequuntur, nihil
+              pariatur minima cupiditate saepe laboriosam quam distinctio eos
+              totam natus in ullam nisi.
+            </p>
+            <p className='text-sm py-3 md:text-base text-gray-600'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Architecto alias consequuntur, nihil pariatur minima cupiditate
               saepe laboriosam quam distinctio eos totam natus in ullam nisi
               ducimus facere similique ea quis?
             </p>
 
-            <div className=''>
-              <h3 className='mb-1 text-lg font-medium'>Languages</h3>
-              <div className='flex flex-wrap space-x-5'>
+            <div className='space-y-2'>
+              <h3 className=''>Languages</h3>
+              <div className='flex flex-wrap'>
                 {['typescript', 'javascript', 'html', 'css'].map((icon) => (
-                  <Icon size={48} key={icon} icon={icon} />
+                  <SkillBadge size={24} key={icon} icon={icon} />
                 ))}
+                <SpanishBadge />
               </div>
 
-              <h3 className='mb-1 text-lg font-medium'>Front-End</h3>
-              <div className='flex flex-wrap space-x-5'>
+              <h3 className=''>Front-End</h3>
+              <div className='flex flex-wrap'>
                 {[
                   'react',
                   'redux',
@@ -64,15 +74,14 @@ const About: NextPage = () => {
                   'bootstrap',
                   'materialize',
                 ].map((icon) => (
-                  <Icon size={48} key={icon} icon={icon} />
+                  <SkillBadge size={24} key={icon} icon={icon} />
                 ))}
               </div>
 
-              <h3 className='mb-1 text-lg font-medium'>Back-End</h3>
-              <div className='flex flex-wrap space-x-5'>
+              <h3 className=''>Back-End</h3>
+              <div className='flex flex-wrap'>
                 {[
                   'node',
-                  'tsnode',
                   'express',
                   'mysql',
                   'postgresql',
@@ -80,14 +89,14 @@ const About: NextPage = () => {
                   'mongodb',
                   'mongoose',
                 ].map((icon) => (
-                  <Icon size={48} key={icon} icon={icon} />
+                  <SkillBadge size={24} key={icon} icon={icon} />
                 ))}
               </div>
 
-              <h3 className='mb-1 text-lg font-medium'>DevOps</h3>
-              <div className='flex flex-wrap space-x-5'>
+              <h3 className=''>DevOps</h3>
+              <div className='flex flex-wrap'>
                 {['git', 'github', 'heroku', 'vercel'].map((icon) => (
-                  <Icon size={48} key={icon} icon={icon} />
+                  <SkillBadge size={24} key={icon} icon={icon} />
                 ))}
               </div>
             </div>
