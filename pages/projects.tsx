@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const headerStyles = getStyles({
   margin: 'my-5',
-  fontSize: 'text-3xl sm:text-4xl md:text-6xl',
+  fontSize: 'text-3xl sm:text-5xl md:text-7xl',
   fontWeight: 'font-bold',
 });
 
@@ -29,7 +29,7 @@ const Projects: NextPage<{ projects: ProjectData }> = ({ projects }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section className='container'>
-          <h1 className={headerStyles}>Projects</h1>
+        <h1 className={headerStyles}>Projects</h1>
         <ProjectContainer projects={projects} />
       </section>
     </>
