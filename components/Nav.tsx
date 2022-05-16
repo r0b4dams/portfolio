@@ -11,7 +11,7 @@ const Nav: React.FC = (): JSX.Element => {
   return (
     <div
       id='nav-bar'
-      className='container flex items-center justify-between'
+      className='container flex items-center justify-between py-2'
     >
       <Logo />
       <NavList />
