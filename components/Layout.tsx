@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
@@ -8,11 +7,9 @@ const Layout: React.FC<{
 }> = ({ page }) => {
   return (
     <>
-      <div className='flex flex-col min-h-screen justify-between w-[95%] m-auto lg:w-full'>
-        <div>
-          <Header />
-          <main className='hide-scrollbar'>{page}</main>
-        </div>
+      <div className='flex flex-col min-h-screen w-[95%] m-auto lg:w-full'>
+        <Header />
+        <main className='grow hide-scrollbar'>{page}</main>
         <Footer />
       </div>
     </>
