@@ -7,9 +7,13 @@ const Layout: React.FC<{
 }> = ({ page }) => {
   return (
     <>
-      <div className='flex flex-col min-h-screen w-[95%] m-auto lg:w-full'>
+      <div
+        className='flex flex-col min-h-screen'
+      >
         <Header />
-        <main className='grow hide-scrollbar'>{page}</main>
+        <main className='grow hide-scrollbar w-[95%] m-auto lg:w-full'>
+          {page}
+        </main>
         <Footer />
       </div>
     </>

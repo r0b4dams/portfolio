@@ -1,6 +1,6 @@
 type MenuProps = {
   active: boolean;
-  toggleActive: () => void;
+  handleToggle: () => void;
 };
 
 const styles = {
@@ -13,9 +13,9 @@ const styles = {
   burger: 'space-y-[6px] cursor-pointer z-[999] md:hidden',
 };
 
-const NavBurger: React.FC<MenuProps> = ({ active, toggleActive }) => {
+const NavBurger: React.FC<MenuProps> = ({ active, handleToggle }) => {
   return (
-    <div id='nav-burger' className={styles.burger} onClick={toggleActive}>
+    <div id='nav-burger' className={styles.burger} onClick={handleToggle}>
       <div
         id='bar-top'
         className={active ? `${styles.bar} ${styles.active.top}` : styles.bar}
