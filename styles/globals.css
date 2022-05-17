@@ -18,6 +18,7 @@
   /* Hide scrollbar for Chrome, Safari and Opera */
   body::-webkit-scrollbar {
     display: none;
+
   }
 }
 
@@ -34,7 +35,7 @@
     left: 0;
     z-index: 5;
     transform: translateX(100%);
-    transition-duration: 200ms;
+    transition-duration: 500ms;
     background-color: white;
     opacity: 95%;
   }

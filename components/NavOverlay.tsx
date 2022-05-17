@@ -17,17 +17,17 @@ const NavOverlay: React.FC<MenuProps> = ({ active, handleToggle }) => {
       <ul className='font-bold text-3xl space-y-10'>
         <li>
           <Link href='/projects'>
-            <a>Projects</a>
+            <a onClick={handleToggle}>Projects</a>
           </Link>
         </li>
         <li className=''>
           <Link href='/about'>
-            <a>About</a>
+            <a onClick={handleToggle}>About</a>
           </Link>
         </li>
         <li>
           <Link href='/contact'>
-            <a>Contact</a>
+            <a onClick={handleToggle}>Contact</a>
           </Link>
         </li>
       </ul>
