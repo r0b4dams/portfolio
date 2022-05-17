@@ -6,18 +6,25 @@ import NavOverlay from './NavOverlay';
 
 const Nav: React.FC = (): JSX.Element => {
   const [active, setActive] = useState(false);
-  const toggleActive = () => setActive(() => !active);
+
+  const handleToggle = () => {
+    const body = document.querySelector('body');
+    body?.classList.toggle('noscroll', !active);
+    setActive(() => !active);
+  };
 
   return (
-    <div
-      id='nav-bar'
-      className='container flex items-center justify-between py-2'
-    >
-      <Logo />
-      <NavList />
-      <NavBurger active={active} toggleActive={toggleActive} />
-      <NavOverlay active={active} toggleActive={toggleActive} />
-    </div>
+    <>
+      <div
+        id='nav-bar'
+        className='container flex items-center justify-between py-2 px-2'
+      >
+        <Logo />
+        <NavList />
+        <NavBurger active={active} handleToggle={handleToggle} />
+        <NavOverlay active={active} handleToggle={handleToggle} />
+      </div>
+    </>
   );
 };
 
