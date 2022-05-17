@@ -25,4 +25,21 @@
   .project-wrapper:hover > * {
     transform: translateY(0px);
   }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    transform: translateX(100%);
+    transition-duration: 200ms;
+    background-color: white;
+    opacity: 95%;
+  }
+
+  .noscroll {
+    overflow: hidden;
+  }
 }
