@@ -33,7 +33,7 @@ const Contact: NextPage = () => {
               <Icon icon={'github'} size={52} />
             </li>
           </ul>
-          <NewtonsCradle />
+          {/* <NewtonsCradle /> */}
         </div>
       </section>
     </>
