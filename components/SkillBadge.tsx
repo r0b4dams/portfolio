@@ -1,11 +1,10 @@
-import { CSSProperties } from 'react';
 import icons from '../lib/icons';
 
 const SkillBadge: React.FC<{
   size?: number;
   icon: string;
 }> = ({ icon = '', size = 16 }) => {
-  const { name, paths, fills, url } = icons[icon];
+  const { name, paths, fills } = icons[icon];
   return (
     <div className='flex items-center border p-1 rounded m-1 w-fit bg-white'>
       <svg
