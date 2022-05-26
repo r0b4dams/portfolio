@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --t: .5s;
+  }
+
   html {
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth;
@@ -42,5 +46,26 @@
 
   .noscroll {
     overflow: hidden;
+  }
+
+  path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: dash 3s linear;
+    animation-fill-mode: forwards;
+  }
+
+  .blue {
+    animation-delay: calc(2 * var(--t));
+  }
+
+  .yellow {
+    animation-delay: var(--t);
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }
