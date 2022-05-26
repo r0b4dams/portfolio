@@ -8,8 +8,7 @@ export type Project = {
   features: string[];
   tech: string[];
   role?: string[];
-  challenges: string[];
-  successes: string[];
+  discussion: string[];
 };
 
 export type ProjectData = Project[];
