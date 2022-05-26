@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --t: .5s;
+    --t: 0.5s;
   }
 
   html {
@@ -22,7 +22,6 @@
   /* Hide scrollbar for Chrome, Safari and Opera */
   body::-webkit-scrollbar {
     display: none;
-
   }
 }
 
@@ -48,18 +47,18 @@
     overflow: hidden;
   }
 
-  path {
+  #logo > path {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
     animation: dash 3s linear;
     animation-fill-mode: forwards;
   }
 
-  .blue {
+  #logo > #blue {
     animation-delay: calc(2 * var(--t));
   }
 
-  .yellow {
+  #logo > #red {
     animation-delay: var(--t);
   }
 
