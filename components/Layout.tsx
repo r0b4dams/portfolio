@@ -11,7 +11,7 @@ const Layout: React.FC<{
         className='flex flex-col min-h-screen'
       >
         <Header />
-        <main className='grow hide-scrollbar w-[95%] m-auto lg:w-full'>
+        <main className='flex grow hide-scrollbar w-[95%] m-auto lg:w-full'>
           {page}
         </main>
         <Footer />
