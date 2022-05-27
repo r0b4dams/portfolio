@@ -13,9 +13,9 @@ const projectData = [
     ],
     tech: ['react', 'node', 'express', 'mongodb', 'redux', 'mui'],
     discussion: [
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+      'After reading about the Web Speech API supported by most modern browsers, I knew I wanted to check out its text-to-speech and speech-to-text capabilities. Having some muiltilingual family members living abroad, I decided to create a translator application to help me for when I visit.',
+      "I had a lot of fun learning some new technologies: custom hooks interface with the Web Speech API, MUI provides easy-to-use components to speed up development, and the redux pattern is utilized not only for overall application state, but also in the decoupled state of each custom hook via React's useReducer method.",
+      'Despite their support, there has been difficulty achieving functionality on mobile browsers and more research and troubleshooting are required for text-to-speech and speech-to-text features to work on Android/iOS. This app is a good candidate to implement in React Native in the near future.',
     ],
   },
   {
@@ -32,15 +32,9 @@ const projectData = [
       "Won “Best Presentation” of all final project submissions for University of Washington's spring full-stack web development certificate program.",
     ],
     tech: ['react', 'node', 'express', 'mongodb', 'sequelize', 'tailwind'],
-    role: [
-      'Implemented voice search functionality',
-      'Designed database and built RESTful API',
-      'Managed GitHub repository, led code reviews, and approved pull requests',
-    ],
     discussion: [
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+      'While many blogs and wikis dedicated to video games guides exist, we wanted one with most of the features but without all of the bloat that seems to accompany these sites. So we made one using a MERN (MongoDB, Express.js, React.js, Node.js) stack!',
+      'I created the backend server and database, implemented JSON web token (JWT) authorization and authentication, and added voice search functionality. I also managed our GitHub repository, led code reviews, and approved pull requests.',
     ],
   },
   {
@@ -62,9 +56,8 @@ const projectData = [
       'Led code reviews and approved pull requests',
     ],
     discussion: [
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+      'In response to the disruption of our daily dynamic caused by the pandemic, we wanted a space for contemplation and self-reflection of our habits.',
+      "One challenge we had early on was being throttled on the number of availble calls by third-party APIs. To get around this problem, I wrote a function that would fetch unique data once per day and cache it to local storage. This solution meshed well with the application's envisaged daily use.",
     ],
   },
   {
@@ -78,7 +71,7 @@ const projectData = [
       'Create a user profile to get started!',
       'Add, edit, and remove tiems from your fridge, freezer, or pantry!',
       'Generate a shopping list from items low in quantity.',
-      'Be notified of expired items.',
+      'Be notified of expired and soon-to-expire items.',
     ],
     tech: ['node', 'express', 'mysql', 'bootstrap', 'handlebars'],
     role: [
@@ -87,9 +80,9 @@ const projectData = [
       'Built server framework and added e-mail component with Nodemailer',
     ],
     discussion: [
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+      'Motivated by kitchen and grocery shopping disorganization, this application aims to provide an interface for your kitchen inventory.',
+      'I designed and implemented the server and database. On the client-side, I wrote functions to communicate create, read, update, and delete (CRUD) functions to the back-end.',
+      'As project manager, I led daily stand-ups and code reviews, reviewed pull requests, and managed the Github repository',
     ],
   },
   {
@@ -105,7 +98,7 @@ const projectData = [
     ],
     tech: ['react', 'node', 'mui'],
     discussion: [
-      'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+      "Inspired by a friend's propensity for amusing puns, this humorous web app is a quick exploration into conditional rendering based on application state. Skeleton loaders are displayed while awaiting responses from the servers.",
       'Dadicated to Justin',
     ],
   },
