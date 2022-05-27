@@ -26,7 +26,6 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
 };
 
 const headerStyles = getStyles({
-  margin: 'mt-5',
   fontSize: 'text-3xl sm:text-5xl md:text-7xl',
   fontWeight: 'font-bold',
 });
@@ -40,9 +39,18 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
       </Head>
 
       <section className='container'>
-        <div className='flex items-center'>
+        <div className='mt-5 flex items-baseline'>
           <h1 className={headerStyles}>{project.name}</h1>
+          <div className='flex ml-5 space-x-5 md:ml-10 md:space-x-10'>
+            <a href={project.repoURL} target='_blank' rel='noopener noreferrer'>
+              <Icon icon='github' className='w-[24px] h-[28px] sm:w-[36px] sm:h-[36px] md:w-[42px] md:h-[42px]' />
+            </a>
+            <a href={project.appURL} target='_blank' rel='noopener noreferrer'>
+              <Icon icon='link' className='w-[24px] h-[28px] sm:w-[36px] sm:h-[36px] md:w-[42px] md:h-[42px]' />
+            </a>
+          </div>
         </div>
+
         <p className='py-3'>{project.desc}</p>
 
         <div
