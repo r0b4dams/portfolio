@@ -16,10 +16,10 @@ const NavList: React.FC = (): JSX.Element => {
     to: { opacity: 1, y: 0 },
   });
 
-  const routeStyle = useSprings(
+  const routeStyles = useSprings(
     data.length,
     data.map((item) => ({
-      from: { width: '0%' },
+      from: { width: '0%', backgroundColor: item.color },
       to: { width: router.pathname === `/${item.name}` ? '100%' : '0%' },
     }))
   );
@@ -33,13 +33,19 @@ const NavList: React.FC = (): JSX.Element => {
             style={mountStyle}
             className='first-letter:uppercase'
           >
-            <div className='hover:scale-125 duration-100'>
+            <div
+              className={
+                router.pathname === `/${data[idx].name}`
+                  ? 'pointer-events-none duration-100'
+                  : 'hover:scale-125 duration-100'
+              }
+            >
               <Link href={`/${data[idx].name}`}>
                 <a>{data[idx].name}</a>
               </Link>
               <animated.div
-                style={routeStyle[idx]}
-                className={`h-2 bg-[${data[idx].color}]`}
+                style={routeStyles[idx]}
+                className='h-2'
               ></animated.div>
             </div>
           </animated.li>
