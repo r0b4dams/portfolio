@@ -1,14 +1,26 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
 
 const year = new Date().getFullYear();
 
 const Footer: React.FC = (): JSX.Element => {
   const router = useRouter();
+
+  const [style, api] = useSpring(() => ({
+    opacity: 0,
+    y: 20,
+  }));
+
+  useEffect(() => {
+    api.start({ opacity: 1, y: 0 });
+  }, []);
+
   return (
     <>
-      <footer className='flex flex-col items-center py-10'>
-        <div className=''>
+      <footer className='flex flex-col items-center py-8'>
+        <animated.div style={style}>
           <Link href='/contact'>
             <a
               className={
@@ -17,13 +29,13 @@ const Footer: React.FC = (): JSX.Element => {
                   : 'font-semibold space-x-1'
               }
             >
-              <span className='border-b-blue-500 border-b'>Robert</span>
-              <span className='border-b-red-500 border-b'>Adams</span>
+              <span className='border-b-[#0000ff] border-b'>Robert</span>
+              <span className='border-b-[#ff0000] border-b'>Adams</span>
               <span>©</span>
-              <span className='border-b-yellow-200 border-b'>{year}</span>
+              <span className='border-b-[#ffff00] border-b'>{year}</span>
             </a>
           </Link>
-        </div>
+        </animated.div>
       </footer>
     </>
   );
