@@ -30,11 +30,7 @@ const HeaderBorder = () => {
   return (
     <div className='space-y-1'>
       {springs.map((style, idx) => (
-        <animated.div
-          key={idx}
-          style={style}
-          className={`h-2 relative z-10`}
-        />
+        <animated.div key={idx} style={style} className='h-2 relative z-10' />
       ))}
     </div>
   );
