@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import type { NextPage } from 'next/types';
+import { useEffect } from 'react';
+import { useTrail, config, animated } from 'react-spring';
 import SkillBadge from '../components/SkillBadge';
-import SpanishBadge from '../components/SpanishBadge';
 import { getStyles } from '../utils';
 
 const headerStyles = getStyles({
@@ -11,7 +12,41 @@ const headerStyles = getStyles({
   fontWeight: 'font-bold',
 });
 
+const lgs = ['typescript', 'javascript', 'html', 'css'];
+const fts = [
+  'react',
+  'redux',
+  'next',
+  'jquery',
+  'mui',
+  'tailwind',
+  'bootstrap',
+  'materialize',
+];
+const bks = [
+  'node',
+  'express',
+  'mysql',
+  'postgresql',
+  'sequelize',
+  'mongodb',
+  'mongoose',
+];
+const dvs = ['git', 'github', 'heroku', 'vercel'];
+
 const About: NextPage = () => {
+  const [lg, lgAPI] = useTrail(lgs.length, () => ({ opacity: 0, y: 20 }));
+  const [ft, ftAPI] = useTrail(fts.length, () => ({ opacity: 0, y: 20 }));
+  const [bk, bkAPI] = useTrail(bks.length, () => ({ opacity: 0, y: 20 }));
+  const [dv, dvAPI] = useTrail(dvs.length, () => ({ opacity: 0, y: 20 }));
+
+  useEffect(() => {
+    lgAPI.start({ opacity: 1, y: 0 });
+    ftAPI.start({ opacity: 1, y: 0 });
+    bkAPI.start({ opacity: 1, y: 0 });
+    dvAPI.start({ opacity: 1, y: 0 });
+  }, []);
+
   return (
     <>
       <Head>
@@ -66,49 +101,47 @@ const About: NextPage = () => {
 
             <div className='space-y-2'>
               <h3 className=''>Languages</h3>
-              <div className='flex flex-wrap'>
-                {['typescript', 'javascript', 'html', 'css'].map((icon) => (
-                  <SkillBadge size={24} key={icon} icon={icon} />
-                ))}
-                <SpanishBadge />
+              <div>
+                <ul className='flex flex-wrap'>
+                  {lg.map((style, idx) => (
+                    <animated.li key={lgs[idx]} style={style}>
+                      <SkillBadge icon={lgs[idx]} size={24} />
+                    </animated.li>
+                  ))}
+                </ul>
               </div>
 
               <h3 className=''>Front-End</h3>
-              <div className='flex flex-wrap'>
-                {[
-                  'react',
-                  'redux',
-                  'next',
-                  'jquery',
-                  'mui',
-                  'tailwind',
-                  'bootstrap',
-                  'materialize',
-                ].map((icon) => (
-                  <SkillBadge size={24} key={icon} icon={icon} />
-                ))}
+              <div>
+                <ul className='flex flex-wrap'>
+                  {ft.map((style, idx) => (
+                    <animated.li key={fts[idx]} style={style}>
+                      <SkillBadge icon={fts[idx]} size={24} />
+                    </animated.li>
+                  ))}
+                </ul>
               </div>
 
-              <h3 className=''>Back-End</h3>
-              <div className='flex flex-wrap'>
-                {[
-                  'node',
-                  'express',
-                  'mysql',
-                  'postgresql',
-                  'sequelize',
-                  'mongodb',
-                  'mongoose',
-                ].map((icon) => (
-                  <SkillBadge size={24} key={icon} icon={icon} />
-                ))}
+              <h3>Back-End</h3>
+              <div>
+                <ul className='flex flex-wrap'>
+                  {bk.map((style, idx) => (
+                    <animated.li key={bks[idx]} style={style}>
+                      <SkillBadge icon={bks[idx]} size={24} />
+                    </animated.li>
+                  ))}
+                </ul>
               </div>
 
               <h3 className=''>DevOps</h3>
-              <div className='flex flex-wrap'>
-                {['git', 'github', 'heroku', 'vercel'].map((icon) => (
-                  <SkillBadge size={24} key={icon} icon={icon} />
-                ))}
+              <div>
+                <ul className='flex flex-wrap'>
+                  {dv.map((style, idx) => (
+                    <animated.li key={dvs[idx]} style={style}>
+                      <SkillBadge icon={dvs[idx]} size={24} />
+                    </animated.li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
