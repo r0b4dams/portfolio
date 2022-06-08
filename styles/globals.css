@@ -33,8 +33,6 @@
     bottom: 0;
     left: 0;
     z-index: 5;
-    transform: translateX(100%);
-    transition-duration: 500ms;
     background-color: white;
     opacity: 95%;
   }
