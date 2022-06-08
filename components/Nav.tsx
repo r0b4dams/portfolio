@@ -5,12 +5,10 @@ import NavList from './NavList';
 import NavOverlay from './NavOverlay';
 
 const Nav: React.FC = (): JSX.Element => {
-  const [active, setActive] = useState(false);
+  const [show, set] = useState(false);
 
   const handleToggle = () => {
-    const body = document.querySelector('body');
-    body?.classList.toggle('noscroll', !active);
-    setActive(() => !active);
+    set(() => !show);
   };
 
   return (
@@ -21,8 +19,8 @@ const Nav: React.FC = (): JSX.Element => {
       >
         <Logo />
         <NavList />
-        <NavBurger active={active} handleToggle={handleToggle} />
-        <NavOverlay active={active} handleToggle={handleToggle} />
+        <NavBurger active={show} handleToggle={handleToggle} />
+        <NavOverlay active={show} handleToggle={handleToggle} />
       </div>
     </>
   );
