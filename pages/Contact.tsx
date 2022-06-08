@@ -46,9 +46,10 @@ const Contact: NextPage = () => {
       strokeApi.start({ x: 1, config: config.default });
       setTimeout(() => {
         strokeApi.start({ x: 0, config: config.molasses });
-      }, 5000);
+      }, 2500);
     } catch (err) {
-      console.error(err);
+      alert('Error copying email to clipboard');
+      alert(err)
     }
   };
 
