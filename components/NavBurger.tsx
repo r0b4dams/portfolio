@@ -1,34 +1,43 @@
+import { useSprings, animated } from 'react-spring';
+
 type MenuProps = {
   active: boolean;
   handleToggle: () => void;
 };
 
-const styles = {
-  active: {
-    top: 'rotate-45 translate-y-[9px]',
-    mid: 'opacity-0',
-    bot: '-rotate-45 translate-y-[-9px]',
-  },
-  bar: 'w-[36px] h-[3px] transition duration-500 bg-black',
-  burger: 'space-y-[6px] cursor-pointer z-[999] md:hidden',
-};
+const items = [
+  { name: 'top', opacity: 1, y: 9, rotate: 45 },
+  { name: 'mid', opacity: 0, y: 0, rotate: 0 },
+  { name: 'bot', opacity: 1, y: -9, rotate: -45 },
+];
 
 const NavBurger: React.FC<MenuProps> = ({ active, handleToggle }) => {
+  const bars = useSprings(
+    items.length,
+    items.map((item) => ({
+      to: {
+        y: active ? item.y : 0,
+        rotate: active ? item.rotate : 0,
+        opacity: active ? item.opacity : 1,
+      },
+    }))
+  );
+
   return (
-    <div id='nav-burger' className={styles.burger} onClick={handleToggle}>
-      <div
-        id='bar-top'
-        className={active ? `${styles.bar} ${styles.active.top}` : styles.bar}
-      ></div>
-      <div
-        id='bar-mid'
-        className={active ? `${styles.bar} ${styles.active.mid}` : styles.bar}
-      ></div>
-      <div
-        id='bar-bot'
-        className={active ? `${styles.bar} ${styles.active.bot}` : styles.bar}
-      ></div>
-    </div>
+    <button
+      id='nav-burger'
+      type='button'
+      className='space-y-[6px] cursor-pointer z-[999] md:hidden'
+      onClick={handleToggle}
+    >
+      {bars.map((style, idx) => (
+        <animated.div
+          key={items[idx].name}
+          style={style}
+          className='w-[36px] h-[3px] bg-black'
+        />
+      ))}
+    </button>
   );
 };
 
