@@ -2,9 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '../@types/projects';
+import { animated, SpringValue } from 'react-spring';
 
-const Project: React.FC<{ project: Project }> = ({ project }) => (
-  <div className='w-full lg:w-1/2 p-2 relative'>
+const Project: React.FC<{
+  project: Project;
+  style: {
+    opacity: SpringValue<number>;
+    y: SpringValue<number>;
+  };
+}> = ({ project, style }) => (
+  <animated.div className='w-full lg:w-1/2 p-2 relative' style={style}>
     <Link href={`/projects/${project.id}`}>
       <a className='flex justify-center'>
         <Image
@@ -33,7 +40,7 @@ const Project: React.FC<{ project: Project }> = ({ project }) => (
         </a>
       </Link>
     </div>
-  </div>
+  </animated.div>
 );
 
 export default Project;
