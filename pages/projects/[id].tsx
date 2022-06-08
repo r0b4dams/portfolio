@@ -7,6 +7,8 @@ import type { Project } from '../../@types/projects';
 import SkillBadge from '../../components/SkillBadge';
 import Head from 'next/head';
 import Icon from '../../components/Icon';
+import { useEffect } from 'react';
+import { animated, useTrail, config } from 'react-spring';
 
 export const getStaticPaths: GetStaticPaths = () => {
   const paths = getProjectIds();
@@ -31,6 +33,15 @@ const headerStyles = getStyles({
 });
 
 const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
+  const [tech, techAPI] = useTrail(project.tech.length, () => ({
+    opacity: 0,
+    y: 20,
+  }));
+
+  useEffect(() => {
+    techAPI.start({ opacity: 1, y: 0 });
+  }, []);
+
   return (
     <>
       <Head>
@@ -43,10 +54,16 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
           <h1 className={headerStyles}>{project.name}</h1>
           <div className='flex ml-5 space-x-5 md:ml-10 md:space-x-10'>
             <a href={project.repoURL} target='_blank' rel='noopener noreferrer'>
-              <Icon icon='github' className='w-[24px] h-[28px] sm:w-[36px] sm:h-[36px] md:w-[42px] md:h-[42px]' />
+              <Icon
+                icon='github'
+                className='w-[24px] h-[28px] sm:w-[36px] sm:h-[36px] md:w-[42px] md:h-[42px]'
+              />
             </a>
             <a href={project.appURL} target='_blank' rel='noopener noreferrer'>
-              <Icon icon='link' className='w-[24px] h-[28px] sm:w-[36px] sm:h-[36px] md:w-[42px] md:h-[42px]' />
+              <Icon
+                icon='link'
+                className='w-[24px] h-[28px] sm:w-[36px] sm:h-[36px] md:w-[42px] md:h-[42px]'
+              />
             </a>
           </div>
         </div>
@@ -69,35 +86,23 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
                 ))}
               </ul>
             </div>
+
             <div>
               <h2 className='py-2 font-medium'>Technologies</h2>
-              <div className='flex flex-wrap justify-center'>
-                {project.tech.map((icon) => (
-                  <SkillBadge key={icon} size={22} icon={icon} />
-                ))}
+              <div>
+                <ul className='flex flex-wrap justify-center'>
+                  {tech.map((style, idx) => (
+                    <animated.li key={project.tech[idx]} style={style}>
+                      <SkillBadge icon={project.tech[idx]} size={22} />
+                    </animated.li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
 
           <div className='p-1 lg:w-1/2'>
             <ProjectImage source={`/images/${project.id}-demo.gif`} />
-          </div>
-
-          <div className='p-1 lg:w-1/2'>
-            <ProjectImage source={`/images/${project.id}-demo.gif`} />
-          </div>
-
-          <div
-            id='reflection'
-            className='p-3 flex flex-col justify-center p-1 lg:w-1/2'
-          >
-            <ul className='space-y-3 font-thin'>
-              {project.discussion.map((data, idx) => (
-                <li key={idx}>
-                  <p>{data}</p>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>
