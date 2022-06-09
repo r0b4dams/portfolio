@@ -1,4 +1,4 @@
-import ProjectImage from '../../components/ProjectImage';
+import Image from 'next/image';
 import { getProjectIds, getProjectData } from '../../lib/projects';
 import { getStyles } from '../../utils';
 
@@ -102,7 +102,16 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
           </div>
 
           <div className='p-1 lg:w-1/2'>
-            <ProjectImage source={`/images/${project.id}-demo.gif`} />
+            <div className='flex'>
+              <Image
+                src={`/images/${project.id}-demo.gif`}
+                alt=''
+                layout='intrinsic'
+                height={360}
+                width={640}
+                className='rounded'
+              />
+            </div>
           </div>
         </div>
       </section>
