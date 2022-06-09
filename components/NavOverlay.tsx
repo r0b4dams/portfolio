@@ -1,39 +1,46 @@
 import Link from 'next/link';
-import { useSpring, animated, config, easings } from 'react-spring';
+import { useRouter } from 'next/router';
+import { useSpring, animated } from 'react-spring';
 
 type MenuProps = {
   active: boolean;
   handleToggle: () => void;
 };
 
+const links = ['projects', 'about', 'contact'];
+
 const NavOverlay: React.FC<MenuProps> = ({ active, handleToggle }) => {
+  const router = useRouter();
+
   const style = useSpring({
+    from: { x: '100%' },
     to: { x: active ? '0%' : '100%' },
   });
 
   return (
-    <animated.nav
+    <animated.div
       style={style}
       className='overlay flex justify-center items-center'
     >
-      <ul className='font-bold text-3xl space-y-10'>
-        <li>
-          <Link href='/projects'>
-            <a onClick={handleToggle}>Projects</a>
-          </Link>
-        </li>
-        <li className=''>
-          <Link href='/about'>
-            <a onClick={handleToggle}>About</a>
-          </Link>
-        </li>
-        <li>
-          <Link href='/contact'>
-            <a onClick={handleToggle}>Contact</a>
-          </Link>
-        </li>
-      </ul>
-    </animated.nav>
+      <nav>
+        <ul className='font-bold text-3xl space-y-10'>
+          {links.map((link) => (
+            <li
+              key={link}
+              className={
+                router.pathname === `/${link}`
+                  ? 'first-letter:uppercase pointer-events-none '
+                  : 'first-letter:uppercase'
+              }
+            >
+              <Link href={`/${link}`}>
+                <a onClick={handleToggle}>{link}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </animated.div>
   );
 };
 
