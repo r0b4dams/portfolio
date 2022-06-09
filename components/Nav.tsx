@@ -8,6 +8,7 @@ const Nav: React.FC = (): JSX.Element => {
   const [show, set] = useState(false);
 
   const handleToggle = () => {
+    document.querySelector('body')!.classList.toggle('noscroll', !show);
     set(() => !show);
   };
 
