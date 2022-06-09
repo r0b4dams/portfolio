@@ -4,7 +4,6 @@ import { useSpring, animated, config } from 'react-spring';
 import { useState, useEffect } from 'react';
 import IntroSubtitle from '../components/IntroSubtitle';
 import IntroTitle from '../components/IntroTitle';
-import { Cursor } from 'react-simple-typewriter';
 
 const Intro = () => {
   const [show, set] = useState(false);
@@ -83,7 +82,10 @@ const Intro = () => {
             <div className='min-h-[50px]'>{show && <IntroSubtitle />}</div>
           </div>
 
-          <animated.div style={hideBtn} className='my-5 self-center'>
+          <animated.div
+            style={hideBtn}
+            className={show ? 'my-5 self-center' : 'pointer-events-none'}
+          >
             <Link href='/projects'>
               <a className='px-5 py-2 text-l md:text-xl rounded border-2 border-gray-100'>
                 View Portfolio
