@@ -71,32 +71,31 @@ const About: NextPage = () => {
               Robert Adams
             </h2>
             <p className='text-gray-600 pb-5'>Software Engineer</p>
+            <div className='border rounded w-fit p-1 mb-5'>
+              <a
+                href='https://docs.google.com/document/d/1BnOZ86kZFrsZUpjgKWqEbyccZz6MXNJFfk8cAVdQEIQ/edit?usp=sharing'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Resume
+              </a>
+            </div>
           </div>
 
           <div className='md:w-2/3 space-y-5'>
             <p>
-              Coming out of college I accepted a position as an avionics repair
-              technician. It was a promising job and my adaptability and ability
-              to learn quickly paid off: in less than a year I had earned
-              trainer status in both the repair of in-flight hardware as well as
-              the maintenance repair software used for documentation.
+              Following a successful start to a career specializing in the
+              repair and modification of avionics equipment, the shifting nature
+              of the industry led me to realize that I needed to make a change
+              in order to find a more challenging, dynamic, and fulfilling
+              opportunity.
             </p>
             <p>
-              Unfortunately, the uncertainty caused by the pandemic led to a lot
-              of restructuring and I felt like I’d hit a wall in my professional
-              growth. I realized I needed to make a change. I’d always enjoyed
-              the programming aspects of my physics degree, so when I saw a
-              chance to apply for a full stack web development certificate, I
-              jumped at it.
-            </p>
-            <p>
-              I’m glad I did, because in earning it, it really solidified my
-              appreciation for what I enjoy in a job: learning new things,
+              Immersing myself in programming has really solidified my
+              appreciation for what I find rewarding: learning new things,
               problem solving, and helping build something tangible. I’m eager
-              to contribute my skills to a collaborative environment, and look
-              to find a position where I can further develop current skills as
-              well as acquire new ones. I’m really excited and I look forward to
-              learning more!
+              and excited to contribute my skills to a collaborative environment
+              and I look forward to learning more!
             </p>
 
             <div className='space-y-2'>
