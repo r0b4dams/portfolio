@@ -11,21 +11,21 @@ const Project: React.FC<{
     y: SpringValue<number>;
   };
 }> = ({ project, style }) => (
-  <animated.div className='w-full lg:w-1/2 p-2 relative' style={style}>
+  <animated.div className='w-full lg:w-1/2 p-3 relative' style={style}>
     <Link href={`/projects/${project.id}`}>
-      <a className='flex justify-center'>
+      <a className='flex justify-center border rounded'>
         <Image
-          src={`/images/${project.id}-demo.gif`}
+          src={`/images/${project.id}-mockup.png`}
           alt=''
-          layout='intrinsic'
           height={360}
           width={640}
-          className='rounded'
+          layout='intrinsic'
+          className=''
         />
       </a>
     </Link>
 
-    <div className='project-wrapper xl:opacity-0 p-5 xl:absolute xl:left-2 xl:right-2 xl:top-2 xl:bottom-2 xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:bg-stone-800 hover:xl:opacity-90 xl:rounded xl:transition xl:ease-in-out xl:duration-200'>
+    <div className='project-wrapper xl:opacity-0 p-5 xl:absolute xl:left-3 xl:right-3 xl:top-3 xl:bottom-3 xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:bg-stone-800 hover:xl:opacity-90 xl:rounded xl:transition xl:ease-in-out xl:duration-200'>
       <h2 className='duration-300 xl:translate-y-5 mb-3 font-bold xl:text-xl xl:text-stone-100'>
         {project.name}
       </h2>
