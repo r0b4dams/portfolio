@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Project from './Project';
 import { ProjectData } from '../@types/projects';
-import { useTrail, config, animated } from 'react-spring';
+import { useTrail } from 'react-spring';
 
 const ProjectContainer: React.FC<{ projects: ProjectData }> = ({
   projects,
