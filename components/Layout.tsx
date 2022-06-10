@@ -12,7 +12,7 @@ const Layout: React.FC<{
 
   useEffect(() => {
     window.onscroll = (_e) => {
-      if (window.scrollY < 200) set(() => false);
+      if (window.scrollY < 250) set(() => false);
       else set(() => true);
     };
   }, []);
@@ -25,9 +25,9 @@ const Layout: React.FC<{
   });
 
   const btnTransition = useTransition(show, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    from: { scale: 0 },
+    enter: { scale: 1 },
+    leave: { scale: 0 },
   });
 
   const scrollToTop = () => {
