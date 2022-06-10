@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import type { NextPage } from 'next/types';
 import { useEffect } from 'react';
-import { useTrail, useSpring, animated } from 'react-spring';
+import { useTrail, useSpring, animated, config } from 'react-spring';
 import SkillBadge from '../components/SkillBadge';
 import { getStyles } from '../utils';
 
@@ -36,7 +36,10 @@ const dvs = ['git', 'github', 'heroku', 'vercel'];
 
 const About: NextPage = () => {
   const [avatar, avAPI] = useSpring(() => ({ scale: 0 }));
-  const [resume, reAPI] = useSpring(() => ({ width: '0%' }));
+  const [resume, reAPI] = useSpring(() => ({
+    width: '0%',
+    config: config.molasses,
+  }));
   const [lg, lgAPI] = useTrail(lgs.length, () => ({ opacity: 0, y: 20 }));
   const [ft, ftAPI] = useTrail(fts.length, () => ({ opacity: 0, y: 20 }));
   const [bk, bkAPI] = useTrail(bks.length, () => ({ opacity: 0, y: 20 }));
@@ -80,7 +83,7 @@ const About: NextPage = () => {
             </h2>
             <p className='text-gray-600 pb-5'>Software Engineer</p>
 
-            <div className='py-1 px-3 mb-5 border rounded'>
+            <div className='py-1 px-3 mb-5 border rounded hover:scale-110 duration-200'>
               <a
                 href='https://docs.google.com/document/d/1BnOZ86kZFrsZUpjgKWqEbyccZz6MXNJFfk8cAVdQEIQ/edit?usp=sharing'
                 target='_blank'
@@ -89,7 +92,10 @@ const About: NextPage = () => {
               >
                 Resume
               </a>
-              <animated.div style={resume} className='origin-center h-1 bg-red-500'></animated.div>
+              <animated.div
+                style={resume}
+                className='origin-center h-1 bg-red-500'
+              ></animated.div>
             </div>
           </div>
 
