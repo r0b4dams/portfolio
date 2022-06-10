@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import type { NextPage } from 'next/types';
 import { useEffect } from 'react';
-import { useTrail, config, animated } from 'react-spring';
+import { useTrail, useSpring, animated } from 'react-spring';
 import SkillBadge from '../components/SkillBadge';
 import { getStyles } from '../utils';
 
@@ -35,12 +35,16 @@ const bks = [
 const dvs = ['git', 'github', 'heroku', 'vercel'];
 
 const About: NextPage = () => {
+  const [avatar, avAPI] = useSpring(() => ({ scale: 0 }));
+  const [resume, reAPI] = useSpring(() => ({ width: '0%' }));
   const [lg, lgAPI] = useTrail(lgs.length, () => ({ opacity: 0, y: 20 }));
   const [ft, ftAPI] = useTrail(fts.length, () => ({ opacity: 0, y: 20 }));
   const [bk, bkAPI] = useTrail(bks.length, () => ({ opacity: 0, y: 20 }));
   const [dv, dvAPI] = useTrail(dvs.length, () => ({ opacity: 0, y: 20 }));
 
   useEffect(() => {
+    avAPI.start({ scale: 1 });
+    reAPI.start({ width: '100%' });
     lgAPI.start({ opacity: 1, y: 0 });
     ftAPI.start({ opacity: 1, y: 0 });
     bkAPI.start({ opacity: 1, y: 0 });
@@ -59,26 +63,33 @@ const About: NextPage = () => {
 
         <div className='md:flex'>
           <div className='flex flex-col items-center pt-8 md:w-1/3'>
-            <Image
-              src='/images/avatar.jpg'
-              alt='avatar'
-              layout='intrinsic'
-              height={192}
-              width={192}
-              className='rounded-full'
-            />
+            <animated.div style={avatar}>
+              <div className='rounded-full'>
+                <Image
+                  src='/images/avatar.jpg'
+                  alt='avatar'
+                  layout='intrinsic'
+                  height={192}
+                  width={192}
+                  className='avatar rounded-full'
+                />
+              </div>
+            </animated.div>
             <h2 className='py-4 pb-1 text-xl font-bold lg:text-3xl'>
               Robert Adams
             </h2>
             <p className='text-gray-600 pb-5'>Software Engineer</p>
-            <div className='border rounded w-fit p-1 mb-5'>
+
+            <div className='py-1 px-3 mb-5 border rounded'>
               <a
                 href='https://docs.google.com/document/d/1BnOZ86kZFrsZUpjgKWqEbyccZz6MXNJFfk8cAVdQEIQ/edit?usp=sharing'
                 target='_blank'
                 rel='noopener noreferrer'
+                className='font-semibold'
               >
                 Resume
               </a>
+              <animated.div style={resume} className='origin-center h-1 bg-red-500'></animated.div>
             </div>
           </div>
 
