@@ -22,7 +22,7 @@ const Logo: React.FC = () => {
 
   return (
     <Link href='/'>
-      <a className='h-[50px] aspect-square lg:h-[100px] relative z-10'>
+      <a className='h-[50px] aspect-square lg:h-[100px] relative z-50'>
         <svg
           id='logo'
           className='h-full w-full'
