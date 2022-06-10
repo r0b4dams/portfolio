@@ -1,42 +1,57 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, useSprings, animated } from 'react-spring';
 
 type MenuProps = {
   active: boolean;
   handleToggle: () => void;
 };
 
-const links = ['projects', 'about', 'contact'];
+const data = [
+  { path: 'projects', color: '#0000ff' },
+  { path: 'about', color: '#ff0000' },
+  { path: 'contact', color: '#ffff00' },
+];
 
 const NavOverlay: React.FC<MenuProps> = ({ active, handleToggle }) => {
-  const router = useRouter();
+  const path = useRouter().pathname.substring(1);
 
-  const style = useSpring({
-    from: { x: '100%' },
-    to: { x: active ? '0%' : '100%' },
+  const overlay = useSpring({
+    from: { x: '100%', opacity: 0 },
+    to: { x: active ? '0%' : '100%', opacity: active ? 1 : 0 },
   });
+
+  const links = useSprings(
+    data.length,
+    data.map((item) => ({
+      from: { borderBottomColor: 'transparent', borderBottomWidth: 4 },
+      to: {
+        borderBottomColor: path === item.path ? item.color : 'transparent',
+      },
+    }))
+  );
 
   return (
     <animated.div
-      style={style}
-      className='overlay flex justify-center items-center'
+      style={overlay}
+      className='fixed flex justify-center items-center top-0 bottom-0 left-0 right-0 bg-white z-10'
     >
       <nav>
-        <ul className='font-bold text-3xl space-y-10'>
-          {links.map((link) => (
-            <li
-              key={link}
+        <ul className='font-bold text-3xl space-y-5 md:space-y-10'>
+          {links.map((style, idx) => (
+            <animated.li
+              key={idx}
+              style={style}
               className={
-                router.pathname === `/${link}`
-                  ? 'first-letter:uppercase pointer-events-none '
+                path === data[idx].path
+                  ? 'first-letter:uppercase pointer-events-none'
                   : 'first-letter:uppercase'
               }
             >
-              <Link href={`/${link}`}>
-                <a onClick={handleToggle}>{link}</a>
+              <Link href={`/${data[idx].path}`}>
+                <a onClick={handleToggle}>{data[idx].path}</a>
               </Link>
-            </li>
+            </animated.li>
           ))}
         </ul>
       </nav>
