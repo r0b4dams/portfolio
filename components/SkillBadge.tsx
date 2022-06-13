@@ -20,7 +20,7 @@ const SkillBadge: React.FC<{
           <path key={idx} d={path} fill={fills[idx]}></path>
         ))}
       </svg>
-      <span className='pl-1 font-light'>{name}</span>
+      <span className='pl-1 font-light text-sm'>{name}</span>
     </div>
   );
 };
