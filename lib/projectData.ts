@@ -4,7 +4,7 @@ const projectData = [
     name: 'Traductora',
     desc: 'A full-stack speech-to-speech translator application.',
     appURL: 'https://traductora.herokuapp.com/',
-    repoURL: 'https://github.com/comatosino/Traductora',
+    repoURL: 'https://github.com/r0b-adams/traductora/',
     imgsrc: '/images/traductora-demo.gif',
     features: [
       'Speak in one language and hear its translation in another!',
@@ -23,7 +23,7 @@ const projectData = [
     name: 'Console Log',
     desc: 'A hub for players to store walkthroughs for their favorite video games!',
     appURL: 'https://sar-console-log.herokuapp.com/',
-    repoURL: 'https://github.com/comatosino/Console-Log',
+    repoURL: 'https://github.com/r0b-adams/console-log/',
     imgsrc: '/images/console-log-demo.gif',
     features: [
       'Create a user profile and start saving text or links to your favorite walkthroughs.',
@@ -41,8 +41,8 @@ const projectData = [
     id: 'vedomý',
     name: 'Vedomý',
     desc: 'Space for self-reflection to record thoughts and daily health habits.',
-    appURL: 'https://gushihiro.github.io/Vedomy',
-    repoURL: 'https://github.com/Gushihiro/Vedomy',
+    appURL: 'https://r0b-adams.github.io/vedomy/',
+    repoURL: 'https://github.com/r0b-adams/vedomy/',
     imgsrc: '/images/vedomy-demo.gif',
     features: [
       'Reflect on your exercise, diet, and mood. Record your thoughts.',
@@ -65,7 +65,7 @@ const projectData = [
     name: 'Pantrimonium',
     desc: 'Manage food inventory, monitor expiration dates, and create a shopping list.',
     appURL: 'https://pantrimonium.herokuapp.com/',
-    repoURL: 'https://github.com/comatosino/Pantrimonium',
+    repoURL: 'https://github.com/r0b-adams/pantrimonium/',
     imgsrc: '/images/pantrimonium-demo.gif',
     features: [
       'Create a user profile to get started!',
@@ -89,8 +89,8 @@ const projectData = [
     id: 'dad-jokes',
     name: 'Bearded Dad Jokes',
     desc: 'Combine the gravitas of facial hair with the dry hilarity of fatherly humor.',
-    appURL: 'https://comatosino.github.io/dad-jokes/',
-    repoURL: 'https://github.com/comatosino/dad-jokes',
+    appURL: 'https://r0b-adams.github.io/dad-jokes/',
+    repoURL: 'https://github.com/r0b-adams/dad-jokes/',
     imgsrc: '/images/dad-jokes-demo.gif',
     features: [
       'Mix and match rugged whiskers with wholesome punchlines!',
