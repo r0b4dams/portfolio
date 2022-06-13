@@ -16,9 +16,9 @@ const data = [
   { icon: 'gmail', href: 'mailto:adamsiii.robert@gmail.com' },
   {
     icon: 'linkedin',
-    href: 'https://www.linkedin.com/in/robert-adams-comatosino/',
+    href: 'https://www.linkedin.com/in/r0b-adams/',
   },
-  { icon: 'github', href: 'https://github.com/comatosino' },
+  { icon: 'github', href: 'https://github.com/r0b-adams' },
 ];
 
 const baseStyle = {
@@ -48,8 +48,8 @@ const Contact: NextPage = () => {
         strokeApi.start({ x: 0, config: config.molasses });
       }, 2500);
     } catch (err) {
+      console.error(err);
       alert('Error copying email to clipboard');
-      alert(err)
     }
   };
 
