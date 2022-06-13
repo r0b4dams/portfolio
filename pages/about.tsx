@@ -116,45 +116,45 @@ const About: NextPage = () => {
             </p>
 
             <div className='space-y-2'>
-              <h3 className=''>Languages</h3>
+              <h3 className='font-semibold'>Languages</h3>
               <div>
                 <ul className='flex flex-wrap'>
                   {lg.map((style, idx) => (
                     <animated.li key={lgs[idx]} style={style}>
-                      <SkillBadge icon={lgs[idx]} size={24} />
+                      <SkillBadge icon={lgs[idx]} size={20} />
                     </animated.li>
                   ))}
                 </ul>
               </div>
 
-              <h3 className=''>Front-End</h3>
+              <h3 className='font-semibold'>Front-End</h3>
               <div>
                 <ul className='flex flex-wrap'>
                   {ft.map((style, idx) => (
                     <animated.li key={fts[idx]} style={style}>
-                      <SkillBadge icon={fts[idx]} size={24} />
+                      <SkillBadge icon={fts[idx]} size={20} />
                     </animated.li>
                   ))}
                 </ul>
               </div>
 
-              <h3>Back-End</h3>
+              <h3 className='font-semibold'>Back-End</h3>
               <div>
                 <ul className='flex flex-wrap'>
                   {bk.map((style, idx) => (
                     <animated.li key={bks[idx]} style={style}>
-                      <SkillBadge icon={bks[idx]} size={24} />
+                      <SkillBadge icon={bks[idx]} size={20} />
                     </animated.li>
                   ))}
                 </ul>
               </div>
 
-              <h3 className=''>DevOps</h3>
+              <h3 className='font-semibold'>DevOps</h3>
               <div>
                 <ul className='flex flex-wrap'>
                   {dv.map((style, idx) => (
                     <animated.li key={dvs[idx]} style={style}>
-                      <SkillBadge icon={dvs[idx]} size={24} />
+                      <SkillBadge icon={dvs[idx]} size={20} />
                     </animated.li>
                   ))}
                 </ul>
@@ -168,3 +168,5 @@ const About: NextPage = () => {
 };
 
 export default About;
+
+
