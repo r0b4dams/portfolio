@@ -85,7 +85,7 @@ const About: NextPage = () => {
 
             <div className='py-1 px-3 mb-5 border rounded hover:scale-110 duration-200'>
               <a
-                href='https://docs.google.com/document/d/1BnOZ86kZFrsZUpjgKWqEbyccZz6MXNJFfk8cAVdQEIQ/edit?usp=sharing'
+                href='https://docs.google.com/document/d/19xx33HJgE1exxapGl27CtC0BB-9VG4i79WCdg-UFkfk/edit?usp=sharing'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='font-semibold'
