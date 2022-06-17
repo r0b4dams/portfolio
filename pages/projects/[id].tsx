@@ -104,6 +104,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
           <div className='p-1 lg:w-1/2'>
             <div className='flex'>
               <Image
+                priority
                 src={`/images/${project.id}-demo.gif`}
                 alt=''
                 layout='intrinsic'
