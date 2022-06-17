@@ -50,7 +50,7 @@ const projectData = [
       'Check out daily yoga, sleep, and recepie suggestions.',
       'Won "People\'s Choice" award for University of Washington\'s spring full-stack web development certificate program',
     ],
-    tech: ['javascript', 'html', 'css', 'materialize'],
+    tech: ['javascript', 'html', 'css', 'jquery', 'materialize'],
     role: [
       'Interfaced with 3rd-Party APIs to fetch data, created and populated recipe card',
       'Led code reviews and approved pull requests',
