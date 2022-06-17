@@ -15,6 +15,7 @@ const Project: React.FC<{
     <Link href={`/projects/${project.id}`}>
       <a className='flex justify-center border rounded'>
         <Image
+          priority
           src={`/images/${project.id}-mockup.png`}
           alt=''
           height={360}
