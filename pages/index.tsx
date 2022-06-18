@@ -37,13 +37,12 @@ const Intro = () => {
               viewBox='0 0 24.0 24.0'
               xmlns='http://www.w3.org/2000/svg'
             >
-              <g>
+              <g strokeLinecap='round' strokeLinejoin='round'>
                 <animated.rect
                   id='rectangle'
                   fill='none'
                   stroke='#ff0000'
                   strokeWidth={0.5}
-                  strokeLinecap='round'
                   strokeDasharray={100}
                   strokeDashoffset={x.to((x) => (1 - x) * 100)}
                   width='10'
@@ -56,7 +55,6 @@ const Intro = () => {
                   fill='none'
                   stroke='#ffff00'
                   strokeWidth={0.5}
-                  strokeLinecap='round'
                   strokeDasharray={50}
                   strokeDashoffset={x.to((x) => (1 - x) * 50)}
                   d='M 1,23 H 13 L 7,11 Z'
@@ -66,7 +64,6 @@ const Intro = () => {
                   fill='none'
                   stroke='#0000ff'
                   strokeWidth={0.5}
-                  strokeLinecap='round'
                   strokeDasharray={50}
                   strokeDashoffset={x.to((x) => (1 - x) * 50)}
                   cx='13'

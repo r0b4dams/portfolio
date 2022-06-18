@@ -19,6 +19,11 @@
   body::-webkit-scrollbar {
     display: none;
   }
+
+  g {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 }
 
 @layer components {
