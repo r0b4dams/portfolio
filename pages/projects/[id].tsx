@@ -102,7 +102,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
           </div>
 
           <div className='p-1 lg:w-1/2'>
-            <div className='flex'>
+            <animated.div className='flex'>
               <Image
                 priority
                 src={`/images/${project.id}-demo.gif`}
@@ -112,7 +112,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
                 width={640}
                 className='rounded'
               />
-            </div>
+            </animated.div>
           </div>
         </div>
       </section>
