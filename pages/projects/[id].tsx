@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { getProjectIds, getProjectData } from '../../lib/projects';
-import { getStyles } from '../../utils';
 
 import type { GetStaticProps, GetStaticPaths, NextPage } from 'next/types';
 import type { Project } from '../../@types/projects';
@@ -8,7 +7,7 @@ import SkillBadge from '../../components/SkillBadge';
 import Head from 'next/head';
 import Icon from '../../components/Icon';
 import { useEffect } from 'react';
-import { animated, useTrail, config } from 'react-spring';
+import { animated, useTrail, config, useSpring } from 'react-spring';
 
 export const getStaticPaths: GetStaticPaths = () => {
   const paths = getProjectIds();
@@ -27,12 +26,9 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
   };
 };
 
-const headerStyles = getStyles({
-  fontSize: 'text-3xl sm:text-5xl md:text-7xl',
-  fontWeight: 'font-bold',
-});
-
 const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
+  const [img, imgAPI] = useSpring(() => ({ opacity: 0, translateX: '100%' }));
+
   const [tech, techAPI] = useTrail(project.tech.length, () => ({
     opacity: 0,
     y: 20,
@@ -40,6 +36,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
 
   useEffect(() => {
     techAPI.start({ opacity: 1, y: 0 });
+    imgAPI.start({opacity: 1, translateX: '0%'})
   }, []);
 
   return (
@@ -51,7 +48,9 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
 
       <section className='container'>
         <div className='mt-5 flex items-baseline'>
-          <h1 className={headerStyles}>{project.name}</h1>
+          <h1 className='my-5 text-3xl sm:text-5xl md:text-7xl font-bold'>
+            {project.name}
+          </h1>
           <div className='flex ml-5 space-x-5 md:ml-10 md:space-x-10'>
             <a href={project.repoURL} target='_blank' rel='noopener noreferrer'>
               <Icon
@@ -102,7 +101,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
           </div>
 
           <div className='p-1 lg:w-1/2'>
-            <animated.div className='flex'>
+            <animated.div style={img} className='flex'>
               <Image
                 priority
                 src={`/images/${project.id}-demo.gif`}
