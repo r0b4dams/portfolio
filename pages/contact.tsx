@@ -4,13 +4,6 @@ import { MouseEventHandler, useEffect, useState } from 'react';
 import { useSpring, useTrail, animated, config } from 'react-spring';
 import Icon from '../components/Icon';
 import NewtonsCradle from '../components/NewtonsCradle';
-import { getStyles } from '../utils';
-
-const headerStyles = getStyles({
-  margin: 'my-5',
-  fontSize: 'text-3xl sm:text-5xl md:text-7xl',
-  fontWeight: 'font-bold',
-});
 
 const data = [
   { icon: 'gmail', href: 'mailto:adamsiii.robert@gmail.com' },
@@ -21,16 +14,18 @@ const data = [
   { icon: 'github', href: 'https://github.com/r0b-adams' },
 ];
 
-const baseStyle = {
-  scale: 0,
-  transformOrigin: 'center',
-};
-
 const Contact: NextPage = () => {
   const [visible, show] = useState(false);
+
   const [{ x }, strokeApi] = useSpring(() => ({ x: 0 }));
-  const [button, btnApi] = useSpring(() => baseStyle);
-  const [iconTrail, IconTrailApi] = useTrail(data.length, () => baseStyle);
+  const [iconTrail, IconTrailApi] = useTrail(data.length, () => ({
+    scale: 0,
+    transformOrigin: 'center',
+  }));
+  const [button, btnApi] = useSpring(() => ({
+    scale: 0,
+    transformOrigin: 'center',
+  }));
 
   useEffect(() => {
     IconTrailApi.start({ scale: 1 });
@@ -61,7 +56,9 @@ const Contact: NextPage = () => {
       </Head>
 
       <section className='container flex flex-col grow'>
-        <h1 className={headerStyles}>Contact</h1>
+        <h1 className='my-5 text-3xl sm:text-5xl md:text-7xl font-bold'>
+          Contact
+        </h1>
 
         <div className='grow flex flex-col items-center justify-center space-y-5'>
           <ul id='icons' className='flex space-x-10'>
