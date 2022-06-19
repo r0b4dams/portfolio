@@ -34,6 +34,60 @@ const bks = [
 ];
 const dvs = ['git', 'github', 'heroku', 'vercel'];
 
+const ResumeSpring: React.FC<{}> = () => {
+  const [{ y }, spr] = useSpring(() => ({ y: 0.25 }));
+  useEffect(() => {
+    spr.start({
+      y: 1,
+      config: {
+        mass: 1,
+        tension: 125,
+        friction: 3,
+      },
+    });
+  }, []);
+
+  return (
+    <div className='flex flex-col items-center relative'>
+      <div className='h-2 rounded bg-[#0000ff] w-32' />
+      <animated.svg
+        style={{ scaleY: y.to((y) => y) }}
+        id='spring'
+        className='origin-top'
+        width='50px'
+        height='100px'
+        viewBox='0 0 210 297'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          fill='none'
+          stroke='#e7e7e7'
+          strokeOpacity='1'
+          strokeWidth='8px'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M 105,-61.5 0,-40.5 H 210 L 0,1.5 H 210 L 0,43.5 H 210 L 0,85.5 h 210 l -210,42 h 210 l -210,42 h 210 l -210,42 h 210 l -210,42 h 210 l -210,42 h 210 l -210,42 h 210 l -105,21 v 0 0'
+        />
+      </animated.svg>
+
+      <animated.div
+        style={{ translateY: y.to((y) => (100 * y) - 100) }}
+        className='py-1 px-3 mb-5 relative z-10 border rounded bg-white'
+      >
+        <a
+          href='https://docs.google.com/document/d/19xx33HJgE1exxapGl27CtC0BB-9VG4i79WCdg-UFkfk/edit?usp=sharing'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='font-semibold '
+        >
+          Resume
+        </a>
+        <div className='origin-center h-1 bg-red-500' />
+      </animated.div>
+    </div>
+  );
+};
+
 const About: NextPage = () => {
   const [avatar, avAPI] = useSpring(() => ({ scale: 0 }));
   const [resume, reAPI] = useSpring(() => ({
@@ -82,21 +136,7 @@ const About: NextPage = () => {
               Robert Adams
             </h2>
             <p className='text-gray-600 pb-5'>Software Engineer</p>
-
-            <div className='py-1 px-3 mb-5 border rounded hover:scale-110 duration-200'>
-              <a
-                href='https://docs.google.com/document/d/19xx33HJgE1exxapGl27CtC0BB-9VG4i79WCdg-UFkfk/edit?usp=sharing'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='font-semibold'
-              >
-                Resume
-              </a>
-              <animated.div
-                style={resume}
-                className='origin-center h-1 bg-red-500'
-              ></animated.div>
-            </div>
+            <ResumeSpring />
           </div>
 
           <div className='md:w-2/3 space-y-5'>
@@ -168,5 +208,3 @@ const About: NextPage = () => {
 };
 
 export default About;
-
-
