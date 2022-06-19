@@ -15,8 +15,6 @@ const data = [
 ];
 
 const Contact: NextPage = () => {
-  const [visible, show] = useState(false);
-
   const [{ x }, strokeApi] = useSpring(() => ({ x: 0 }));
   const [iconTrail, IconTrailApi] = useTrail(data.length, () => ({
     scale: 0,
@@ -30,10 +28,6 @@ const Contact: NextPage = () => {
   useEffect(() => {
     IconTrailApi.start({ scale: 1 });
   }, []);
-
-  useEffect(() => {
-    if (visible) btnApi.start({ scale: 1 });
-  }, [visible]);
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = async () => {
     try {
@@ -67,7 +61,7 @@ const Contact: NextPage = () => {
                 <animated.li
                   key={idx}
                   style={style}
-                  onMouseEnter={() => show(() => true)}
+                  onMouseEnter={() => btnApi.start({ scale: 1 })}
                 >
                   <a href={data[idx].href}>
                     <Icon
