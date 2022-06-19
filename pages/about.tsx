@@ -2,15 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import type { NextPage } from 'next/types';
 import { useEffect } from 'react';
-import { useTrail, useSpring, animated, config } from 'react-spring';
+import { useTrail, useSpring, animated } from 'react-spring';
 import SkillBadge from '../components/SkillBadge';
-import { getStyles } from '../utils';
-
-const headerStyles = getStyles({
-  margin: 'my-5',
-  fontSize: 'text-3xl sm:text-5xl md:text-7xl',
-  fontWeight: 'font-bold',
-});
 
 const lgs = ['typescript', 'javascript', 'html', 'css'];
 const fts = [
@@ -35,9 +28,9 @@ const bks = [
 const dvs = ['git', 'github', 'heroku', 'vercel'];
 
 const ResumeSpring: React.FC<{}> = () => {
-  const [{ y }, spr] = useSpring(() => ({ y: 0.25 }));
+  const [{ y }, spring] = useSpring(() => ({ y: 0.25 }));
   useEffect(() => {
-    spr.start({
+    spring.start({
       y: 1,
       config: {
         mass: 1,
@@ -48,8 +41,8 @@ const ResumeSpring: React.FC<{}> = () => {
   }, []);
 
   return (
-    <div className='flex flex-col items-center relative'>
-      <div className='h-2 rounded bg-[#0000ff] w-32' />
+    <div className='flex flex-col items-center relative pb-10'>
+      <div className='h-2 bg-[#0000ff] w-32' />
       <animated.svg
         style={{ scaleY: y.to((y) => y) }}
         id='spring'
@@ -71,8 +64,8 @@ const ResumeSpring: React.FC<{}> = () => {
       </animated.svg>
 
       <animated.div
-        style={{ translateY: y.to((y) => (100 * y) - 100) }}
-        className='py-1 px-3 mb-5 relative z-10 border rounded bg-white'
+        style={{ translateY: y.to((y) => 100 * y - 100) }}
+        className='py-1 px-3 mb-5 relative z-[2] border rounded bg-white'
       >
         <a
           href='https://docs.google.com/document/d/19xx33HJgE1exxapGl27CtC0BB-9VG4i79WCdg-UFkfk/edit?usp=sharing'
@@ -90,10 +83,6 @@ const ResumeSpring: React.FC<{}> = () => {
 
 const About: NextPage = () => {
   const [avatar, avAPI] = useSpring(() => ({ scale: 0 }));
-  const [resume, reAPI] = useSpring(() => ({
-    width: '0%',
-    config: config.molasses,
-  }));
   const [lg, lgAPI] = useTrail(lgs.length, () => ({ opacity: 0, y: 20 }));
   const [ft, ftAPI] = useTrail(fts.length, () => ({ opacity: 0, y: 20 }));
   const [bk, bkAPI] = useTrail(bks.length, () => ({ opacity: 0, y: 20 }));
@@ -101,7 +90,6 @@ const About: NextPage = () => {
 
   useEffect(() => {
     avAPI.start({ scale: 1 });
-    reAPI.start({ width: '100%' });
     lgAPI.start({ opacity: 1, y: 0 });
     ftAPI.start({ opacity: 1, y: 0 });
     bkAPI.start({ opacity: 1, y: 0 });
@@ -116,7 +104,9 @@ const About: NextPage = () => {
       </Head>
 
       <section className='container'>
-        <h1 className={headerStyles}>About</h1>
+        <h1 className='my-5 text-3xl sm:text-5xl md:text-7xl font-bold'>
+          About
+        </h1>
 
         <div className='md:flex'>
           <div className='flex flex-col items-center pt-8 md:w-1/3'>
@@ -126,8 +116,8 @@ const About: NextPage = () => {
                   src='/images/avatar.jpg'
                   alt='avatar'
                   layout='intrinsic'
-                  height={192}
-                  width={192}
+                  height={164}
+                  width={164}
                   className='avatar rounded-full'
                 />
               </div>
@@ -135,7 +125,7 @@ const About: NextPage = () => {
             <h2 className='py-4 pb-1 text-xl font-bold lg:text-3xl'>
               Robert Adams
             </h2>
-            <p className='text-gray-600 pb-5'>Software Engineer</p>
+            <p className='text-gray-600'>Software Engineer</p>
             <ResumeSpring />
           </div>
 
