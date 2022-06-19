@@ -4,7 +4,6 @@ import Head from 'next/head';
 import ProjectContainer from '../components/ProjectContainer';
 import { getAllProjectData } from '../lib/projects';
 import { ProjectData } from '../@types/projects';
-import { getStyles } from '../utils';
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = getAllProjectData();
@@ -15,12 +14,6 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const headerStyles = getStyles({
-  margin: 'my-5',
-  fontSize: 'text-3xl sm:text-5xl md:text-7xl',
-  fontWeight: 'font-bold',
-});
-
 const Projects: NextPage<{ projects: ProjectData }> = ({ projects }) => {
   return (
     <>
@@ -29,7 +22,9 @@ const Projects: NextPage<{ projects: ProjectData }> = ({ projects }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section className='container'>
-        <h1 className={headerStyles}>Projects</h1>
+        <h1 className='my-5 text-3xl sm:text-5xl md:text-7xl font-bold'>
+          Projects
+        </h1>
         <ProjectContainer projects={projects} />
       </section>
     </>
