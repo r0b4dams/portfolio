@@ -36,7 +36,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
 
   useEffect(() => {
     techAPI.start({ opacity: 1, y: 0 });
-    imgAPI.start({opacity: 1, translateX: '0%'})
+    imgAPI.start({ opacity: 1, translateX: '0%', config: config.molasses });
   }, []);
 
   return (
