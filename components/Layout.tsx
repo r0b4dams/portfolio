@@ -13,7 +13,7 @@ const Layout: React.FC<{
   useEffect(() => {
     window.onscroll = (_e) => {
       if (window.scrollY < 250) set(() => false);
-      else set(() => true);
+      else if (!show) set(() => true);
     };
   }, []);
 
