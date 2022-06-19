@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import { useTrail, animated, config } from 'react-spring';
 import { useEffect } from 'react';
 
