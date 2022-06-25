@@ -14,8 +14,8 @@ const IntroSubtitle = () => {
   });
 
   return (
-    <h2 className='text-2xl my-5 md:text-4xl'>
-      <span>{text}</span>
+    <h2 className='text-2xl md:text-4xl inline-block'>
+      {text}
       <Cursor />
     </h2>
   );

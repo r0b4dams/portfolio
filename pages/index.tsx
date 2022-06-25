@@ -13,11 +13,16 @@ const Intro = () => {
     drawAPI.start({ x: 1, config: config.molasses });
   }, []);
 
-  const [hideBtn, btnAPI] = useSpring(() => ({ opacity: 0, y: 20 }));
+  const [hideBtn, btnAPI] = useSpring(() => ({ opacity: 0, y: 20, scale: 0 }));
 
   const handleLoopDone = () => {
     set(() => true);
-    btnAPI.start({ opacity: 1, y: 0, config: config.molasses, delay: 1500 });
+    btnAPI.start({
+      to: async (next, _cancel) => {
+        await next({ scale: 1, delay: 1500 });
+        await next({ opacity: 1, y: 0, config: config.molasses });
+      },
+    });
   };
 
   return (
@@ -76,12 +81,19 @@ const Intro = () => {
 
           <div className='pl-3'>
             <IntroTitle handleLoopDone={handleLoopDone} />
-            <div className='min-h-[50px]'>{show && <IntroSubtitle />}</div>
+            <div>
+              {show && <IntroSubtitle />}
+              <span className='opacity-0 text-2xl md:text-4xl'>|</span>
+            </div>
           </div>
 
           <animated.div
             style={hideBtn}
-            className={show ? 'my-5 self-center' : 'pointer-events-none'}
+            className={
+              show
+                ? 'mt-10 self-center visible'
+                : 'mt-10 pointer-events-none invisible'
+            }
           >
             <Link href='/projects'>
               <a className='px-5 py-2 text-l md:text-xl rounded border-2 border-gray-100'>

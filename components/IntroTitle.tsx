@@ -2,12 +2,10 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
-type TitleProps = {
-  handleLoopDone: () => void;
-};
-
-const IntroTitle: React.FC<TitleProps> = ({ handleLoopDone }) => {
-  const [show, set] = useState(true);
+const IntroTitle: React.FC<{ handleLoopDone: () => void }> = ({
+  handleLoopDone,
+}) => {
+  const [show, set] = useState(true);  // cursor visibility
   const mount = useTransition(show, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -23,7 +21,7 @@ const IntroTitle: React.FC<TitleProps> = ({ handleLoopDone }) => {
   });
 
   return (
-    <h1 className='text-5xl my-5 md:text-7xl'>
+    <h1 className='text-5xl my-5 md:text-6xl'>
       <span>{text}</span>
       {mount(
         (style, visible) =>
