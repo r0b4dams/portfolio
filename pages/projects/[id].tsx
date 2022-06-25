@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
 };
 
 const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
-  const [img, imgAPI] = useSpring(() => ({ opacity: 0, translateX: '100%' }));
+  const [img, imgAPI] = useSpring(() => ({ opacity: 0 }));
 
   const [tech, techAPI] = useTrail(project.tech.length, () => ({
     opacity: 0,
@@ -36,8 +36,11 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
 
   useEffect(() => {
     techAPI.start({ opacity: 1, y: 0 });
-    imgAPI.start({ opacity: 1, translateX: '0%', config: config.molasses });
   }, []);
+
+  const handleImageLoaded = () => {
+    imgAPI.start({ opacity: 1, config: config.molasses });
+  };
 
   return (
     <>
@@ -47,7 +50,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
       </Head>
 
       <section className='container'>
-        <div className='mt-5 flex items-baseline'>
+        <div className='flex items-baseline'>
           <h1 className='my-5 text-3xl sm:text-5xl md:text-7xl font-bold'>
             {project.name}
           </h1>
@@ -103,6 +106,7 @@ const ProjectPage: NextPage<{ project: Project }> = ({ project }) => {
           <div className='p-1 lg:w-1/2'>
             <animated.div style={img} className='flex'>
               <Image
+                onLoadingComplete={handleImageLoaded}
                 priority
                 src={`/images/${project.id}-demo.gif`}
                 alt=''
