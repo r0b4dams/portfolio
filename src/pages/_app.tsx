@@ -1,6 +1,19 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import { DefaultLayout } from "@/layouts";
+import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const router = useRouter();
+
+  const Page = <Component {...pageProps} />;
+
+  switch (router.pathname) {
+    default:
+      return <DefaultLayout page={Page} />;
+    case "/":
+      return Page;
+  }
+};
+
+export default App;
