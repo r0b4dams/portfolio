@@ -1,0 +1,6 @@
+{
+  "languages": ["typescript", "javascript", "html", "css"],
+  "frontend": ["react", "redux", "next", "jquery", "mui", "tailwind", "bootstrap", "materialize"],
+  "backend": ["node", "express", "mysql", "postgresql", "sequelize", "mongodb", "mongoose"],
+  "devops": ["git", "github", "heroku", "vercel"]
+}
