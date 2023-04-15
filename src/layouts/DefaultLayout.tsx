@@ -1,15 +1,27 @@
+import { animated, useTransition } from "@react-spring/web";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-interface IProps {
-  page: React.ReactNode;
+interface Props {
+  page: JSX.Element;
 }
 
-export const DefaultLayout: React.FC<IProps> = ({ page }) => {
+export const DefaultLayout: React.FC<Props> = ({ page }) => {
+  const pageTransition = useTransition(page, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    exitBeforeEnter: true,
+  });
+
   return (
     <div className="h-screen flex flex-col">
       <Header />
-      <main className="container grow">{page}</main>
+      {pageTransition((style, animatedPage) => (
+        <animated.main style={style} className="flex flex-col container grow">
+          {animatedPage}
+        </animated.main>
+      ))}
       <Footer />
     </div>
   );
