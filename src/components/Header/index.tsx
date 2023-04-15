@@ -3,7 +3,7 @@ import { Logo } from "../Logo";
 import { Nav } from "../Nav";
 import { SpringBorder } from "./SpringBorder";
 
-export const Header: React.FC = (): JSX.Element => {
+export const Header: React.FC = () => {
   return (
     <>
       <header className="container flex items-center justify-between">

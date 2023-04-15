@@ -9,7 +9,7 @@ interface IWidthItem {
   };
 }
 
-export const SpringBorder: React.FC = (): JSX.Element => {
+export const SpringBorder: React.FC = () => {
   const router = useRouter();
 
   const springs = useSprings(
