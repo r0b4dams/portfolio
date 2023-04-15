@@ -20,7 +20,7 @@ const data = [
   },
 ];
 
-export const NavLinks: React.FC = (): JSX.Element => {
+export const NavLinks: React.FC = () => {
   const router = useRouter();
 
   const linkTrail = useTrail(data.length, {

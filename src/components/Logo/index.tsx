@@ -6,7 +6,7 @@ interface IProps {
   className: string;
 }
 
-export const Logo: React.FC<IProps> = (props): JSX.Element => {
+export const Logo: React.FC<IProps> = (props) => {
   const [trail, api] = useTrail(paths.length, () => ({ x: 0 }));
 
   useEffect(() => {
