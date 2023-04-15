@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const year = new Date().getFullYear();
 
-export const Footer: React.FC = (): JSX.Element => {
+export const Footer: React.FC = () => {
   const router = useRouter();
 
   const [style, api] = useSpring(() => ({
@@ -28,10 +28,10 @@ export const Footer: React.FC = (): JSX.Element => {
               : "font-semibold space-x-1"
           }
         >
-          <span className="border-b-pm-blue border-b">Robert</span>
-          <span className="border-b-pm-red border-b">Adams</span>
+          <span className="border-b-pm-blue border-b-2">Robert</span>
+          <span className="border-b-pm-red border-b-2">Adams</span>
           <span>©</span>
-          <span className="border-b-pm-yellow border-b">{year}</span>
+          <span className="border-b-pm-yellow border-b-2">{year}</span>
         </Link>
       </animated.div>
     </footer>
