@@ -2,7 +2,7 @@ interface Props {
   features: string[];
 }
 
-export const Features: React.FC<Props> = ({ features }) => {
+export const ProjectFeatures: React.FC<Props> = ({ features }) => {
   return (
     <div id="features" className="mt-3">
       <h2 className="font-medium">Features</h2>

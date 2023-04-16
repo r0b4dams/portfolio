@@ -1,10 +1,8 @@
 import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+import NextHead from "next/head";
 import { useSpring } from "@react-spring/web";
 
-import { NewtonsCradle, Page } from "@/components";
-import { ContactIcons } from "./ContactIcons";
-import { CopyEmail } from "./CopyEmail";
+import { ContactEmail, ContactIcons, NewtonsCradle, Page } from "@/components";
 
 interface Props {
   email: string;
@@ -23,16 +21,16 @@ const Contact: NextPage<Props> = ({ email }) => {
 
   return (
     <Page>
-      <Head>
+      <NextHead>
         <title>Robert Adams | Contact</title>
-      </Head>
+      </NextHead>
 
       <Page.Heading>Contact</Page.Heading>
 
       <Page.Body>
         <div className="flex flex-col grow justify-center items-center space-y-5">
           <ContactIcons showCopyEmail={showCopyEmail} />
-          <CopyEmail email={email} style={style} />
+          <ContactEmail email={email} style={style} />
           <NewtonsCradle />
         </div>
       </Page.Body>

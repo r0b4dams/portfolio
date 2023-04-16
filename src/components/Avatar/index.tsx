@@ -1,11 +1,11 @@
-import Image from "next/image";
+import NextImage from "next/image";
 import { animated, useSpring } from "@react-spring/web";
 import avatar from "./avatar.jpg";
 
+const AnimatedImg = animated(NextImage);
+
 export const Avatar: React.FC = () => {
   const [style, animation] = useSpring(() => ({ scale: 0, opacity: 0 }));
-
-  const AnimatedImg = animated(Image);
 
   const animate = () => {
     animation.start({ scale: 1, opacity: 1 });

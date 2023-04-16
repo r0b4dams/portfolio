@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+import NextHead from "next/head";
 
-import { Page, Avatar, ResumeSpring, Badges } from "@/components";
-import skills from "./skills.json";
+import { Page, Avatar, BadgeList, ResumeSpring } from "@/components";
+import { skills } from "@/lib/skills";
 
 const About: NextPage = () => {
   return (
     <Page>
-      <Head>
+      <NextHead>
         <title>Robert Adams | About</title>
-      </Head>
+      </NextHead>
 
       <Page.Heading>About</Page.Heading>
 
@@ -39,10 +39,10 @@ const About: NextPage = () => {
           </p>
 
           <div className="space-y-2">
-            <Badges title="Languages" badges={skills.languages} />
-            <Badges title="Front End" badges={skills.frontend} />
-            <Badges title="Back End" badges={skills.backend} />
-            <Badges title="Dev Ops" badges={skills.devops} />
+            <BadgeList title="Languages" badges={skills.languages} />
+            <BadgeList title="Front End" badges={skills.frontend} />
+            <BadgeList title="Back End" badges={skills.backend} />
+            <BadgeList title="Dev Ops" badges={skills.devops} />
           </div>
         </div>
       </Page.Body>

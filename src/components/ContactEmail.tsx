@@ -9,7 +9,7 @@ interface Props {
 
 const STROKE_DASH_ARRAY = 100;
 
-export const CopyEmail: React.FC<Props> = ({ email, style }) => {
+export const ContactEmail: React.FC<Props> = ({ email, style }) => {
   const [{ x }, animation] = useSpring(() => ({ x: 0 }));
 
   const animate = () => {

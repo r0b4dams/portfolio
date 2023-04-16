@@ -13,7 +13,7 @@ export const ResumeSpring: React.FC = () => {
         friction: 3,
       },
     });
-  }, []);
+  }, [spring]);
 
   return (
     <div className="flex flex-col items-center relative">

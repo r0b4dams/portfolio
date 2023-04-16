@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { NavBurger } from "./NavBurger";
 import { NavLinks } from "./NavLinks";
 import { NavOverlay } from "./NavOverlay";
@@ -7,8 +8,8 @@ export const Nav: React.FC = () => {
   const [active, set] = useState(false);
 
   const toggle = () => {
+    set((visible) => !visible);
     document.querySelector("body")?.classList.toggle("noscroll", !active);
-    set((state) => !state);
   };
 
   return (

@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { animated, useTrail } from "@react-spring/web";
+
 import { Icon } from "@/components";
+import { CONFIG } from "@/config";
 
 const data = [
-  { icon: "gmail", href: `mailto:${process.env.EMAIL}` },
-  { icon: "linkedin", href: "https://www.linkedin.com/in/r0b-adams" },
-  { icon: "github", href: "https://github.com/r0b-adams" },
+  { icon: "gmail", href: `mailto:${CONFIG.EMAIL}` },
+  { icon: "linkedin", href: CONFIG.LINKEDIN },
+  { icon: "github", href: CONFIG.GITHUB },
 ];
 
 interface Props {
@@ -19,7 +21,7 @@ export const ContactIcons: React.FC<Props> = ({ showCopyEmail }) => {
 
   useEffect(() => {
     animation.start({ scale: 1 });
-  }, []);
+  }, [animation]);
 
   const handleMouseEnter = () => {
     showCopyEmail();

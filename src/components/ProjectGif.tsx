@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NextImage from "next/image";
 import { animated, config, useSpring } from "@react-spring/web";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   name: string;
 }
 
-export const Gif: React.FC<Props> = ({ id, name }): JSX.Element => {
+export const ProjectGif: React.FC<Props> = ({ id, name }): JSX.Element => {
   const [style, animation] = useSpring(() => ({ opacity: 0 }));
 
   const handleImageLoaded = () => {
@@ -15,7 +15,7 @@ export const Gif: React.FC<Props> = ({ id, name }): JSX.Element => {
 
   return (
     <animated.div style={style} className="flex">
-      <Image
+      <NextImage
         priority
         src={`/images/${id}-demo.gif`}
         alt={name}

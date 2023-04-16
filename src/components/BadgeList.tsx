@@ -8,7 +8,7 @@ interface Props {
   badges: string[];
 }
 
-export const Badges: React.FC<Props> = ({ title, badges }): JSX.Element => {
+export const BadgeList: React.FC<Props> = ({ title, badges }): JSX.Element => {
   const [trail, animation] = useTrail(badges.length, () => ({ opacity: 0, y: 20 }));
 
   useEffect(() => {

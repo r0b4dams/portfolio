@@ -1,13 +1,13 @@
 import { Title } from "./Title";
 import { Subtitle } from "./Subtitle";
-import { ButtonLink } from "./ButtonLink";
+import { Link } from "./Link";
 
-export const Salutation: React.FC = () => {
+export const Greeting: React.FC = () => {
   return (
     <div className="flex flex-col">
       <Title />
       <Subtitle />
-      <ButtonLink href="/about" />
+      <Link href="/about" />
     </div>
   );
 };

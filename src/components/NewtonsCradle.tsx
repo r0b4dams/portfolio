@@ -15,7 +15,7 @@ export const NewtonsCradle: React.FC = () => {
         config: { friction: FRICTION, mass: MASS },
       },
     });
-  }, []);
+  }, [swing]);
 
   return (
     <div className="flex flex-col items-center justify-evenly">

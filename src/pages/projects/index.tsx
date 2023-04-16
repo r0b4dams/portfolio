@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Page } from "@/components";
 import { IProject } from "@/types";
 import { getAllProjects } from "@/lib/projects";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard } from "../../components/ProjectCard";
 
 interface Props {
   projects: IProject[];

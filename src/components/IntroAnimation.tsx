@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 import { animated, config, useSpring } from "@react-spring/web";
 
-export const Animation: React.FC = () => {
-  const [{ x }, svgAnimation] = useSpring(() => ({ x: 0 }));
+const STROKE_DASH_ARRAY = 100;
+
+export const IntroAnimation: React.FC = () => {
+  const [{ x }, animation] = useSpring(() => ({ x: 0 }));
 
   useEffect(() => {
-    svgAnimation.start({ x: 1, config: config.molasses });
-  }, []);
+    animation.start({ x: 1, config: config.molasses });
+  }, [animation]);
+
+  const strokeDashoffset = x.to((x) => (1 - x) * 100);
 
   return (
     <svg
@@ -22,8 +26,8 @@ export const Animation: React.FC = () => {
           stroke="#E70503"
           strokeWidth={0.5}
           strokeLinecap="round"
-          strokeDasharray={100}
-          strokeDashoffset={x.to((x) => (1 - x) * 100)}
+          strokeDasharray={STROKE_DASH_ARRAY}
+          strokeDashoffset={strokeDashoffset}
           width="10"
           height="22"
           x="13"
@@ -35,8 +39,8 @@ export const Animation: React.FC = () => {
           stroke="#FDDE06"
           strokeWidth={0.5}
           strokeLinecap="round"
-          strokeDasharray={100}
-          strokeDashoffset={x.to((x) => (1 - x) * 100)}
+          strokeDasharray={STROKE_DASH_ARRAY}
+          strokeDashoffset={strokeDashoffset}
           d="M 1,23 H 13 L 7,11 Z"
         />
         <animated.circle
@@ -45,8 +49,8 @@ export const Animation: React.FC = () => {
           stroke="#0300AD"
           strokeWidth={0.5}
           strokeLinecap="round"
-          strokeDasharray={100}
-          strokeDashoffset={x.to((x) => (1 - x) * 100)}
+          strokeDasharray={STROKE_DASH_ARRAY}
+          strokeDashoffset={strokeDashoffset}
           cx="13"
           cy="17"
           r="6"
