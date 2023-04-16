@@ -1,5 +1,6 @@
 import NextImage from "next/image";
 import { animated, useSpring } from "@react-spring/web";
+
 import avatar from "./avatar.jpg";
 
 const AnimatedImg = animated(NextImage);
