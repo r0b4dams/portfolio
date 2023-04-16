@@ -37,25 +37,27 @@ export const NavLinks: React.FC = () => {
   );
 
   return (
-    <ul className="flex space-x-12 font-semibold text-lg">
-      {linkTrail.map((mountStyle, idx) => {
-        const href = `/${data[idx].name.toLowerCase()}`;
+    <div className="hidden md:block">
+      <ul className="flex space-x-12 font-semibold text-lg">
+        {linkTrail.map((mountStyle, idx) => {
+          const href = `/${data[idx].name.toLowerCase()}`;
 
-        return (
-          <animated.li key={data[idx].name} style={mountStyle}>
-            <div
-              className={
-                router.pathname === href
-                  ? "pointer-events-none duration-100"
-                  : "hover:scale-125 duration-100"
-              }
-            >
-              <Link href={href}>{data[idx].name}</Link>
-              <animated.div style={routeStyles[idx]} className="h-2 "></animated.div>
-            </div>
-          </animated.li>
-        );
-      })}
-    </ul>
+          return (
+            <animated.li key={data[idx].name} style={mountStyle}>
+              <div
+                className={
+                  router.pathname === href
+                    ? "pointer-events-none duration-100"
+                    : "hover:scale-125 duration-100"
+                }
+              >
+                <Link href={href}>{data[idx].name}</Link>
+                <animated.div style={routeStyles[idx]} className="h-2 "></animated.div>
+              </div>
+            </animated.li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
