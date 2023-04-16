@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { animated, useSpring } from "@react-spring/web";
+
 import { IProject } from "@/types";
 
-const Project: React.FC<{
+export const ProjectCard: React.FC<{
   project: IProject;
 }> = ({ project }) => {
   const [style, animation] = useSpring(() => ({ opacity: 0, y: 25 }));
@@ -15,7 +16,7 @@ const Project: React.FC<{
   };
 
   return (
-    <animated.div style={style} className="w-full lg:w-1/2 p-3 relative">
+    <animated.div style={style} className="w-full lg:w-1/2 relative p-3">
       <Link href={`/projects/${project.id}`} className="flex justify-center border rounded">
         <Image
           src={`/images/${project.id}-mockup.png`}
@@ -46,5 +47,3 @@ const Project: React.FC<{
     </animated.div>
   );
 };
-
-export default Project;

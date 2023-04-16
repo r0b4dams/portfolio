@@ -3,8 +3,8 @@ import Head from "next/head";
 
 import { Page } from "@/components";
 import { IProject } from "@/types";
-import { getAllProjects } from "./fetchers";
-import Project from "./Project";
+import { getAllProjects } from "@/lib/projects";
+import { ProjectCard } from "./ProjectCard";
 
 interface Props {
   projects: IProject[];
@@ -27,7 +27,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
       <Page.Body>
         <div className="w-full flex flex-col items-center justify-center lg:flex-row lg:flex-wrap">
           {projects.map((proj) => (
-            <Project key={proj.id} project={proj} />
+            <ProjectCard key={proj.id} project={proj} />
           ))}
         </div>
       </Page.Body>
