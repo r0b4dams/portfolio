@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { animated, useSpring, useSprings } from "@react-spring/web";
-
-const data = [
-  { path: "about", color: "#0300AD" },
-  { path: "projects", color: "#E70503" },
-  { path: "contact", color: "#FDDE06" },
-];
+import { routes } from "./routes";
 
 interface Props {
   active: boolean;
@@ -14,7 +9,7 @@ interface Props {
 }
 
 export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
-  const path = useRouter().pathname.substring(1);
+  const location = useRouter().pathname;
 
   const overlay = useSpring({
     from: {
@@ -27,12 +22,15 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
     },
   });
 
-  const links = useSprings(
-    data.length,
-    data.map((item) => ({
-      from: { borderBottomColor: "transparent", borderBottomWidth: 4 },
+  const borders = useSprings(
+    routes.length,
+    routes.map((route) => ({
+      from: {
+        borderBottomColor: "transparent",
+        borderBottomWidth: 4,
+      },
       to: {
-        borderBottomColor: path === item.path ? item.color : "transparent",
+        borderBottomColor: location === route.path ? route.color : "transparent",
       },
     })),
   );
@@ -43,21 +41,23 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
       className="fixed flex justify-center z-50 top-[12vh] right-0 left-0 bottom-0 md:hidden bg-white"
     >
       <ul className="font-bold text-3xl pt-10 space-y-5">
-        {links.map((style, idx) => (
-          <animated.li
-            key={idx}
-            style={style}
-            className={
-              path === data[idx].path
-                ? "first-letter:uppercase pointer-events-none"
-                : "first-letter:uppercase"
-            }
-          >
-            <Link href={`/${data[idx].path}`} onClick={toggle}>
-              {data[idx].path}
-            </Link>
-          </animated.li>
-        ))}
+        {routes.map((route, i) => {
+          return (
+            <li
+              key={i}
+              className={
+                location === route.path
+                  ? "first-letter:uppercase pointer-events-none"
+                  : "first-letter:uppercase"
+              }
+            >
+              <Link href={route.path} onClick={toggle}>
+                {route.name}
+              </Link>
+              <animated.div style={borders[i]} />
+            </li>
+          );
+        })}
       </ul>
     </animated.div>
   );
