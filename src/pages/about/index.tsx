@@ -12,6 +12,7 @@ const About: NextPage = () => {
       </Head>
 
       <Page.Heading>About</Page.Heading>
+
       <Page.Body>
         {/* left column */}
         <div className="md:w-1/3 flex flex-col items-center">
