@@ -18,7 +18,7 @@ export const DefaultLayout: React.FC<Props> = ({ page }) => {
     <div className="h-screen flex flex-col">
       <Header />
       {pageTransition((style, animatedPage) => (
-        <animated.main style={style} className="flex flex-col container grow">
+        <animated.main style={style} className="flex flex-col container grow px-5 md:px-0">
           {animatedPage}
         </animated.main>
       ))}
