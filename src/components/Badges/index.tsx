@@ -18,15 +18,13 @@ export const Badges: React.FC<Props> = ({ title, badges }): JSX.Element => {
   return (
     <div>
       <h3 className="font-semibold">{title}</h3>
-      <div>
-        <ul className="flex flex-wrap">
-          {trail.map((style, idx) => (
-            <animated.li key={badges[idx]} style={style}>
-              <Badge name={badges[idx]} size={20} />
-            </animated.li>
-          ))}
-        </ul>
-      </div>
+      <ul className="flex flex-wrap mt-2">
+        {trail.map((style, idx) => (
+          <animated.li key={badges[idx]} style={style}>
+            <Badge name={badges[idx]} size={20} />
+          </animated.li>
+        ))}
+      </ul>
     </div>
   );
 };

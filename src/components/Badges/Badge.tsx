@@ -1,4 +1,4 @@
-import { icons } from "./icons";
+import { icons } from "@/lib/icons";
 
 export const Badge: React.FC<{
   name: string;
@@ -7,7 +7,7 @@ export const Badge: React.FC<{
   const { name: icon_name, paths, fills } = icons[name];
 
   return (
-    <div className="flex items-center border p-1 rounded m-1 w-fit bg-white">
+    <div className="flex items-center border p-1 rounded mr-1 mb-1 w-fit bg-white">
       <svg
         role="img"
         viewBox="0 0 24 24"
