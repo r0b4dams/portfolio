@@ -10,9 +10,13 @@ interface Props {
   projects: IProject[];
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const projects = getAllProjects();
-  return { props: { projects } };
+  return {
+    props: {
+      projects,
+    },
+  };
 };
 
 const Projects: NextPage<Props> = ({ projects }) => {

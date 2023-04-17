@@ -3,11 +3,12 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import * as api from "./handlers";
 import { METHOD } from "../utils";
 
-interface IData {
-  [key: string]: string;
-}
-
-export default async function controller(req: NextApiRequest, res: NextApiResponse<IData>) {
+/**
+ *
+ * /api/example
+ *
+ */
+export default async function controller(req: NextApiRequest, res: NextApiResponse) {
   try {
     switch (req.method) {
       case METHOD.GET:
@@ -25,10 +26,11 @@ export default async function controller(req: NextApiRequest, res: NextApiRespon
       default:
         return res.status(404).json({ error: "not found" });
     }
-  } catch (error) {
-    console.log(error);
-    if (error instanceof Error) {
-      res.status(500).json({ error: error.message });
+  } catch (err) {
+    if (err instanceof Error) {
+      const data = { error: err.message };
+      console.log(data);
+      return res.status(500).json(data);
     }
   }
 }

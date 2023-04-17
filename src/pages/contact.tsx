@@ -3,21 +3,36 @@ import NextHead from "next/head";
 import { useSpring } from "@react-spring/web";
 
 import { ContactEmail, ContactIcons, NewtonsCradle, Page } from "@/components";
+import { CONFIG } from "@/config";
 
 interface Props {
   email: string;
+  github: string;
+  linkedin: string;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  return { props: { email: process.env.EMAIL } };
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      email: CONFIG.EMAIL,
+      github: CONFIG.GITHUB,
+      linkedin: CONFIG.LINKEDIN,
+    },
+  };
 };
 
-const Contact: NextPage<Props> = ({ email }) => {
+const Contact: NextPage<Props> = ({ email, github, linkedin }) => {
   const [style, animation] = useSpring(() => ({ scale: 0 }));
 
   const showCopyEmail = () => {
     animation.start({ scale: 1 });
   };
+
+  const data = [
+    { icon: "gmail", href: email },
+    { icon: "linkedin", href: github },
+    { icon: "github", href: linkedin },
+  ];
 
   return (
     <Page>
@@ -29,7 +44,7 @@ const Contact: NextPage<Props> = ({ email }) => {
 
       <Page.Body>
         <div className="flex flex-col grow justify-center items-center space-y-5">
-          <ContactIcons showCopyEmail={showCopyEmail} />
+          <ContactIcons links={data} showCopyEmail={showCopyEmail} />
           <ContactEmail email={email} style={style} />
           <NewtonsCradle />
         </div>

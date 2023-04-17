@@ -1,20 +1,22 @@
-import type { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+
+import { logger } from "./middleware/logger";
 
 export const config = {
   matcher: "/api/:path*",
 };
 
-export async function middleware(req: NextRequest) {
-  logger(req);
-}
-
-const logger = (req: NextRequest) => {
-  const {
-    nextUrl: { pathname },
-    method,
-    body,
-  } = req;
-
-  console.log(method, pathname);
-  if (body) console.log(body);
+export const middleware = async (req: NextRequest) => {
+  try {
+    logger(req);
+  } catch (err) {
+    if (err instanceof Error) {
+      const data = { error: err.message };
+      console.log(data);
+      return new NextResponse(JSON.stringify(data), {
+        status: 500,
+        headers: { "content-type": "application/json" },
+      });
+    }
+  }
 };
