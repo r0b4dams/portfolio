@@ -10,3 +10,8 @@ export type IProject = {
   role?: string[];
   discussion: string[];
 };
+
+export interface ContactLink {
+  icon: string;
+  href: string;
+}
