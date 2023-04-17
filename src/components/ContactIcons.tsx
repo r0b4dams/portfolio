@@ -2,20 +2,10 @@ import { useEffect } from "react";
 import { animated, useTrail } from "@react-spring/web";
 
 import { Icon } from "@/components";
-import { CONFIG } from "@/config";
+import { ContactLink } from "@/types";
 
-// const data = [
-//   { icon: "gmail", href: `mailto:${CONFIG.EMAIL}` },
-//   { icon: "linkedin", href: CONFIG.LINKEDIN },
-//   { icon: "github", href: CONFIG.GITHUB },
-// ];
-
-interface Link {
-  icon: string;
-  href: string;
-}
 interface Props {
-  links: Link[];
+  links: ContactLink[];
   showCopyEmail: () => void;
 }
 
@@ -37,24 +27,20 @@ export const ContactIcons: React.FC<Props> = ({ links, showCopyEmail }) => {
       {trail.map((style, idx) => {
         const { icon, href } = links[idx];
 
+        const iconJSX = <Icon icon={icon} size={52} className="xl:hover:scale-125 duration-100" />;
+
         if (icon === "gmail") {
           return (
             <animated.li key={idx} style={style} onMouseEnter={handleMouseEnter}>
-              <a href={href}>
-                <Icon
-                  icon={links[idx].icon}
-                  size={52}
-                  className="xl:hover:scale-125 duration-100"
-                />
-              </a>
+              <a href={`mailto:${href}`}>{iconJSX}</a>
             </animated.li>
           );
         }
 
         return (
           <animated.li key={idx} style={style}>
-            <a href={links[idx].href} target="_blank" rel="noopener noreferrer">
-              <Icon icon={links[idx].icon} size={52} className="xl:hover:scale-125 duration-100" />
+            <a href={href} target="_blank" rel="noopener noreferrer">
+              {iconJSX}
             </a>
           </animated.li>
         );

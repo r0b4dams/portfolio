@@ -2,37 +2,34 @@ import type { GetStaticProps, NextPage } from "next";
 import NextHead from "next/head";
 import { useSpring } from "@react-spring/web";
 
-import { ContactEmail, ContactIcons, NewtonsCradle, Page } from "@/components";
 import { CONFIG } from "@/config";
+import { ContactEmail, ContactIcons, NewtonsCradle, Page } from "@/components";
+import { ContactLink } from "@/types";
 
 interface Props {
   email: string;
-  github: string;
-  linkedin: string;
+  links: ContactLink[];
 }
 
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
       email: CONFIG.EMAIL,
-      github: CONFIG.GITHUB,
-      linkedin: CONFIG.LINKEDIN,
+      links: [
+        { icon: "gmail", href: CONFIG.EMAIL },
+        { icon: "linkedin", href: CONFIG.LINKEDIN },
+        { icon: "github", href: CONFIG.GITHUB },
+      ],
     },
   };
 };
 
-const Contact: NextPage<Props> = ({ email, github, linkedin }) => {
+const Contact: NextPage<Props> = ({ email, links }) => {
   const [style, animation] = useSpring(() => ({ scale: 0 }));
 
   const showCopyEmail = () => {
     animation.start({ scale: 1 });
   };
-
-  const data = [
-    { icon: "gmail", href: email },
-    { icon: "linkedin", href: github },
-    { icon: "github", href: linkedin },
-  ];
 
   return (
     <Page>
@@ -44,7 +41,7 @@ const Contact: NextPage<Props> = ({ email, github, linkedin }) => {
 
       <Page.Body>
         <div className="flex flex-col grow justify-center items-center space-y-5">
-          <ContactIcons links={data} showCopyEmail={showCopyEmail} />
+          <ContactIcons links={links} showCopyEmail={showCopyEmail} />
           <ContactEmail email={email} style={style} />
           <NewtonsCradle />
         </div>
