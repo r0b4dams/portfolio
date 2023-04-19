@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { animated, useSpring } from "@react-spring/web";
 
-export const ResumeSpring: React.FC = () => {
+interface Props {
+  resumeURL: string;
+}
+
+export const ResumeSpring: React.FC<Props> = ({ resumeURL }) => {
   const [{ y }, spring] = useSpring(() => ({ y: 0.25 }));
 
   useEffect(() => {
@@ -42,7 +46,7 @@ export const ResumeSpring: React.FC = () => {
         style={{ translateY: y.to((y) => 100 * y - 100) }}
         className="py-1 px-3 mb-5 relative border rounded bg-white"
       >
-        <a href="#" target="_blank" rel="noopener noreferrer" className="font-semibold ">
+        <a href={resumeURL} target="_blank" rel="noopener noreferrer" className="font-semibold ">
           Resume
         </a>
         <div className="origin-center h-1 bg-pm-red" />
