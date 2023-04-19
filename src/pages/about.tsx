@@ -1,10 +1,23 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import NextHead from "next/head";
 
+import { CONFIG } from "@/config";
 import { Page, Avatar, BadgeList, ResumeSpring } from "@/components";
 import { skills } from "@/lib/skills";
 
-const About: NextPage = () => {
+interface Props {
+  resumeURL: string;
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      resumeURL: CONFIG.RESUME,
+    },
+  };
+};
+
+const About: NextPage<Props> = ({ resumeURL }) => {
   return (
     <Page>
       <NextHead>
@@ -19,7 +32,7 @@ const About: NextPage = () => {
           <Avatar />
           <h2 className="text-xl font-bold lg:text-3xl">Robert Adams</h2>
           <p className="text-gray-600">Software Engineer</p>
-          <ResumeSpring />
+          <ResumeSpring resumeURL={resumeURL} />
         </div>
 
         {/* right column */}
