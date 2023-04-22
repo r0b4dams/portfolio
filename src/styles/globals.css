@@ -8,11 +8,13 @@
   }
 
   body {
+    /* background */
     @apply bg-white;
     @apply dark:bg-slate-900;
 
+    /* default text */
     @apply text-slate-900;
-    @apply dark:text-slate-400;
+    @apply dark:text-slate-300;
 
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none; /* IE and Edge */
