@@ -16,9 +16,9 @@ export const getStaticProps: GetStaticProps = () => {
     props: {
       email: CONFIG.EMAIL,
       links: [
-        { icon: "gmail", href: CONFIG.EMAIL },
-        { icon: "linkedin", href: CONFIG.LINKEDIN },
-        { icon: "github", href: CONFIG.GITHUB },
+        { name: "gmail", href: CONFIG.EMAIL },
+        { name: "linkedin", href: CONFIG.LINKEDIN },
+        { name: "github", href: CONFIG.GITHUB },
       ],
     },
   };
