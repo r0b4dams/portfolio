@@ -19,6 +19,23 @@
     ]
   },
   {
+    "id": "dad-jokes",
+    "name": "Bearded Dad Jokes",
+    "desc": "Combine the gravitas of facial hair with the dry hilarity of fatherly humor.",
+    "appURL": "https://r0b-adams.github.io/dad-jokes/",
+    "repoURL": "https://github.com/r0b-adams/dad-jokes/",
+    "imgsrc": "/images/dad-jokes-demo.gif",
+    "features": [
+      "Mix and match rugged whiskers with wholesome punchlines!",
+      "Grab an individual joke, beard, or both!"
+    ],
+    "tech": ["react", "node", "mui"],
+    "discussion": [
+      "Inspired by a friend's propensity for amusing puns, this humorous web app is a quick exploration into conditional rendering based on application state. Skeleton loaders are displayed while awaiting responses from the servers.",
+      "Dadicated to Justin"
+    ]
+  },
+  {
     "id": "console-log",
     "name": "Console Log",
     "desc": "A hub for players to store walkthroughs for their favorite video games!",
@@ -83,23 +100,6 @@
       "Motivated by kitchen and grocery shopping disorganization, this application aims to provide an interface for your kitchen inventory.",
       "I designed and implemented the server and database. On the client-side, I wrote functions to communicate create, read, update, and delete (CRUD) functions to the back-end.",
       "As project manager, I led daily stand-ups and code reviews, reviewed pull requests, and managed the Github repository"
-    ]
-  },
-  {
-    "id": "dad-jokes",
-    "name": "Bearded Dad Jokes",
-    "desc": "Combine the gravitas of facial hair with the dry hilarity of fatherly humor.",
-    "appURL": "https://r0b-adams.github.io/dad-jokes/",
-    "repoURL": "https://github.com/r0b-adams/dad-jokes/",
-    "imgsrc": "/images/dad-jokes-demo.gif",
-    "features": [
-      "Mix and match rugged whiskers with wholesome punchlines!",
-      "Grab an individual joke, beard, or both!"
-    ],
-    "tech": ["react", "node", "mui"],
-    "discussion": [
-      "Inspired by a friend's propensity for amusing puns, this humorous web app is a quick exploration into conditional rendering based on application state. Skeleton loaders are displayed while awaiting responses from the servers.",
-      "Dadicated to Justin"
     ]
   }
 ]
