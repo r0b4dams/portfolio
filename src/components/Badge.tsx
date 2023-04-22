@@ -8,7 +8,7 @@ export const Badge: React.FC<{
   const { name: logoName, svg } = icons[name];
 
   return (
-    <div className="flex items-center w-fit h-[30px] border rounded  p-1 mr-1 mb-1 bg-white">
+    <div className="flex items-center w-fit h-[30px] border rounded  p-1 mr-1 mb-1">
       <Icon src={svg} size={size} />
       <span className="pl-1 font-light text-sm">{logoName}</span>
     </div>
