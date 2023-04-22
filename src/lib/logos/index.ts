@@ -18,7 +18,7 @@ import jest from "./jest.svg";
 import jfrog from "./jfrog.svg";
 import jquery from "./jquery.svg";
 import kubernetes from "./kubernetes.svg";
-// import link from "./link.svg"
+import link from "./link.svg";
 import linkedin from "./linkedin.svg";
 import materialize from "./materialize.svg";
 import mongodb from "./mongodb.svg";
@@ -124,7 +124,10 @@ export const logos: LogoMap = {
     name: "Kubernetes",
     svg: kubernetes,
   },
-  // link,
+  link: {
+    name: "Link",
+    svg: link,
+  },
   linkedin: {
     name: "LinkedIn",
     svg: linkedin,
