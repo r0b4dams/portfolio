@@ -21,7 +21,7 @@ export const BadgeList: React.FC<Props> = ({ title, badges }): JSX.Element => {
       <ul className="flex flex-wrap mt-2">
         {trail.map((style, idx) => (
           <animated.li key={badges[idx]} style={style}>
-            <Badge name={badges[idx]} size={20} />
+            <Badge name={badges[idx]} size={24} />
           </animated.li>
         ))}
       </ul>

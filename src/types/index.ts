@@ -12,6 +12,6 @@ export type IProject = {
 };
 
 export interface ContactLink {
-  icon: string;
+  name: string;
   href: string;
 }

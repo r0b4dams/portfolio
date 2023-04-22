@@ -3,7 +3,7 @@
     "id": "traductora",
     "name": "Traductora",
     "desc": "A full-stack speech-to-speech translator application.",
-    "appURL": "https://traductora.herokuapp.com/",
+    "appURL": "",
     "repoURL": "https://github.com/r0b-adams/traductora/",
     "imgsrc": "/images/traductora-demo.gif",
     "features": [
@@ -22,7 +22,7 @@
     "id": "console-log",
     "name": "Console Log",
     "desc": "A hub for players to store walkthroughs for their favorite video games!",
-    "appURL": "https://sar-console-log.herokuapp.com/",
+    "appURL": "",
     "repoURL": "https://github.com/r0b-adams/console-log/",
     "imgsrc": "/images/console-log-demo.gif",
     "features": [
@@ -64,7 +64,7 @@
     "id": "pantrimonium",
     "name": "Pantrimonium",
     "desc": "Manage food inventory, monitor expiration dates, and create a shopping list.",
-    "appURL": "https://pantrimonium.herokuapp.com/",
+    "appURL": "",
     "repoURL": "https://github.com/r0b-adams/pantrimonium/",
     "imgsrc": "/images/pantrimonium-demo.gif",
     "features": [
