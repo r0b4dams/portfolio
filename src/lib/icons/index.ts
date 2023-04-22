@@ -1,3 +1,4 @@
+import avionics from "./avionics.svg";
 import aws from "./aws.svg";
 import bash from "./bash.svg";
 import bootstrap from "./bootstrap.svg";
@@ -28,22 +29,28 @@ import mysql from "./mysql.svg";
 import netlify from "./netlify.svg";
 import next from "./next.svg";
 import node from "./node.svg";
+import pillar from "./pillar.svg";
 import postgresql from "./postgresql.svg";
 import react from "./react.svg";
 import redux from "./redux.svg";
 import sequelize from "./sequelize.svg";
 import tailwind from "./tailwind.svg";
 import typescript from "./typescript.svg";
+import uw from "./uw.svg";
 import vercel from "./vercel.svg";
 
-interface LogoMap {
+interface IconMap {
   [key: string]: {
     name: string;
     svg: string; // StaticImport
   };
 }
 
-export const logos: LogoMap = {
+export const icons: IconMap = {
+  avionics: {
+    name: "Avionics",
+    svg: avionics,
+  },
   aws: {
     name: "Amazon Web Services",
     svg: aws,
@@ -164,6 +171,10 @@ export const logos: LogoMap = {
     name: "Node",
     svg: node,
   },
+  pillar: {
+    name: "Pillar",
+    svg: pillar,
+  },
   postgresql: {
     name: "Postgresql",
     svg: postgresql,
@@ -187,6 +198,10 @@ export const logos: LogoMap = {
   typescript: {
     name: "Typescript",
     svg: typescript,
+  },
+  uw: {
+    name: "UW",
+    svg: uw,
   },
   vercel: {
     name: "Vercel",

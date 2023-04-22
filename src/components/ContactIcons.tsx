@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { animated, useTrail } from "@react-spring/web";
 
-import { logos } from "@/lib/logos";
+import { icons } from "@/lib/icons";
 import { Icon } from "@/components";
 import { ContactLink } from "@/types";
 
@@ -27,7 +27,7 @@ export const ContactIcons: React.FC<Props> = ({ links, showCopyEmail }) => {
     <ul id="icons" className="flex space-x-10">
       {trail.map((style, idx) => {
         const link = links[idx];
-        const logo = logos[link.name];
+        const logo = icons[link.name];
 
         const iconJSX = (
           <Icon src={logo.svg} size={52} className="xl:hover:scale-125 duration-100" />
