@@ -1,6 +1,29 @@
 {
-  "languages": ["typescript", "javascript", "html", "css"],
-  "frontend": ["react", "redux", "next", "jquery", "mui", "tailwind", "bootstrap", "materialize"],
-  "backend": ["node", "express", "mysql", "postgresql", "sequelize", "mongodb", "mongoose"],
-  "devops": ["git", "github", "heroku", "vercel"]
+  "languages_frameworks": [
+    "typescript",
+    "javascript",
+    "node",
+    "css",
+    "html",
+    "bash",
+    "react",
+    "redux",
+    "graphql",
+    "express",
+    "next"
+  ],
+  "databases": ["mongodb", "mysql", "postgresql"],
+  "infrastructure": [
+    "git",
+    "docker",
+    "kubernetes",
+    "drone",
+    "jest",
+    "cypress",
+    "jfrog",
+    "aws",
+    "vercel",
+    "netlify",
+    "heroku"
+  ]
 }
