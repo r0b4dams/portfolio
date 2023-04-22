@@ -47,7 +47,7 @@ const About: NextPage<Props> = ({ resumeURL, pillarURL }) => {
           </p>
           <p>
             Immersing myself in programming has really solidified my appreciation for what I find
-            rewarding: learning new things, problem solving, and helping build something tangible.
+            rewarding: learning new things, problem solving, and building something tangible.
           </p>
           <p>
             Recently I had an exciting opportunity with

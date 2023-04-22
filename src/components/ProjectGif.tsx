@@ -6,6 +6,8 @@ interface Props {
   name: string;
 }
 
+const AnimatedImage = animated(NextImage);
+
 export const ProjectGif: React.FC<Props> = ({ id, name }): JSX.Element => {
   const [style, animation] = useSpring(() => ({ opacity: 0 }));
 
@@ -14,16 +16,15 @@ export const ProjectGif: React.FC<Props> = ({ id, name }): JSX.Element => {
   };
 
   return (
-    <animated.div style={style} className="flex">
-      <NextImage
-        priority
-        src={`/images/${id}-demo.gif`}
-        alt={name}
-        width={640}
-        height={360}
-        className="rounded"
-        onLoadingComplete={handleImageLoaded}
-      />
-    </animated.div>
+    <AnimatedImage
+      style={style}
+      priority
+      src={`/images/${id}-demo.gif`}
+      alt={name}
+      width={640}
+      height={360}
+      className="rounded"
+      onLoadingComplete={handleImageLoaded}
+    />
   );
 };
