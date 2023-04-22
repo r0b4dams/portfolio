@@ -46,8 +46,6 @@ export const ContactEmail: React.FC<Props> = ({ email, style }) => {
         <animated.svg
           id="clipboard"
           className="absolute"
-          width="20px"
-          height="20px"
           viewBox="0 0 16 16"
           fill="none"
           stroke="#e5e7eb"
@@ -63,8 +61,6 @@ export const ContactEmail: React.FC<Props> = ({ email, style }) => {
         <animated.svg
           id="check"
           className="absolute"
-          width="20"
-          height="20"
           viewBox="0 0 16 16"
           fill="none"
           stroke="#00ff00"
