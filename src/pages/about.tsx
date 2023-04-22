@@ -52,10 +52,9 @@ const About: NextPage<Props> = ({ resumeURL }) => {
           </p>
 
           <div className="space-y-2">
-            <BadgeList title="Languages" badges={skills.languages} />
-            <BadgeList title="Front End" badges={skills.frontend} />
-            <BadgeList title="Back End" badges={skills.backend} />
-            <BadgeList title="Dev Ops" badges={skills.devops} />
+            <BadgeList title="Languages & Frameworks" badges={skills.languages_frameworks} />
+            <BadgeList title="Databases" badges={skills.databases} />
+            <BadgeList title="Infrastructure" badges={skills.infrastructure} />
           </div>
         </div>
       </Page.Body>
