@@ -1,16 +1,24 @@
-import { Icon } from "./Icon";
 import { icons } from "@/lib/icons";
+import { Icon } from "./Icon";
+
+const DM_SKIP = ["bash", "kubernetes"];
+
+const dm = (skill: string) => {
+  return DM_SKIP.includes(skill)
+    ? "dark:grayscale"
+    : "dark:grayscale dark:brightness-0 dark:invert";
+};
 
 export const Badge: React.FC<{
-  name: string;
+  skill: string;
   size?: number;
-}> = ({ name = "", size = 24 }) => {
-  const { name: logoName, svg } = icons[name];
+}> = ({ skill = "", size = 24 }) => {
+  const { name, path } = icons[skill];
 
   return (
-    <div className="flex items-center w-fit h-[30px] border rounded  p-1 mr-1 mb-1">
-      <Icon src={svg} size={size} />
-      <span className="pl-1 font-light text-sm">{logoName}</span>
+    <div className="flex items-center w-fit bg-white bg-opacity-10 border rounded p-1 mr-1 mb-1 dark:border-transparent">
+      <Icon src={path} size={size} className={dm(skill)} />
+      <span className="px-1 font-light text-md">{name}</span>
     </div>
   );
 };
