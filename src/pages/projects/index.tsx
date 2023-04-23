@@ -29,7 +29,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
       <Page.Heading>Projects</Page.Heading>
 
       <Page.Body>
-        <div className="w-full flex flex-col items-center justify-center lg:flex-row lg:flex-wrap">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {projects.map((proj) => (
             <ProjectCard key={proj.id} project={proj} />
           ))}

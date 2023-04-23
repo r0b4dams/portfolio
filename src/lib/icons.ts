@@ -5,9 +5,7 @@ interface IconMap {
   };
 }
 
-const loc = (name: string) => {
-  return `/icons/${name}.svg`;
-};
+const loc = (name: string) => `/icons/${name}.svg`;
 
 export const icons: IconMap = {
   avionics: {

@@ -8,7 +8,7 @@ interface Props {
 
 export const ProjectLinks: React.FC<Props> = ({ repoURL, appURL }) => {
   return (
-    <div className="flex mr-2 space-x-2 lg:space-x-0 lg:self-end">
+    <div className="flex mr-2 mt-2 space-x-2 lg:space-x-0 lg:self-end lg:mt-0">
       <a target="_blank" href={repoURL}>
         <Badge text="View repo" skill="github" size={28} />
       </a>

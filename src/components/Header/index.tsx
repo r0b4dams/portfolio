@@ -10,9 +10,9 @@ export const Header: React.FC = () => {
     <>
       <header className="container flex items-center justify-between px-5">
         <NextLink href="/">
-          <Logo className="h-[50px] lg:h-[100px]" />
+          <Logo className="h-[10vh]" />
         </NextLink>
-        <div className="flex items-center justify-center space-x-10">
+        <div className="flex items-center justify-center ">
           <Nav />
           <ToggleDarkMode />
         </div>
