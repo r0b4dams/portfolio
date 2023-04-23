@@ -18,7 +18,7 @@ export const NewtonsCradle: React.FC = () => {
   }, [swing]);
 
   return (
-    <div className="flex flex-col items-center justify-evenly bg-slate-50 bg-opacity-10 p-12 rounded-3xl">
+    <div className="flex flex-col items-center justify-evenly">
       <div className="cradle">
         <div className="bg-pm-red h-5 rounded w-full relative z-[1]"></div>
         <div className="w-[200px] flex justify-evenly border-top md:w-[300px]">

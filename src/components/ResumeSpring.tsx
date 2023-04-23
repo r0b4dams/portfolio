@@ -44,9 +44,9 @@ export const ResumeSpring: React.FC<Props> = ({ resumeURL }) => {
 
       <animated.div
         style={{ translateY: y.to((y) => 100 * y - 100) }}
-        className="py-2 px-5 mb-5 relative border rounded bg-white bg-opacity-10 dark:border-transparent"
+        className="py-2 px-5 mb-5 relative rounded bg-white bg-opacity-10 border dark:border-slate-600"
       >
-        <a href={resumeURL} target="_blank" rel="noopener noreferrer" className="font-semibold ">
+        <a href={resumeURL} target="_blank" rel="noopener noreferrer" className="font-semibold">
           Resume
         </a>
         <div className="origin-center h-1 bg-pm-red" />

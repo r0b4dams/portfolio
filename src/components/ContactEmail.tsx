@@ -45,7 +45,7 @@ export const ContactEmail: React.FC<Props> = ({ email, style }) => {
       <div className="absolute top-0 right-0 h-5 w-5">
         <animated.svg
           id="clipboard"
-          className="absolute stroke-slate-900 dark:stroke-slate-500"
+          className="absolute stroke-slate-300 dark:stroke-slate-500"
           viewBox="0 0 16 16"
           fill="none"
           stroke="#e5e7eb"
