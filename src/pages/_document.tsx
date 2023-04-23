@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 import { open_sans } from "@/theme/font";
 
 const Document: React.FC = () => {
@@ -10,6 +11,7 @@ const Document: React.FC = () => {
       <body className={`${open_sans.className} `}>
         <Main />
         <NextScript />
+        <Script id="dark-mode" src="/scripts/dark-mode.js" strategy="beforeInteractive" />
       </body>
     </Html>
   );

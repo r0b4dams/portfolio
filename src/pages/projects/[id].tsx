@@ -2,7 +2,6 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import NextLink from "next/link";
 
-import { CONFIG } from "@/config";
 import { IProject } from "@/types";
 import { getAllProjectIds, getOneProject } from "@/lib/projects";
 import {
@@ -29,17 +28,15 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
   return {
     props: {
       project,
-      ENABLE_DEPLOYED_LINK: CONFIG.FEATURE.ENABLE_DEPLOYED_LINK,
     },
   };
 };
 
 interface Props {
   project: IProject;
-  ENABLE_DEPLOYED_LINK: boolean;
 }
 
-const SingleProject: NextPage<Props> = ({ project, ENABLE_DEPLOYED_LINK }) => {
+const SingleProject: NextPage<Props> = ({ project }) => {
   const title = `Robert Adams | ${project.name}`;
 
   return (
@@ -64,13 +61,13 @@ const SingleProject: NextPage<Props> = ({ project, ENABLE_DEPLOYED_LINK }) => {
 
           <div className="flex flex-col self-center md:w-[640px] lg:w-1/2 lg:self-auto">
             <ProjectLinks
+              projectName={project.name}
               repoURL={project.repoURL}
               appURL={project.appURL}
-              flag={ENABLE_DEPLOYED_LINK}
             />
             <ProjectFeatures features={project.features} />
             <div className="mt-3">
-              <ProjectTech title="Technologies" badges={project.tech} />
+              <ProjectTech title="Technologies" skills={project.tech} />
             </div>
           </div>
         </div>

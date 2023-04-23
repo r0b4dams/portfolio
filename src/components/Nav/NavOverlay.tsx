@@ -39,9 +39,9 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
   return (
     <animated.div
       style={overlay}
-      className="fixed flex justify-center z-50 top-[12vh] right-0 left-0 bottom-0 md:hidden bg-white"
+      className="fixed flex justify-center items-center z-50 top-[calc(10vh+32px)] right-0 left-0 bottom-0 md:hidden bg-slate-50 dark:bg-slate-900"
     >
-      <ul className="font-bold text-3xl pt-10 space-y-5">
+      <ul className="font-bold text-3xl space-y-5">
         {routes.map((route, i) => {
           return (
             <li

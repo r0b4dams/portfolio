@@ -37,7 +37,7 @@ export const NavBurger: React.FC<Props> = ({ active, toggle, size = 50 }) => {
             style={style}
             d="m 0,12 h 24 v 0"
             fill="none"
-            stroke="#000000"
+            className="stroke-slate-900 dark:stroke-slate-50"
             strokeWidth="2"
           />
         ))}

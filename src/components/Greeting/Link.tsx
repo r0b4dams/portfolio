@@ -9,7 +9,7 @@ export const Link: React.FC<Props> = ({ href }) => {
     <div className="mt-10 self-center visible">
       <NextLink
         href={href}
-        className="px-5 py-2 text-l md:text-xl rounded border-2 border-gray-100"
+        className="px-5 py-2 text-l md:text-xl rounded border dark:border-slate-600 bg-slate-50 bg-opacity-10"
       >
         View Portfolio
       </NextLink>

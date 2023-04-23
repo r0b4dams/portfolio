@@ -5,11 +5,11 @@ import { Badge } from "./Badge";
 
 interface Props {
   title: string;
-  badges: string[];
+  skills: string[];
 }
 
-export const BadgeList: React.FC<Props> = ({ title, badges }): JSX.Element => {
-  const [trail, animation] = useTrail(badges.length, () => ({ opacity: 0, y: 20 }));
+export const BadgeList: React.FC<Props> = ({ title, skills }): JSX.Element => {
+  const [trail, animation] = useTrail(skills.length, () => ({ opacity: 0, y: 20 }));
 
   useEffect(() => {
     animation.start({ opacity: 1, y: 0 });
@@ -19,9 +19,9 @@ export const BadgeList: React.FC<Props> = ({ title, badges }): JSX.Element => {
     <div>
       <h3 className="font-semibold">{title}</h3>
       <ul className="flex flex-wrap mt-2">
-        {trail.map((style, idx) => (
-          <animated.li key={badges[idx]} style={style}>
-            <Badge name={badges[idx]} size={24} />
+        {trail.map((style, i) => (
+          <animated.li key={i} style={style}>
+            <Badge skill={skills[i]} size={28} />
           </animated.li>
         ))}
       </ul>

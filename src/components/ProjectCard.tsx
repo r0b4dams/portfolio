@@ -16,8 +16,8 @@ export const ProjectCard: React.FC<{
   };
 
   return (
-    <animated.div style={style} className="w-full lg:w-1/2 relative p-3">
-      <NextLink href={`/projects/${project.id}`} className="flex justify-center border rounded">
+    <animated.div style={style} className="relative">
+      <NextLink href={`/projects/${project.id}`} className="flex justify-center p-2">
         <NextImage
           src={`/images/${project.id}-mockup.png`}
           onLoadingComplete={startAnimation}
@@ -28,12 +28,12 @@ export const ProjectCard: React.FC<{
         />
       </NextLink>
 
-      <div className="project-wrapper xl:opacity-0 p-5 xl:absolute xl:left-3 xl:right-3 xl:top-3 xl:bottom-3 xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:bg-stone-800 hover:xl:opacity-90 xl:rounded xl:transition xl:ease-in-out xl:duration-200">
-        <h2 className="duration-300 xl:translate-y-5 mb-3 font-bold xl:text-xl xl:text-stone-100">
+      <div className="project-wrapper xl:opacity-0 p-8 xl:absolute xl:left-0 xl:right-0 xl:top-0 xl:bottom-0 xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:bg-slate-100 dark:xl:bg-slate-800 hover:xl:opacity-90 xl:rounded xl:transition xl:ease-in-out xl:duration-200">
+        <h2 className="duration-300 xl:translate-y-5 mb-3 font-bold xl:text-xl dark:xl:text-slate-50">
           {project.name}
         </h2>
 
-        <p className="duration-700 xl:translate-y-5 lg:min-h-[48px] mb-3 xl:text-stone-100">
+        <p className="duration-700 xl:translate-y-5 lg:min-h-[48px] mb-3 dark:xl:text-slate-50">
           {project.desc}
         </p>
 
