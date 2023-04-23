@@ -39,13 +39,13 @@ export const ContactEmail: React.FC<Props> = ({ email, style }) => {
     <animated.button
       id="email"
       style={style}
-      className="cursor-pointer	relative border rounded p-5"
+      className="cursor-pointer	relative rounded border dark:border-slate-600 p-5 dark:bg-slate-50 dark:bg-opacity-10"
       onClick={handleClick}
     >
-      <div className="absolute top-0 right-0 h-5 w-5 ">
+      <div className="absolute top-0 right-0 h-5 w-5">
         <animated.svg
           id="clipboard"
-          className="absolute"
+          className="absolute stroke-slate-900 dark:stroke-slate-500"
           viewBox="0 0 16 16"
           fill="none"
           stroke="#e5e7eb"
@@ -60,10 +60,9 @@ export const ContactEmail: React.FC<Props> = ({ email, style }) => {
         </animated.svg>
         <animated.svg
           id="check"
-          className="absolute"
+          className="absolute stroke-[#00ff00]"
           viewBox="0 0 16 16"
           fill="none"
-          stroke="#00ff00"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

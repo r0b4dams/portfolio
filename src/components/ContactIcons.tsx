@@ -27,10 +27,14 @@ export const ContactIcons: React.FC<Props> = ({ links, showCopyEmail }) => {
     <ul id="icons" className="flex space-x-10">
       {trail.map((style, idx) => {
         const link = links[idx];
-        const logo = icons[link.name];
+        const icon = icons[link.name];
 
         const iconJSX = (
-          <Icon src={logo.svg} size={52} className="xl:hover:scale-125 duration-100" />
+          <Icon
+            src={icon.path}
+            size={52}
+            className="xl:hover:scale-125 duration-100 dark:grayscale dark:brightness-0 dark:invert"
+          />
         );
 
         if (link.name === "gmail") {

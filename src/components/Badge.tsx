@@ -18,7 +18,7 @@ export const Badge: React.FC<{
   return (
     <div className="flex items-center w-fit bg-white bg-opacity-10 border rounded p-1 mr-1 mb-1 dark:border-transparent">
       <Icon src={path} size={size} className={dm(skill)} />
-      <span className="px-1 font-light text-md">{name}</span>
+      <span className="px-2 font-light text-md">{name}</span>
     </div>
   );
 };
