@@ -1,6 +1,7 @@
 import { CONFIG } from '@/config';
-import { skills } from '@/lib/skills';
 import { Avatar, BadgeList, Page, ResumeSpring } from '@/components';
+
+import skills from './skills.json';
 
 const { RESUME_URL, PILLAR_URL } = CONFIG;
 
