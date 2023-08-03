@@ -1,5 +1,4 @@
 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-
   <title>
     Cypress
   </title>
@@ -14,20 +13,6 @@
 
     .gradient-right {
       fill: url(#linearGradient-1);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .solid {
-        fill: white;
-      }
-
-      .gradient-left {
-        fill: url(#linearGradient-2);
-      }
-
-      .gradient-right {
-        fill: url(#linearGradient-1);
-      }
     }
   </style>
   <path
