@@ -1,14 +1,22 @@
 'use client';
-
 import Script from 'next/script';
 import { usePathname } from 'next/navigation';
-
 import { AnimatedPage, Footer, Header } from '@/components';
 import { open_sans } from '@/theme/font';
 import '@/theme/globals.css';
 
 interface LayoutProps {
   children: React.ReactNode;
+}
+
+function DefaultLayout({ children: main }: LayoutProps) {
+  return (
+    <>
+      <Header />
+      {main}
+      <Footer />
+    </>
+  );
 }
 
 export default function RootLayout({ children: main }: LayoutProps) {
@@ -33,15 +41,5 @@ export default function RootLayout({ children: main }: LayoutProps) {
         <Script id='dark-mode' src='/scripts/dark-mode.js' strategy='beforeInteractive' />
       </body>
     </html>
-  );
-}
-
-function DefaultLayout({ children: main }: LayoutProps) {
-  return (
-    <>
-      <Header />
-      {main}
-      <Footer />
-    </>
   );
 }
