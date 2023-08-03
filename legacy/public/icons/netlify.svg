@@ -1,0 +1,41 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <title>
+    Netlify
+  </title>
+  <style id="style2">
+    .favicon-center-dot {
+      fill: #014847;
+    }
+
+    .favicon-lines {
+      fill: #05BDBA;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .favicon-center-dot {
+        fill: #fff;
+      }
+
+      .favicon-lines {
+        fill: #05BDBA;
+      }
+    }
+  </style>
+  <path class="favicon-center-dot" stroke="none"
+    d="m 26.9883,27.493735 h -5.9808 l -0.4956,-0.4956 v -5.98065 l 0.4956,-0.4956 h 5.9808 l 0.4956,0.4956 v 5.98065 z"
+    style="stroke-width:1.5" />
+  <g class="favicon-lines" stroke="none" transform="matrix(1.5,0,0,1.5,0,0.009985)">
+    <path
+      d="M 9.6958,24.3311 H 9.35705 L 7.6661,22.6401 v -0.336 l 2.585,-2.5877 1.7909,0.0027 0.2388,0.2361 v 1.7909 z" />
+    <path
+      d="M 7.6661,9.69576 V 9.35701 L 9.35705,7.66606 H 9.6958 l 2.585,2.58504 v 1.7881 l -0.2388,0.2416 h -1.7909 z" />
+    <path
+      d="M 10.0457,17.4369 H 0.205466 L 0,17.2314 V 14.7658 L 0.205466,14.5603 H 10.0457 l 0.2054,0.2055 v 2.4656 z" />
+    <path
+      d="m 31.7945,17.4369 h -9.8401 l -0.2055,-0.2055 v -2.4656 l 0.2055,-0.2055 h 9.8401 L 32,14.7658 v 2.4656 z" />
+    <path
+      d="M 14.5631,10.0456 V 2.66547 l 0.2055,-0.20546 h 2.4657 l 0.2053,0.20546 v 7.38013 l -0.2053,0.2055 h -2.4657 z" />
+    <path
+      d="m 14.5631,29.3316 v -7.3801 l 0.2055,-0.2055 h 2.4657 l 0.2053,0.2055 v 7.3801 l -0.2053,0.2055 h -2.4657 z" />
+  </g>
+</svg>
