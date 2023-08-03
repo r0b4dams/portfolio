@@ -1,0 +1,14 @@
+<svg viewBox="0 0 48 48" fill="#e10098" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <title>
+    GraphQL
+  </title>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M 24.009952,3.1041436 42.106281,13.552053 V 34.447899 L 24.009952,44.895798 5.9136231,34.447899 V 13.552053 Z M 7.94406,14.724341 V 30.072886 L 21.236326,7.0500676 Z M 24.009952,6.3068783 8.6872493,32.846561 H 39.332655 Z M 37.302218,34.876998 H 10.717686 l 13.292266,7.674273 z M 40.075844,30.072886 26.783578,7.0500676 40.075844,14.724341 Z"
+    style="stroke-width:0.484857" />
+  <circle cx="24.009953" cy="4.2764411" r="4.2764411" style="stroke-width:0.484857" />
+  <circle cx="41.091091" cy="14.138245" r="4.2764411" style="stroke-width:0.484857" />
+  <circle cx="41.091091" cy="33.861805" r="4.2764411" style="stroke-width:0.484857" />
+  <circle cx="24.009953" cy="43.72356" r="4.2764411" style="stroke-width:0.484857" />
+  <circle cx="6.9264412" cy="33.861805" r="4.2764411" style="stroke-width:0.484857" />
+  <circle cx="6.9264412" cy="14.138245" r="4.2764411" style="stroke-width:0.484857" />
+</svg>
