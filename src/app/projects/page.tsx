@@ -1,9 +1,20 @@
-const Projects: React.FC = () => {
-  return (
-    <div>
-      <h1>projects page</h1>
-    </div>
-  );
-};
+import { Page } from '@/components';
+import { ProjectCard } from '../../components/ProjectCard';
 
-export default Projects;
+import projects from './projects.json';
+
+export default async function Projects() {
+  return (
+    <Page>
+      <Page.Heading>Projects</Page.Heading>
+
+      <Page.Body>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+          {projects.map((proj) => (
+            <ProjectCard key={proj.id} project={proj} />
+          ))}
+        </div>
+      </Page.Body>
+    </Page>
+  );
+}
