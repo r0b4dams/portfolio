@@ -1,6 +1,5 @@
 'use client';
 
-import type { Metadata } from 'next';
 import { Greeting, IntroAnimation, Page } from '@/components';
 
 export default function Intro() {
