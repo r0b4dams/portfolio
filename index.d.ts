@@ -1,4 +1,4 @@
-interface Project {
+interface IProject {
   id: string;
   name: string;
   desc: string;
@@ -11,7 +11,7 @@ interface Project {
   discussion: string[];
 }
 
-interface ContactLink {
+interface IContactLink {
   name: string;
   href: string;
 }
