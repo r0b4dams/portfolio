@@ -5,23 +5,13 @@ import { usePathname } from 'next/navigation';
 
 import { AnimatedPage, Footer, Header } from '@/components';
 import { open_sans } from '@/theme/font';
-import '@/theme/style.css';
+import '@/theme/globals.css';
 
-interface Props {
+interface LayoutProps {
   children: React.ReactNode;
 }
 
-const DefaultLayout: React.FC<Props> = ({ children: page }) => {
-  return (
-    <>
-      <Header />
-      {page}
-      <Footer />
-    </>
-  );
-};
-
-const RootLayout: React.FC<Props> = ({ children: page }) => {
+export default function RootLayout({ children: main }: LayoutProps) {
   const pathname = usePathname();
 
   return (
@@ -30,11 +20,11 @@ const RootLayout: React.FC<Props> = ({ children: page }) => {
         {(() => {
           switch (pathname) {
             case '/': // intro page
-              return <AnimatedPage>{page}</AnimatedPage>;
+              return main;
             default:
               return (
                 <DefaultLayout>
-                  <AnimatedPage>{page}</AnimatedPage>
+                  <AnimatedPage>{main}</AnimatedPage>
                 </DefaultLayout>
               );
           }
@@ -44,6 +34,14 @@ const RootLayout: React.FC<Props> = ({ children: page }) => {
       </body>
     </html>
   );
-};
+}
 
-export default RootLayout;
+function DefaultLayout({ children: main }: LayoutProps) {
+  return (
+    <>
+      <Header />
+      {main}
+      <Footer />
+    </>
+  );
+}
