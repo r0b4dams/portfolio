@@ -1,0 +1,26 @@
+[
+  {
+    "color": "#0300AD",
+    "widths": {
+      "/about": "100%",
+      "/projects": "33%",
+      "/contact": "66%"
+    }
+  },
+  {
+    "color": "#E70503",
+    "widths": {
+      "/projects": "100%",
+      "/about": "66%",
+      "/contact": "33%"
+    }
+  },
+  {
+    "color": "#FDDE06",
+    "widths": {
+      "/about": "33%",
+      "/projects": "66%",
+      "/contact": "100%"
+    }
+  }
+]
