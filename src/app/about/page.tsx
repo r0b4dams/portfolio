@@ -4,7 +4,7 @@ import { Avatar, BadgeList, Page, ResumeSpring } from '@/components';
 
 const { RESUME_URL, PILLAR_URL } = CONFIG;
 
-const About: React.FC = () => {
+export default function About() {
   return (
     <Page>
       <Page.Heading>About</Page.Heading>
@@ -51,6 +51,4 @@ const About: React.FC = () => {
       </Page.Body>
     </Page>
   );
-};
-
-export default About;
+}
