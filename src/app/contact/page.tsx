@@ -1,9 +1,33 @@
-const Contact: React.FC = () => {
-  return (
-    <div>
-      <h1>contact page</h1>
-    </div>
-  );
-};
+'use client';
 
-export default Contact;
+import { useSpring } from '@react-spring/web';
+import { ContactEmail, ContactIcons, NewtonsCradle, Page } from '@/components';
+import { CONFIG } from '@/config';
+
+const links = [
+  { name: 'gmail', href: CONFIG.EMAIL },
+  { name: 'linkedin', href: CONFIG.LINKEDIN_URL },
+  { name: 'github', href: CONFIG.GITHUB_URL },
+];
+
+export default function Contact() {
+  const [style, animation] = useSpring(() => ({ scale: 0 }));
+
+  const showCopyEmail = () => {
+    animation.start({ scale: 1 });
+  };
+
+  return (
+    <Page>
+      <Page.Heading>Contact</Page.Heading>
+
+      <Page.Body>
+        <div className='flex flex-col grow justify-center items-center space-y-5'>
+          <ContactIcons links={links} showCopyEmail={showCopyEmail} />
+          <ContactEmail email={CONFIG.EMAIL!} style={style} />
+          <NewtonsCradle />
+        </div>
+      </Page.Body>
+    </Page>
+  );
+}
