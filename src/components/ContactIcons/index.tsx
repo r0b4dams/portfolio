@@ -3,8 +3,11 @@
 import { useEffect } from 'react';
 import { animated, useTrail } from '@react-spring/web';
 
+import { Icon } from '@/components';
+import { icons } from '@/lib/icons';
+
 interface Props {
-  links: ContactLink[];
+  links: IContactLink[];
   showCopyEmail: () => void;
 }
 
