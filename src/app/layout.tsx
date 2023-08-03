@@ -19,7 +19,7 @@ function DefaultLayout({ children: main }: LayoutProps) {
   );
 }
 
-export default function RootLayout({ children: main }: LayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
   const pathname = usePathname();
 
   return (
@@ -28,11 +28,11 @@ export default function RootLayout({ children: main }: LayoutProps) {
         {(() => {
           switch (pathname) {
             case '/': // intro page
-              return main;
+              return children;
             default:
               return (
                 <DefaultLayout>
-                  <AnimatedPage>{main}</AnimatedPage>
+                  <AnimatedPage>{children}</AnimatedPage>
                 </DefaultLayout>
               );
           }
