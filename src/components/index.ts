@@ -1,9 +1,10 @@
+export { AnimatedPage } from './AnimatedPage';
 export { Avatar } from './Avatar';
 export { Greeting } from './Greeting';
 export { Header } from './Header';
 export { Logo } from './Logo';
 export { Nav } from './Nav';
-
+export { Page } from './Page';
 export { Badge } from './Badge';
 export { BadgeList } from './BadgeList';
 export { ContactEmail } from './ContactEmail';
