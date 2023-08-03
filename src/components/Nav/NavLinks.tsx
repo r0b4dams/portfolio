@@ -1,10 +1,11 @@
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { animated, useSprings, useTrail } from '@react-spring/web';
+
 import { routes } from './routes';
 
 export const NavLinks: React.FC = () => {
-  const location = useRouter().pathname;
+  const location = usePathname();
 
   const trail = useTrail(routes.length, {
     from: {

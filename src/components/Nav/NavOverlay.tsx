@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { animated, useSpring, useSprings } from '@react-spring/web';
 
 import { routes } from './routes';
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
-  const location = useRouter().pathname;
+  const location = usePathname();
 
   const overlay = useSpring({
     from: {

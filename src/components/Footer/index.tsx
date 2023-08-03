@@ -1,14 +1,14 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { useSpring, animated } from '@react-spring/web';
 import NextLink from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useSpring, animated } from '@react-spring/web';
 
 const year = new Date().getFullYear();
 
 export const Footer: React.FC = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   const [style, api] = useSpring(() => ({
     opacity: 0,
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
         <NextLink
           href='/contact'
           className={
-            router.pathname === '/contact'
+            pathname === '/contact'
               ? 'pointer-events-none font-semibold space-x-1'
               : 'font-semibold space-x-1'
           }

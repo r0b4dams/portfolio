@@ -1,3 +1,5 @@
+'use client';
+
 import { SpringValue, animated, config, useSpring } from '@react-spring/web';
 
 interface Props {

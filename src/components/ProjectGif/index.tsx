@@ -1,3 +1,5 @@
+'use client';
+
 import NextImage from 'next/image';
 import { animated, config, useSpring } from '@react-spring/web';
 
