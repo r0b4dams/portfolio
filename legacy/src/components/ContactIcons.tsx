@@ -3,10 +3,9 @@ import { animated, useTrail } from "@react-spring/web";
 
 import { icons } from "@/lib/icons";
 import { Icon } from "@/components";
-import { ContactLink } from "@/types";
 
 interface Props {
-  links: ContactLink[];
+  links: IContactLink[];
   showCopyEmail: () => void;
 }
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 export const Subtitle: React.FC = () => {

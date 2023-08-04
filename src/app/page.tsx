@@ -1,5 +1,3 @@
-'use client';
-
 import { Greeting, IntroAnimation, Page } from '@/components';
 
 export default function Intro() {
