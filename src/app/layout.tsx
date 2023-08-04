@@ -1,4 +1,5 @@
 'use client';
+
 import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 import { AnimatedPage, Footer, Header } from '@/components';
@@ -11,11 +12,11 @@ interface LayoutProps {
 
 function DefaultLayout({ children: main }: LayoutProps) {
   return (
-    <>
+    <main className='h-screen flex flex-col'>
       <Header />
       {main}
       <Footer />
-    </>
+    </main>
   );
 }
 
