@@ -1,9 +1,6 @@
-'use client';
-
-import { usePathname } from 'next/navigation';
-import { animated, useSprings } from '@react-spring/web';
-
-import data from './springs.json';
+import { useRouter } from "next/router";
+import { animated, useSprings } from "@react-spring/web";
+import data from "./springs.json";
 
 interface IWidthItem {
   color: string;
@@ -13,20 +10,20 @@ interface IWidthItem {
 }
 
 export const SpringBorder: React.FC = () => {
-  const pathname = usePathname();
+  const router = useRouter();
 
   const springs = useSprings(
     data.length,
     data.map((item: IWidthItem) => ({
-      from: { width: '0%', backgroundColor: item.color },
-      to: { width: item.widths[pathname] ?? '100%' },
+      from: { width: "0%", backgroundColor: item.color },
+      to: { width: item.widths[router.pathname] ?? "100%" },
     })),
   );
 
   return (
-    <div className='space-y-1'>
+    <div className="space-y-1">
       {springs.map((style, idx) => (
-        <animated.div key={idx} style={style} className='h-2' />
+        <animated.div key={idx} style={style} className="h-2" />
       ))}
     </div>
   );
