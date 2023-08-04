@@ -8,7 +8,6 @@ export { Page } from './Page';
 export { Badge } from './Badge';
 export { BadgeList } from './BadgeList';
 export { ContactEmail } from './ContactEmail';
-export { ContactIcons } from './ContactIcons';
 export { Footer } from './Footer';
 export { Icon } from './Icon';
 export { IntroAnimation } from './IntroAnimation';
