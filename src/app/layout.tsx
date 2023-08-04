@@ -1,23 +1,12 @@
 'use client';
 
-import Script from 'next/script';
 import { usePathname } from 'next/navigation';
-import { AnimatedPage, Footer, Header } from '@/components';
+import { Footer, Header } from '@/components';
 import { open_sans } from '@/theme/font';
 import '@/theme/globals.css';
 
 interface LayoutProps {
   children: React.ReactNode;
-}
-
-function DefaultLayout({ children: main }: LayoutProps) {
-  return (
-    <main className='h-screen flex flex-col'>
-      <Header />
-      {main}
-      <Footer />
-    </main>
-  );
 }
 
 export default function RootLayout({ children }: LayoutProps) {
@@ -28,18 +17,21 @@ export default function RootLayout({ children }: LayoutProps) {
       <body className={open_sans.className}>
         {(() => {
           switch (pathname) {
-            case '/': // intro page
+            case '/': // landing page
               return children;
+
             default:
               return (
-                <DefaultLayout>
-                  <AnimatedPage>{children}</AnimatedPage>
-                </DefaultLayout>
+                <>
+                  <Header />
+                  <main className='h-screen flex flex-col'>
+                    <div className='flex flex-col container grow px-5'>{children}</div>
+                  </main>
+                  <Footer />
+                </>
               );
           }
         })()}
-        {/* Next has added functionality with app router but ESLint hasn't been updated */}
-        <Script id='dark-mode' src='/scripts/dark-mode.js' strategy='beforeInteractive' />
       </body>
     </html>
   );

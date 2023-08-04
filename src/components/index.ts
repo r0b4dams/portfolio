@@ -1,4 +1,3 @@
-export { AnimatedPage } from './AnimatedPage';
 export { Avatar } from './Avatar';
 export { Greeting } from './Greeting';
 export { Header } from './Header';
