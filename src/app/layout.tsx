@@ -9,30 +9,31 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: LayoutProps) {
-  const pathname = usePathname();
+function DefaultLayout({ children: page }: LayoutProps) {
+  return (
+    <div id='app' className='flex flex-col min-h-screen'>
+      <Header />
+      <main className='container grow'>{page}</main>
+      <Footer />
+    </div>
+  );
+}
 
+function getLayout(pathname: string, page: React.ReactNode) {
+  switch (pathname) {
+    case '/': // landing page
+      return page;
+
+    default:
+      return <DefaultLayout>{page}</DefaultLayout>;
+  }
+}
+
+// the children react node(s) here represent a page
+export default function RootLayout({ children: page }: LayoutProps) {
   return (
     <html lang='en'>
-      <body className={open_sans.className}>
-        {(() => {
-          switch (pathname) {
-            case '/': // landing page
-              return children;
-
-            default:
-              return (
-                <>
-                  <Header />
-                  <main className='h-screen flex flex-col'>
-                    <div className='flex flex-col container grow px-5'>{children}</div>
-                  </main>
-                  <Footer />
-                </>
-              );
-          }
-        })()}
-      </body>
+      <body className={open_sans.className}>{getLayout(usePathname(), page)}</body>
     </html>
   );
 }
