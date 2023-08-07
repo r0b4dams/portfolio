@@ -1,9 +1,9 @@
 'use client';
 
+import { ContactEmail, ContactIcons, NewtonsCradle } from '.';
 import { useSpring } from '@react-spring/web';
+import { Page } from '@/components';
 import { CONFIG } from '@/config';
-import { ContactEmail, NewtonsCradle, Page } from '@/components';
-import { ContactIcons } from './ContactIcons';
 
 const links = [
   { name: 'gmail', href: CONFIG.EMAIL },
