@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 
-import { Logo, Nav } from '..';
+import { Logo, Nav } from '@/components';
 import { SpringBorder } from './SpringBorder';
 
 export const Header: React.FC = () => {

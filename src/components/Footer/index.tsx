@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 const year = new Date().getFullYear();
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className='container flex flex-col items-center py-8'>
       <animated.div style={style}>
-        <NextLink
+        <Link
           href='/contact'
           className={
             pathname === '/contact'
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
           <span className='border-b-pm-red border-b-2'>Adams</span>
           <span>©</span>
           <span className='border-b-pm-yellow border-b-2'>{year}</span>
-        </NextLink>
+        </Link>
       </animated.div>
     </footer>
   );

@@ -1,6 +1,5 @@
 import { animated, useSprings } from '@react-spring/web';
-
-import { animationValues } from './config';
+import { animationValues } from './borderConfig';
 
 interface Props {
   active: boolean;

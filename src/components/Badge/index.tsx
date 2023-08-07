@@ -1,5 +1,5 @@
 import { icons } from '@/lib/icons';
-import { Icon } from '../Icon';
+import { Icon } from '@/components/Icon';
 import { filterDarkMode } from '@/utils/filterDarkMode';
 
 interface Props {

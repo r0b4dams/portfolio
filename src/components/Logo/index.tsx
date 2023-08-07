@@ -1,8 +1,8 @@
 'use client';
 
+import paths from './paths.json';
 import { useEffect } from 'react';
 import { animated, config, useTrail } from '@react-spring/web';
-import paths from './paths.json';
 
 interface IProps {
   className: string;

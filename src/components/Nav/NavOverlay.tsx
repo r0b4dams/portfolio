@@ -1,4 +1,4 @@
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { animated, useSpring, useSprings } from '@react-spring/web';
 
@@ -52,9 +52,9 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
                   : 'first-letter:uppercase'
               }
             >
-              <NextLink href={route.path} onClick={toggle}>
+              <Link href={route.path} onClick={toggle}>
                 {route.name}
-              </NextLink>
+              </Link>
               <animated.div style={borders[i]} />
             </li>
           );

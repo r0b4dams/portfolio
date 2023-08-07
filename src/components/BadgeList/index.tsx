@@ -2,8 +2,7 @@
 
 import { useEffect } from 'react';
 import { animated, useTrail } from '@react-spring/web';
-
-import { Badge } from '../Badge';
+import { Badge } from '@/components/Badge';
 
 interface Props {
   title: string;

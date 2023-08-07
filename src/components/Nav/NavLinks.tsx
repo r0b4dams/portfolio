@@ -1,4 +1,4 @@
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { animated, useSprings, useTrail } from '@react-spring/web';
 
@@ -48,7 +48,7 @@ export const NavLinks: React.FC = () => {
                     : 'hover:scale-125 duration-100'
                 }
               >
-                <NextLink href={route.path}>{route.name}</NextLink>
+                <Link href={route.path}>{route.name}</Link>
                 <animated.div style={borders[i]} className='h-2 ' />
               </div>
             </animated.li>
