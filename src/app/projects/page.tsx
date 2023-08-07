@@ -1,7 +1,7 @@
-import { Page } from '@/components';
-import { ProjectCard } from '../../components/ProjectCard';
-
 import projects from './projects.json';
+
+import { Page } from '@/components';
+import { ProjectCard } from '.';
 
 export default async function Projects() {
   return (

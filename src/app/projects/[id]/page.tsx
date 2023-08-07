@@ -1,7 +1,8 @@
-import { Page } from '@/components/Page';
 import projects from '../projects.json';
-import { ProjectFeatures, ProjectGif, ProjectLinks, BadgeList as ProjectTech } from '@/components';
+
 import Link from 'next/link';
+import { Page, BadgeList as ProjectTech } from '@/components';
+import { ProjectFeatures, ProjectGif, ProjectLinks } from '.';
 
 interface Props {
   params: { id: string };

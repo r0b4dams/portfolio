@@ -1,8 +1,6 @@
 import NextLink from 'next/link';
 
-import { Logo } from '../Logo';
-import { Nav } from '../Nav';
-// import { ToggleDarkMode } from '../ToggleDarkMode';
+import { Logo, Nav } from '..';
 import { SpringBorder } from './SpringBorder';
 
 export const Header: React.FC = () => {
