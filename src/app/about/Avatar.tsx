@@ -1,11 +1,9 @@
 'use client';
 
-import NextImage from 'next/image';
+import Image from 'next/image';
 import { animated, useSpring } from '@react-spring/web';
 
-import avatar from './avatar.jpg';
-
-const AnimatedImg = animated(NextImage);
+const AnimatedImg = animated(Image);
 
 export const Avatar: React.FC = () => {
   const [style, animation] = useSpring(() => ({ scale: 0, opacity: 0 }));
@@ -17,7 +15,7 @@ export const Avatar: React.FC = () => {
   return (
     <AnimatedImg
       onLoadingComplete={animate}
-      src={avatar}
+      src='/images/avatar.jpg'
       className='avatar rounded-full'
       alt='avatar'
       style={style}

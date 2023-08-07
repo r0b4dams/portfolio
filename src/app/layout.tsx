@@ -21,7 +21,7 @@ function DefaultLayout({ children: page }: LayoutProps) {
 
 function getLayout(pathname: string, page: React.ReactNode) {
   switch (pathname) {
-    case '/': // landing page
+    case '/': // standalone landing page
       return page;
 
     default:
