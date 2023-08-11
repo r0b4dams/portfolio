@@ -3,7 +3,7 @@ import projects from './projects.json';
 import { Page } from '@/components';
 import { ProjectCard } from '.';
 
-export default async function Projects() {
+export default function Projects() {
   return (
     <Page>
       <Page.Heading>Projects</Page.Heading>

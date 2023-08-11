@@ -31,7 +31,7 @@ function DefaultLayout({ children: page }: LayoutProps) {
 
 // the children react node(s) here represent a page
 export default function RootLayout({ children: page }: LayoutProps) {
-    return (
+  return (
     <html lang='en'>
       <body className={open_sans.className}>{getLayout(usePathname(), page)}</body>
     </html>
