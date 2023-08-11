@@ -9,16 +9,6 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-function DefaultLayout({ children: page }: LayoutProps) {
-  return (
-    <div id='app' className='flex flex-col min-h-screen'>
-      <Header />
-      <main className='container grow'>{page}</main>
-      <Footer />
-    </div>
-  );
-}
-
 function getLayout(pathname: string, page: React.ReactNode) {
   switch (pathname) {
     case '/': // standalone landing page
@@ -29,9 +19,19 @@ function getLayout(pathname: string, page: React.ReactNode) {
   }
 }
 
+function DefaultLayout({ children: page }: LayoutProps) {
+  return (
+    <div id='app' className='flex flex-col min-h-screen'>
+      <Header />
+      <main className='container grow'>{page}</main>
+      <Footer />
+    </div>
+  );
+}
+
 // the children react node(s) here represent a page
 export default function RootLayout({ children: page }: LayoutProps) {
-  return (
+    return (
     <html lang='en'>
       <body className={open_sans.className}>{getLayout(usePathname(), page)}</body>
     </html>
