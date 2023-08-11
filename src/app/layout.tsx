@@ -13,7 +13,7 @@ function Layout({ children: page }: LayoutProps) {
   return (
     <div id='app' className='flex flex-col min-h-screen'>
       <Header />
-      <main className='container grow'>{page}</main>
+      <main className='container grow px-3 md:px-0'>{page}</main>
       <Footer />
     </div>
   );

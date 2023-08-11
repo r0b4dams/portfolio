@@ -23,14 +23,14 @@ export const ThemeToggle: React.FC = () => {
   };
 
   if (!theme) {
-    return <div className='w-[24px] h-[24px] hidden'></div>;
+    return <div className='w-[32px] h-[32px] md:w-[24px] md:h-[24px] opacity-0'></div>;
   }
 
   return (
     <button className='md:mx-10' onClick={toggleTheme}>
       {theme === 'dark' ? (
         <svg
-          className='h-[24px] fill-slate-50'
+          className='h-[32px] md:h-[24px] fill-slate-50'
           viewBox='0 0 512 512'
           focusable='false'
           xmlns='http://www.w3.org/2000/svg'
@@ -39,7 +39,7 @@ export const ThemeToggle: React.FC = () => {
         </svg>
       ) : (
         <svg
-          className='h-[24px] fill-yellow-400'
+          className='h-[32px] md:h-[24px] fill-yellow-400'
           viewBox='0 0 512 512'
           focusable='false'
           xmlns='http://www.w3.org/2000/svg'

@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
         <NextLink href='/'>
           <Logo className='h-[10vh]' />
         </NextLink>
-        <div className='flex items-center justify-center '>
+        <div className='flex items-center justify-center px-5 md:px-0'>
           <Nav />
           <ThemeToggle />
         </div>
