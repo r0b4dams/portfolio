@@ -19,7 +19,6 @@ export const Nav: React.FC = () => {
     <nav className='px-3 md:px-0 flex items-center'>
       <NavLinks />
       <NavBurger active={active} toggle={toggle} />
-      <ThemeToggle />
       <NavOverlay active={active} toggle={toggle} />
     </nav>
   );

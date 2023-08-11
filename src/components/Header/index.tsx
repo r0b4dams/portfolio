@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 
-import { Logo, Nav } from '@/components';
+import { Logo, Nav, ThemeToggle } from '@/components';
 import { SpringBorder } from './SpringBorder';
 
 export const Header: React.FC = () => {
@@ -12,6 +12,7 @@ export const Header: React.FC = () => {
         </NextLink>
         <div className='flex items-center justify-center '>
           <Nav />
+          <ThemeToggle />
         </div>
       </header>
       <SpringBorder />

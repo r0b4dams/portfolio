@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { Footer, Header } from '@/components';
-import { theme, font } from '@/theme';
+import { theme, fontClass } from '@/theme';
 import '@/theme/globals.css';
 
 interface LayoutProps {
@@ -26,7 +26,7 @@ export default function RootLayout({ children: page }: LayoutProps) {
       <head>
         <script id='theme' dangerouslySetInnerHTML={theme()} />
       </head>
-      <body className={font}>{pathname === '/' ? page : <Layout>{page}</Layout>}</body>
+      <body className={fontClass}>{pathname === '/' ? page : <Layout>{page}</Layout>}</body>
     </html>
   );
 }

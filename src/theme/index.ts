@@ -1,4 +1,4 @@
-export { font } from './font';
+export { fontClass } from './font';
 
 // https://tailwindcss.com/docs/dark-mode#supporting-system-preference-and-manual-selection
 export const theme = () => ({
