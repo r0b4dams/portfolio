@@ -2,24 +2,14 @@
 
 import { usePathname } from 'next/navigation';
 import { Footer, Header } from '@/components';
-import { open_sans } from '@/theme/font';
+import { theme, font } from '@/theme';
 import '@/theme/globals.css';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-function getLayout(pathname: string, page: React.ReactNode) {
-  switch (pathname) {
-    case '/': // standalone landing page
-      return page;
-
-    default:
-      return <DefaultLayout>{page}</DefaultLayout>;
-  }
-}
-
-function DefaultLayout({ children: page }: LayoutProps) {
+function Layout({ children: page }: LayoutProps) {
   return (
     <div id='app' className='flex flex-col min-h-screen'>
       <Header />
@@ -29,11 +19,14 @@ function DefaultLayout({ children: page }: LayoutProps) {
   );
 }
 
-// the children react node(s) here represent a page
 export default function RootLayout({ children: page }: LayoutProps) {
+  const pathname = usePathname();
   return (
-    <html lang='en'>
-      <body className={open_sans.className}>{getLayout(usePathname(), page)}</body>
+    <html lang='en' suppressHydrationWarning>
+      <head>
+        <script id='theme' dangerouslySetInnerHTML={theme()} />
+      </head>
+      <body className={font}>{pathname === '/' ? page : <Layout>{page}</Layout>}</body>
     </html>
   );
 }

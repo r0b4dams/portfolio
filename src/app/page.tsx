@@ -1,4 +1,9 @@
+import { Metadata } from 'next/types';
 import { Greeting, IntroAnimation, Page } from '@/components';
+
+export const metadata: Metadata = {
+  title: 'Robert Adams | Portfolio',
+};
 
 export default function Intro() {
   return (

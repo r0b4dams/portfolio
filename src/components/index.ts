@@ -7,3 +7,4 @@ export { Footer } from './Footer';
 export { Icon } from './Icon';
 export { Badge } from './Badge';
 export { BadgeList } from './BadgeList';
+export { ThemeToggle } from './ThemeToggle';

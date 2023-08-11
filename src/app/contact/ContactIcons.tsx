@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { animated, useTrail } from '@react-spring/web';
+import { animated, useSpring, useTrail } from '@react-spring/web';
 
 import { Icon } from '@/components';
 import { icons } from '@/lib/icons';

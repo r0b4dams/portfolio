@@ -1,6 +1,6 @@
 import { icons } from '@/lib/icons';
 import { Icon } from '@/components/Icon';
-import { filterDarkMode } from '@/utils/filterDarkMode';
+import { darkModeIconClass } from '@/theme/helpers';
 
 interface Props {
   text?: string;
@@ -13,7 +13,7 @@ export const Badge: React.FC<Props> = ({ text, skill = '', size = 24 }) => {
 
   return (
     <div className='flex items-center w-fit bg-slate-50 bg-opacity-10 rounded p-1 mr-1 mb-1 border dark:border-slate-600'>
-      <Icon src={path} size={size} className={filterDarkMode(skill)} />
+      <Icon src={path} size={size} className={darkModeIconClass(skill)} />
       <span className='px-2 font-light text-md'>{text || name}</span>
     </div>
   );

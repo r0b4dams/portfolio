@@ -1,33 +1,18 @@
-'use client';
-
-import { ContactEmail, ContactIcons, NewtonsCradle } from '.';
-import { useSpring } from '@react-spring/web';
+import { Metadata } from 'next/types';
 import { Page } from '@/components';
-import { CONFIG } from '@/config';
+import { ContactContainer } from './ContactContainer';
 
-const links = [
-  { name: 'gmail', href: CONFIG.EMAIL },
-  { name: 'linkedin', href: CONFIG.LINKEDIN_URL },
-  { name: 'github', href: CONFIG.GITHUB_URL },
-];
+export const metadata: Metadata = {
+  title: 'Robert Adams | Contact',
+};
 
 export default function Contact() {
-  const [style, animation] = useSpring(() => ({ scale: 0 }));
-
-  const showCopyEmail = () => {
-    animation.start({ scale: 1 });
-  };
-
   return (
     <Page>
       <Page.Heading>Contact</Page.Heading>
 
       <Page.Body>
-        <div className='flex flex-col grow justify-center items-center space-y-5'>
-          <ContactIcons links={links} showCopyEmail={showCopyEmail} />
-          <ContactEmail email={CONFIG.EMAIL!} style={style} />
-          <NewtonsCradle />
-        </div>
+        <ContactContainer />
       </Page.Body>
     </Page>
   );

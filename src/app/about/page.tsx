@@ -1,9 +1,15 @@
 import skills from './skills.json';
+
+import { Metadata } from 'next/types';
 import { Avatar, ResumeSpring } from '.';
 import { BadgeList, Page } from '@/components';
 import { CONFIG } from '@/config';
 
 const { RESUME_URL, PILLAR_URL } = CONFIG;
+
+export const metadata: Metadata = {
+  title: 'Robert Adams | About',
+};
 
 export default function About() {
   return (

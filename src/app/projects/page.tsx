@@ -1,7 +1,12 @@
 import projects from './projects.json';
 
+import { Metadata } from 'next/types';
 import { Page } from '@/components';
 import { ProjectCard } from '.';
+
+export const metadata: Metadata = {
+  title: 'Robert Adams | Projects',
+};
 
 export default function Projects() {
   return (

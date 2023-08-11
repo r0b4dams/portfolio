@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { NavBurger } from './NavBurger';
 import { NavLinks } from './NavLinks';
 import { NavOverlay } from './NavOverlay';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export const Nav: React.FC = () => {
   const [active, set] = useState(false);
@@ -18,6 +19,7 @@ export const Nav: React.FC = () => {
     <nav className='px-3 md:px-0 flex items-center'>
       <NavLinks />
       <NavBurger active={active} toggle={toggle} />
+      <ThemeToggle />
       <NavOverlay active={active} toggle={toggle} />
     </nav>
   );

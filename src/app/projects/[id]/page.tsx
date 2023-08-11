@@ -8,7 +8,7 @@ interface Props {
   params: { id: string };
 }
 
-function getOneProject(id: string) {
+function getProject(id: string) {
   const project = projects.find((project) => id === project.id);
   if (project) {
     return project as IProject;
@@ -20,8 +20,15 @@ export async function generateStaticParams() {
   return projects.map((project) => ({ id: project.id }));
 }
 
+export async function generateMetadata({ params }: Props) {
+  const project = getProject(params.id);
+  return {
+    title: `Robert Adams | ${project.name}`,
+  };
+}
+
 export default function Project({ params }: Props) {
-  const project = getOneProject(params.id);
+  const project = getProject(params.id);
 
   return (
     <Page>
