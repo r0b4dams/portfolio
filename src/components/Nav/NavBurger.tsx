@@ -1,6 +1,5 @@
-import { animated, useSprings } from "@react-spring/web";
-
-import { animationValues } from "./config";
+import { animated, useSprings } from '@react-spring/web';
+import { animationValues } from './borderConfig';
 
 interface Props {
   active: boolean;
@@ -23,22 +22,22 @@ export const NavBurger: React.FC<Props> = ({ active, toggle, size = 50 }) => {
   return (
     <button onClick={handleClick}>
       <svg
-        id="navburger"
-        className="md:hidden"
+        id='navburger'
+        className='md:hidden'
         width={size}
         height={size}
-        viewBox="0 0 24 24"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
+        viewBox='0 0 24 24'
+        version='1.1'
+        xmlns='http://www.w3.org/2000/svg'
       >
         {bars.map((style, i) => (
           <animated.path
             key={i}
             style={style}
-            d="m 0,12 h 24 v 0"
-            fill="none"
-            className="stroke-slate-900 dark:stroke-slate-50"
-            strokeWidth="2"
+            d='m 0,12 h 24 v 0'
+            fill='none'
+            className='stroke-slate-900 dark:stroke-slate-50'
+            strokeWidth='2'
           />
         ))}
       </svg>

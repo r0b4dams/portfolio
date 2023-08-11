@@ -1,20 +1,18 @@
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
-import { Logo } from "../Logo";
-import { Nav } from "../Nav";
-import { ToggleDarkMode } from "../ToggleDarkMode";
-import { SpringBorder } from "./SpringBorder";
+import { Logo, Nav, ThemeToggle } from '@/components';
+import { SpringBorder } from './SpringBorder';
 
 export const Header: React.FC = () => {
   return (
     <>
-      <header className="container flex items-center justify-between px-5">
-        <NextLink href="/">
-          <Logo className="h-[10vh]" />
+      <header className='container flex items-center justify-between'>
+        <NextLink href='/'>
+          <Logo className='h-[10vh]' />
         </NextLink>
-        <div className="flex items-center justify-center ">
+        <div className='flex items-center justify-center px-5 md:px-0'>
           <Nav />
-          <ToggleDarkMode />
+          <ThemeToggle />
         </div>
       </header>
       <SpringBorder />

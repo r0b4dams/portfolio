@@ -1,5 +1,5 @@
-import { Heading } from "./Heading";
-import { Body } from "./Body";
+import { Heading } from './Heading';
+import { Body } from './Body';
 
 interface Props {
   children: React.ReactNode;
