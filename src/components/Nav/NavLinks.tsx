@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { animated, useSprings, useTrail } from '@react-spring/web';
-
 import { routes } from './routes';
 
 export const NavLinks: React.FC = () => {
-  const location = usePathname();
+  const pathname = usePathname();
 
   const trail = useTrail(routes.length, {
     from: {
@@ -27,7 +26,7 @@ export const NavLinks: React.FC = () => {
           backgroundColor: route.color,
         },
         to: {
-          width: location === route.path ? '100%' : '0%',
+          width: pathname === route.pathname ? '100%' : '0%',
         },
       };
     }),
@@ -43,12 +42,12 @@ export const NavLinks: React.FC = () => {
             <animated.li key={i} style={style}>
               <div
                 className={
-                  location === route.path
+                  pathname === route.pathname
                     ? 'pointer-events-none duration-100'
                     : 'hover:scale-125 duration-100'
                 }
               >
-                <Link href={route.path}>{route.name}</Link>
+                <Link href={route.pathname}>{route.name}</Link>
                 <animated.div style={borders[i]} className='h-2 ' />
               </div>
             </animated.li>
