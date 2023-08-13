@@ -27,7 +27,6 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
     routes.map((route) => ({
       from: {
         borderBottomColor: 'transparent',
-        borderBottomWidth: 4,
       },
       to: {
         borderBottomColor: pathname === route.pathname ? route.color : 'transparent',
@@ -43,19 +42,16 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
       <ul className='font-bold text-3xl space-y-10'>
         {routes.map((route, i) => {
           return (
-            <li
+            <animated.li
               key={route.pathname}
-              className={
-                pathname === route.pathname
-                  ? 'first-letter:uppercase pointer-events-none'
-                  : 'first-letter:uppercase'
-              }
+              style={borders[i]}
+              className='border-b-4'
+              onClick={toggle}
             >
-              <Link href={route.pathname} onClick={toggle}>
+              <Link key={route.pathname} href={route.pathname}>
                 {route.name}
               </Link>
-              <animated.div style={borders[i]} className='border-b-4' />
-            </li>
+            </animated.li>
           );
         })}
       </ul>
