@@ -46,7 +46,7 @@ export default function Project({ params }: Props) {
             <ProjectGif id={project.id} name={project.name} />
           </div>
 
-          <div className='flex flex-col self-center md:w-[640px] lg:w-1/2 lg:self-auto'>
+          <div className='flex flex-col justify-between self-center md:w-[640px] lg:w-1/2 lg:self-auto'>
             <ProjectLinks
               projectName={project.name}
               repoURL={project.repoURL}

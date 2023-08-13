@@ -1,26 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useTheme } from '@/hooks/useTheme';
 
 export const ThemeToggle: React.FC = () => {
-  const [theme, set] = useState('');
-  const ref = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    ref.current = document.documentElement;
-    set(ref.current.getAttribute('data-theme') || 'light');
-  }, []);
-
-  const toggleTheme = () => {
-    if (!ref.current) {
-      return;
-    }
-    const theme = ref.current.getAttribute('data-theme');
-    const update = theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', update);
-    ref.current.setAttribute('data-theme', update);
-    set(update);
-  };
+  const { theme, toggleTheme } = useTheme();
 
   if (!theme) {
     return <div className='w-[32px] h-[32px] md:w-[24px] md:h-[24px] opacity-0'></div>;

@@ -1,5 +1,4 @@
 import skills from './skills.json';
-
 import { Metadata } from 'next/types';
 import { Avatar, ResumeSpring } from '.';
 import { BadgeList, Page } from '@/components';
@@ -15,7 +14,6 @@ export default function About() {
   return (
     <Page>
       <Page.Heading>About</Page.Heading>
-
       <Page.Body>
         {/* left column */}
         <div className='md:w-1/3 flex flex-col items-center'>

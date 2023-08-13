@@ -5,12 +5,12 @@ interface Props {
   children: React.ReactNode;
 }
 
-interface Components {
+interface PageComponents {
   Heading: typeof Heading;
   Body: typeof Body;
 }
 
-export const Page: React.FC<Props> & Components = ({ children }) => <>{children}</>;
+export const Page: React.FC<Props> & PageComponents = ({ children }) => <>{children}</>;
 
 Page.Heading = Heading;
 Page.Body = Body;

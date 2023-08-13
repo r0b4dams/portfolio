@@ -1,5 +1,4 @@
 import NextLink from 'next/link';
-
 import { Logo, Nav, ThemeToggle } from '@/components';
 import { SpringBorder } from './SpringBorder';
 

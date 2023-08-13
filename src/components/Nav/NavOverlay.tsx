@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { animated, config, useSpring, useSprings } from '@react-spring/web';
-
 import { routes } from './routes';
 
 interface Props {
@@ -10,7 +9,7 @@ interface Props {
 }
 
 export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
-  const location = usePathname();
+  const pathname = usePathname();
 
   const translation = useSpring({
     config: config.gentle,
@@ -28,10 +27,9 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
     routes.map((route) => ({
       from: {
         borderBottomColor: 'transparent',
-        borderBottomWidth: 4,
       },
       to: {
-        borderBottomColor: location === route.path ? route.color : 'transparent',
+        borderBottomColor: pathname === route.pathname ? route.color : 'transparent',
       },
     })),
   );
@@ -41,22 +39,19 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
       style={translation}
       className='fixed flex justify-center items-center z-50 top-[calc(10vh+32px)] right-[-50px] left-[-50px] bottom-0 md:hidden bg-slate-50 dark:bg-slate-900'
     >
-      <ul className='font-bold text-3xl space-y-5'>
+      <ul className='font-bold text-3xl space-y-10'>
         {routes.map((route, i) => {
           return (
-            <li
-              key={i}
-              className={
-                location === route.path
-                  ? 'first-letter:uppercase pointer-events-none'
-                  : 'first-letter:uppercase'
-              }
+            <animated.li
+              key={route.pathname}
+              style={borders[i]}
+              className='border-b-4'
+              onClick={toggle}
             >
-              <Link href={route.path} onClick={toggle}>
+              <Link key={route.pathname} href={route.pathname}>
                 {route.name}
               </Link>
-              <animated.div style={borders[i]} />
-            </li>
+            </animated.li>
           );
         })}
       </ul>
