@@ -1,19 +1,19 @@
 export const routes = [
   {
     name: 'About',
-    path: '/about',
+    pathname: '/about',
     // blue
     color: '#0300AD',
   },
   {
     name: 'Projects',
-    path: '/projects',
+    pathname: '/projects',
     // red
     color: '#E70503',
   },
   {
     name: 'Contact',
-    path: '/contact',
+    pathname: '/contact',
     //yellow
     color: '#FDDE06',
   },
