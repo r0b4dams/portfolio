@@ -12,7 +12,6 @@ export const ProjectLinks: React.FC<Props> = ({ repoURL, appURL }) => {
       <a target='_blank' href={repoURL}>
         <Badge text='View repo' skill='github' size={28} />
       </a>
-
       {appURL && (
         <a target='_blank' href={appURL}>
           <Badge text='Open app' skill='link' size={28} />

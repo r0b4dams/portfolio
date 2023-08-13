@@ -1,9 +1,8 @@
 'use client';
 
+import data from './springs.json';
 import { usePathname } from 'next/navigation';
 import { animated, useSprings } from '@react-spring/web';
-
-import data from './springs.json';
 
 interface IWidthItem {
   color: string;

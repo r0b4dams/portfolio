@@ -10,7 +10,6 @@ export default function Contact() {
   return (
     <Page>
       <Page.Heading>Contact</Page.Heading>
-
       <Page.Body>
         <ContactContainer />
       </Page.Body>
