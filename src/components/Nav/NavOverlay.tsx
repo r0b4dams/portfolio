@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { animated, useSpring, useSprings } from '@react-spring/web';
+import { animated, config, useSpring, useSprings } from '@react-spring/web';
 
 import { routes } from './routes';
 
@@ -12,13 +12,13 @@ interface Props {
 export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
   const location = usePathname();
 
-  const overlay = useSpring({
+  const translation = useSpring({
+    config: config.gentle,
+    delay: 250,
     from: {
-      opacity: 0,
       x: '100%',
     },
     to: {
-      opacity: active ? 1 : 0,
       x: active ? '0%' : '100%',
     },
   });
@@ -38,8 +38,8 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
 
   return (
     <animated.div
-      style={overlay}
-      className='fixed flex justify-center items-center z-50 top-[calc(10vh+32px)] right-0 left-0 bottom-0 md:hidden bg-slate-50 dark:bg-slate-900'
+      style={translation}
+      className='fixed flex justify-center items-center z-50 top-[calc(10vh+32px)] right-[-50px] left-[-50px] bottom-0 md:hidden bg-slate-50 dark:bg-slate-900'
     >
       <ul className='font-bold text-3xl space-y-5'>
         {routes.map((route, i) => {
