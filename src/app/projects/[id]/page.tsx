@@ -42,19 +42,21 @@ export default function Project({ params }: Props) {
 
       <Page.Body>
         <div className='flex flex-col lg:flex-wrap lg:flex-row-reverse md:w-full'>
-          <div className='self-center pt-5 lg:pt-0 lg:self-auto lg:w-1/2'>
+          <div className='self-center pt-5 lg:pt-0 lg:w-1/2'>
             <ProjectGif id={project.id} name={project.name} />
           </div>
 
-          <div className='flex flex-col justify-between self-center md:w-[640px] lg:w-1/2 lg:self-auto'>
+          <div className='flex flex-col self-center md:w-[640px] lg:w-1/2 lg:self-auto'>
             <ProjectLinks
               projectName={project.name}
               repoURL={project.repoURL}
               appURL={project.appURL}
             />
-            <ProjectFeatures features={project.features} />
-            <div className='mt-3'>
-              <ProjectTech title='Technologies' skills={project.tech} />
+            <div className='flex flex-col grow justify-between'>
+              <ProjectFeatures features={project.features} />
+              <div className='mt-3'>
+                <ProjectTech title='Technologies' skills={project.tech} />
+              </div>
             </div>
           </div>
         </div>
