@@ -1,5 +1,4 @@
 import projects from '../projects.json';
-
 import Link from 'next/link';
 import { Page, BadgeList as ProjectTech } from '@/components';
 import { ProjectFeatures, ProjectGif, ProjectLinks } from '.';
