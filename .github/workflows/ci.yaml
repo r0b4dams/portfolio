@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: validate branch name
+      - run: bash scripts/check_branch
 
       - name: checkout
         uses: actions/checkout@v3
