@@ -1,4 +1,4 @@
-import projects from './projects.json';
+import projects from '@/lib/projects.json';
 import { Metadata } from 'next/types';
 import { Page } from '@/components';
 import { ProjectCard } from '.';
