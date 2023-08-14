@@ -1,7 +1,10 @@
 #! /bin/bash
 
 # docker login -u<username> -p<password>
+
 # docker build -t <username>/portfolio:<TAG> .
+# docker build -t r0b4dams/portfolio:latest .
+
 # docker push <username>/portfolio:<TAG>
 
 # run an image locally
