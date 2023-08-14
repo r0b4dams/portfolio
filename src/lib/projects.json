@@ -48,7 +48,7 @@
       "Search for games using voice commands!",
       "Won “Best Presentation” of all final project submissions for University of Washington's spring full-stack web development certificate program."
     ],
-    "tech": ["react", "node", "express", "mongodb", "sequelize", "tailwind"],
+    "tech": ["react", "node", "express", "mongodb", "mongoose", "tailwind"],
     "discussion": [
       "While many blogs and wikis dedicated to video games guides exist, we wanted one with most of the features but without all of the bloat that seems to accompany these sites. So we made one using a MERN (MongoDB, Express.js, React.js, Node.js) stack!",
       "I created the backend server and database, implemented JSON web token (JWT) authorization and authentication, and added voice search functionality. I also managed our GitHub repository, led code reviews, and approved pull requests."
@@ -90,7 +90,7 @@
       "Generate a shopping list from items low in quantity.",
       "Be notified of expired and soon-to-expire items."
     ],
-    "tech": ["node", "express", "mysql", "bootstrap", "handlebars"],
+    "tech": ["node", "express", "mysql", "sequelize", "bootstrap", "handlebars"],
     "role": [
       "Fulfilled project manager and GitHub repository master roles",
       "Implemented client-side CRUD functionality",
