@@ -13,6 +13,13 @@ export const useTheme = (def?: Theme) => {
     set(__theme ? __theme : 'light');
   }, []);
 
+  useEffect(() => {
+    if (ref.current && theme) {
+      ref.current.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+  }, [theme]);
+
   const setTheme = (t: Theme) => {
     if (THEMES.includes(t)) {
       set(t);
@@ -20,12 +27,7 @@ export const useTheme = (def?: Theme) => {
   };
 
   const toggleTheme = () => {
-    if (!ref.current) {
-      return;
-    }
-    const update = ref.current.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    ref.current.setAttribute('data-theme', update);
-    localStorage.setItem('theme', update);
+    const update = ref.current?.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     set(update);
   };
 

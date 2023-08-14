@@ -9,7 +9,7 @@ export const IntroAnimation: React.FC = () => {
   const [{ x }, animation] = useSpring(() => ({ x: 0 }));
 
   useEffect(() => {
-    animation.start({ x: 1, config: config.molasses });
+    animation.start({ x: 1, config: config.molasses, delay: 1000 });
   }, [animation]);
 
   const strokeDashoffset = x.to((x) => (1 - x) * 100);
