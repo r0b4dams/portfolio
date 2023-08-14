@@ -41,7 +41,7 @@ export default function Project({ params }: Props) {
 
       <Page.Body>
         <div className='flex flex-col lg:flex-wrap lg:flex-row-reverse md:w-full'>
-          <div className='pt-5 lg:pt-0 lg:w-1/2'>
+          <div className='self-center lg:self-auto pt-5 lg:pt-0 lg:w-1/2'>
             <ProjectGif id={project.id} name={project.name} />
           </div>
 
