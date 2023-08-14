@@ -1,9 +1,6 @@
-name: ci-cd
+name: CI
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -12,20 +9,23 @@ permissions:
   contents: read
 
 jobs:
-  lint:
+  ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
 
-      - name: Setup
+      - name: validate branch name
+        run: bash scripts/check_branch.sh ${{ github.head_ref }}
+
+      - name: setup
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: latest
           cache: 'yarn'
 
-      - name: Install
+      - name: install
         run: yarn
 
-      - name: Lint
+      - name: lint
         run: yarn lint
