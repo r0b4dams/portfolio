@@ -157,7 +157,7 @@ export const icons: IconMap = {
     path: loc('tailwind'),
   },
   typescript: {
-    name: 'Typescript',
+    name: 'TypeScript',
     path: loc('typescript'),
   },
   uw: {

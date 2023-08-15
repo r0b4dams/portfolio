@@ -1,0 +1,10 @@
+docker login -u<user> -p<password>
+docker build -t <user>/<repo>:<tag> .
+docker push  <user>/<repo>:<tag>
+
+
+build an image with tag 'latest'
+docker build -t r0b4dams/portfolio:latest .
+
+run a container with this image on localhost:3000 
+docker run -p 127.0.0.1:3000:3002 r0b4dams/portfolio:latest
