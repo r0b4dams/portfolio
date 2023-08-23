@@ -176,4 +176,8 @@ export const icons: IconMap = {
     name: 'Mocha',
     path: loc('mocha'),
   },
+  webpack: {
+    name: 'Webpack',
+    path: loc('webpack'),
+  },
 };
