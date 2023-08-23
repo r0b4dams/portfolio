@@ -1,4 +1,4 @@
-name: Build & push image to Dockerhub
+name: Dockerhub
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 on:
   workflow_run:
-    workflows: [Bump version]
+    workflows: [Bump]
     types:
       - completed
 
