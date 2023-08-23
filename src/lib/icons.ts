@@ -172,4 +172,8 @@ export const icons: IconMap = {
     name: 'Vite',
     path: loc('vite'),
   },
+  mocha: {
+    name: 'Mocha',
+    path: loc('mocha'),
+  },
 };
