@@ -1,0 +1,27 @@
+name: Bump version
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      # - name: bump
+      #   run: bash scripts/bump_version.sh ${{  }}
+
+      - name: view contexts
+        run: |
+        echo actor: ${{ github.actor }}
+        echo action: ${{ github.action }}
+        echo head_ref: ${{ github.head_ref }}
+        echo ref_name: ${{ github.ref_name }}
+        echo message: ${{ github.event.head_commit.message }}

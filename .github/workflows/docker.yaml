@@ -5,6 +5,12 @@ on:
     branches:
       - 'main'
 
+on:
+  workflow_run:
+    workflows: [Bump version]
+    types:
+      - completed
+
 jobs:
   docker:
     runs-on: ubuntu-latest
