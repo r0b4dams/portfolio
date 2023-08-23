@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: view contexts
-        run:  echo $GITHUB_CONTEXT
+        run: echo $GITHUB_CONTEXT

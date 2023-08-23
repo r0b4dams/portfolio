@@ -14,10 +14,3 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-
-      # - name: bump
-      #   run: bash scripts/bump_version.sh ${{  }}
-
-      - name: view contexts
-        run: |
-        echo $GITHUB_CONTEXT
