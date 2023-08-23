@@ -20,6 +20,6 @@ jobs:
 
       - name: Commit
         run: |
-        git add package.json
-        git commit -m 'bump version [skip actions]'
-        git push origin main
+          git add package.json
+          git commit -m 'bump version [skip actions]'
+          git push origin main
