@@ -20,8 +20,8 @@ jobs:
 
       - name: view contexts
         run: |
-        echo "actor: ${{ github.actor }}"
-        echo "action: ${{ github.action }}"
-        echo "head_ref: ${{ github.head_ref }}"
-        echo "ref_name: ${{ github.ref_name }}"
-        echo "message: ${{ github.event.head_commit.message }}"
+        echo ${{ github.actor }}
+        echo ${{ github.action }}
+        echo ${{ github.head_ref }}
+        echo ${{ github.ref_name }}
+        echo ${{ github.event.head_commit.message }}
