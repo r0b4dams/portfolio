@@ -168,4 +168,8 @@ export const icons: IconMap = {
     name: 'Vercel',
     path: loc('vercel'),
   },
+  vite: {
+    name: 'Vite',
+    path: loc('vite'),
+  },
 };
