@@ -180,4 +180,8 @@ export const icons: IconMap = {
     name: 'Webpack',
     path: loc('webpack'),
   },
+  codepen: {
+    name: 'Codepen',
+    path: loc('codepen.svg'),
+  },
 };
