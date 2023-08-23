@@ -176,12 +176,16 @@ export const icons: IconMap = {
     name: 'Mocha',
     path: loc('mocha'),
   },
+  chai: {
+    name: 'Chai',
+    path: loc('chai'),
+  },
   webpack: {
     name: 'Webpack',
     path: loc('webpack'),
   },
   codepen: {
     name: 'Codepen',
-    path: loc('codepen.svg'),
+    path: loc('codepen'),
   },
 };
