@@ -7,7 +7,6 @@ config () {
   yarn config set version-tag-prefix ""
 }
 
-
 case $1 in
   [Hh]otfix/?* | [Bb]ugfix/?* )
     config
