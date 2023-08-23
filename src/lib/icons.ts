@@ -168,4 +168,24 @@ export const icons: IconMap = {
     name: 'Vercel',
     path: loc('vercel'),
   },
+  vite: {
+    name: 'Vite',
+    path: loc('vite'),
+  },
+  mocha: {
+    name: 'Mocha',
+    path: loc('mocha'),
+  },
+  chai: {
+    name: 'Chai',
+    path: loc('chai'),
+  },
+  webpack: {
+    name: 'Webpack',
+    path: loc('webpack'),
+  },
+  codepen: {
+    name: 'Codepen',
+    path: loc('codepen'),
+  },
 };

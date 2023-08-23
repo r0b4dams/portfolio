@@ -1,11 +1,14 @@
 #! /bin/bash
 
+echo $1
+
 shopt -s extglob
 
 config () {
   yarn config set version-git-tag false
   yarn config set version-tag-prefix ""
 }
+
 
 case $1 in
   [Hh]otfix/?* | [Bb]ugfix/?* )

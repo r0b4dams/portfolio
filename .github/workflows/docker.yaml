@@ -1,9 +1,15 @@
-name: Build & push image to Dockerhub
+name: Dockerhub
 
 on:
   push:
     branches:
       - 'main'
+
+on:
+  workflow_run:
+    workflows: [Bump]
+    types:
+      - completed
 
 jobs:
   docker:

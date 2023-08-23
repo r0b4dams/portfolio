@@ -1,4 +1,4 @@
-const SKIP = ['bash', 'kubernetes'];
+const SKIP = ['bash', 'kubernetes', 'webpack', 'mocha', 'vite'];
 
 const grayscale = 'dark:grayscale';
 const inverted = grayscale + ' dark:brightness-0 dark:invert';
