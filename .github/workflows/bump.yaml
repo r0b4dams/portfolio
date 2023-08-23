@@ -14,3 +14,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
+      - name: bump
+        run: bash scripts/check_branch.sh ${{ github.event.head_commit.message }}

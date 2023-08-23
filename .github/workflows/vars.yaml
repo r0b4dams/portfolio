@@ -12,8 +12,8 @@ jobs:
   vars:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: view contexts
-        run: echo $GITHUB_CONTEXT
+      - name: View contexts
+        run: echo ${{ github }}
