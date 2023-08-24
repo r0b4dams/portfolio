@@ -1,36 +1,49 @@
-https://github.com/r0b4dams/portfolio
+# portfolio
 
-https://hub.docker.com/r/r0b4dams/portfolio
+My portfolio! Built with Next.js and TailwindCSS with animations powered by React Spring.
 
-## Getting Started
+Recently updated to use the latest in Next.js 13 features including app routing, layouts, and server components.
 
-First, run the development server:
+Click the screenshot to visit the application!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+[![screenshot](/.github/assets/screenshot.png)](https://www.robertadams.codes/)
+
+## Installation
+
+clone the repository:
+
+```
+git clone git@github.com:r0b4dams/portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+yarn
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+after installation, start the development server:
 
-To learn more about Next.js, take a look at the following resources:
+```
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+create a production build:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+yarn build
+```
 
-## Deploy on Vercel
+start the app in production:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+yarn start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Next.js lints code before production builds by default; there is also a script to run linting manually:
+
+```
+yarn lint
+```
