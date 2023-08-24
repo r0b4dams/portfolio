@@ -1,6 +1,8 @@
 # portfolio
 
-my portfolio!
+My portfolio!
+
+An older iteration that uses Next.js [pages router](https://nextjs.org/docs/pages).
 
 ## Installation
 
