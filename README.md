@@ -1,6 +1,6 @@
 # portfolio
 
-My portfolio! Built with Next.js and TailwindCSS with animations powered by React Spring.
+My portfolio! Built with Next.js and Tailwind CSS with animations powered by React Spring.
 
 Recently updated to use the latest in Next.js 13 features including app routing, layouts, and server components.
 
