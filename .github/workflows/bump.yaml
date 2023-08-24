@@ -18,7 +18,7 @@ jobs:
       - name: Commit
         env: 
           CI_COMMIT_AUTHOR: bump_bot
-          CI_COMMIT_MESSAGE: bump version [skip actions]
+          CI_COMMIT_MESSAGE: bump version to $(node -p "require('./package.json').version") [skip actions]
         run: |
           git add package.json
           git config --global user.name '${{ env.CI_COMMIT_AUTHOR }}'
