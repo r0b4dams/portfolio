@@ -41,9 +41,3 @@ start the app in production:
 ```
 yarn start
 ```
-
-Next.js lints code before production builds by default; there is also a script to run linting manually:
-
-```
-yarn lint
-```
