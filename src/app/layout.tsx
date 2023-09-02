@@ -9,24 +9,24 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-function Layout({ children: page }: LayoutProps) {
+function Layout({ children }: LayoutProps) {
   return (
     <div id='app' className='flex flex-col min-h-screen'>
       <Header />
-      <main className='container grow px-3 md:px-0'>{page}</main>
+      {children}
       <Footer />
     </div>
   );
 }
 
-export default function RootLayout({ children: page }: LayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
   const pathname = usePathname();
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
         <script id='theme' dangerouslySetInnerHTML={theme()} />
       </head>
-      <body className={fontClass}>{pathname === '/' ? page : <Layout>{page}</Layout>}</body>
+      <body className={fontClass}>{pathname === '/' ? children : <Layout>{children}</Layout>}</body>
     </html>
   );
 }
