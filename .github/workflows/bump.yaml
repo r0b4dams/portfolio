@@ -24,7 +24,6 @@ jobs:
       - name: Commit
         env:
           VERSION: ${{ steps.get-version.outputs.version }}
-
           CI_COMMIT_AUTHOR: bump_bot
         run: |
           git add package.json
