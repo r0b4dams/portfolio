@@ -38,4 +38,6 @@ jobs:
           VERSION: ${{ steps.get-version.outputs.version }}
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ env.VERSION }}
+          tags: 
+            - ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
+            - ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ env.VERSION }}
