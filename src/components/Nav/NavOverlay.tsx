@@ -25,6 +25,7 @@ export const NavOverlay: React.FC<Props> = ({ active, toggle }) => {
   const borders = useSprings(
     routes.length,
     routes.map((route) => ({
+      immediate: true,
       from: {
         borderBottomColor: 'transparent',
       },
