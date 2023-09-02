@@ -35,9 +35,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         env:
+          REPO: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}
           VERSION: ${{ steps.get-version.outputs.version }}
         with:
           push: true
           tags: 
-            - ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
-            - ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ env.VERSION }}
+            - ${{ env.REPO }}:latest
+            - ${{ env.REPO }}:${{ env.VERSION }}
