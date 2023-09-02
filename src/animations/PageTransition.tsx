@@ -14,7 +14,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     exitBeforeEnter: true,
   });
   return transition((style, page) => (
-    <animated.div data-animated_type='page-transition' style={style}>
+    <animated.div data-animated_type='page-transition' style={style} className='grow'>
       {page}
     </animated.div>
   ));
