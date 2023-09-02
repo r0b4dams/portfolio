@@ -1,4 +1,4 @@
-name: Docker Hub
+name: Docker
 
 on:
   workflow_run:
@@ -27,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:$(node -p "require('./package.json').version")

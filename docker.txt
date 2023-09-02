@@ -2,7 +2,6 @@ docker login -u<user> -p<password>
 docker build -t <user>/<repo>:<tag> .
 docker push  <user>/<repo>:<tag>
 
-
 build an image with tag 'latest'
 docker build -t r0b4dams/portfolio:latest .
 

@@ -1,15 +1,15 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 shopt -s extglob
 
-echo branch name: ${1}
+echo pr title: ${1}
 
 case $1 in
  !([Hh]otfix/?*|[Bb]ugfix/?*|[Ff]eature/?*) )
-    echo error: invalid branch name
+    echo error: invalid pr title
     exit 1
     ;;
   * )
-    echo name ok
+    echo title ok
     ;;
 esac
