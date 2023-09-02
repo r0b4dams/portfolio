@@ -10,6 +10,6 @@ case $1 in
     exit 1
     ;;
   * )
-    echo name ok
+    echo title ok
     ;;
 esac
