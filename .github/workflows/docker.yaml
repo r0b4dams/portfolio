@@ -23,8 +23,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Get version
+        id: get-version
+        run: echo "version=$(node -p "require('./package.json').version") >> "$GITHUB_OUTPUT"
+
       - name: Build and push
         uses: docker/build-push-action@v4
+        env:
+          VERSION: ${{steps.get-version.outputs.version}}
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:$(node -p "require('./package.json').version")
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ env.VERSION }}
