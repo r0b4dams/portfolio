@@ -39,6 +39,6 @@ jobs:
           VERSION: ${{ steps.get-version.outputs.version }}
         with:
           push: true
-          tags: 
-            - ${{ env.REPO }}:latest
-            - ${{ env.REPO }}:${{ env.VERSION }}
+          tags: |
+            ${{ env.REPO }}:latest
+            ${{ env.REPO }}:${{ env.VERSION }}
