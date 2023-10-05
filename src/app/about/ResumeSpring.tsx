@@ -7,16 +7,18 @@ interface Props {
   resumeURL: string;
 }
 
+const SPRING_REST_LENGTH = 100;
+
 export const ResumeSpring: React.FC<Props> = ({ resumeURL }) => {
-  const [{ y }, spring] = useSpring(() => ({ y: 0.25 }));
+  const [{ y }, spring] = useSpring(() => ({ y: 0.15 }));
 
   useEffect(() => {
     spring.start({
       y: 1,
       config: {
         mass: 1,
-        tension: 125,
-        friction: 3,
+        tension: 100,
+        friction: 2.5,
       },
     });
   }, [spring]);
@@ -29,7 +31,7 @@ export const ResumeSpring: React.FC<Props> = ({ resumeURL }) => {
         id='spring'
         className='origin-top'
         width='50px'
-        height='100px'
+        height={`${SPRING_REST_LENGTH}px`}
         viewBox='0 0 210 297'
         xmlns='http://www.w3.org/2000/svg'
       >
@@ -45,7 +47,7 @@ export const ResumeSpring: React.FC<Props> = ({ resumeURL }) => {
       </animated.svg>
 
       <animated.div
-        style={{ translateY: y.to((y) => 100 * y - 100) }}
+        style={{ translateY: y.to((y) => SPRING_REST_LENGTH * y - SPRING_REST_LENGTH) }}
         className='py-2 px-5 mb-5 relative rounded bg-white bg-opacity-10 border dark:border-slate-600'
       >
         <a href={resumeURL} target='_blank' rel='noopener noreferrer' className='font-semibold'>
