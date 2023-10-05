@@ -10,24 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Bump
         run: bash scripts/bump_version.sh '${{ github.event.head_commit.message }}'
 
-      - name: Get version
-        id: get-version
-        run: |
-          VERSION=$(node -p "require('./package.json').version")
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-
       - name: Commit
         env:
-          VERSION: ${{ steps.get-version.outputs.version }}
           CI_COMMIT_AUTHOR: bump_bot
         run: |
+          VERSION=$(node -p "require('./package.json').version")
           git add package.json
           git config --global user.name '${{ env.CI_COMMIT_AUTHOR }}'
-          git config --global user.email 'username@users.noreply.github.com'
-          git commit -m "bump version to ${{ env.VERSION }} [skip actions]"
+          git config --global user.email '${{ env.CI_COMMIT_AUTHOR }}@users.noreply.github.com'
+          git commit -m "bump version to $VERSION"
           git push origin main
