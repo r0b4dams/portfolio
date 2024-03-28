@@ -4,7 +4,7 @@ import { Avatar, ResumeSpring } from '.';
 import { BadgeList, Page } from '@/components';
 import { CONFIG } from '@/config';
 
-const { RESUME_URL, PILLAR_URL } = CONFIG;
+const { RESUME_URL } = CONFIG;
 
 export const metadata: Metadata = {
   title: 'Robert Adams | About',
@@ -35,15 +35,6 @@ export default function About() {
             <p>
               Immersing myself in programming has really solidified my appreciation for what I find
               rewarding: learning new things, problem solving, and building something tangible.
-            </p>
-            <p>
-              Recently I had an exciting opportunity with
-              <a target='_blank' href={PILLAR_URL} className='mx-1 text-[#2F5DFB]'>
-                Pillar
-              </a>
-              as a full-stack software engineer. I contributed across the technology stack to
-              implement an event-driven microservice architecture for improved resiliency with
-              TypeScript, React, GraphQL, Node, Apache Kafka, MongoDB, Postgres, and Debezium.
             </p>
           </div>
 
