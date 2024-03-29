@@ -3,6 +3,7 @@
     "typescript",
     "javascript",
     "node",
+    "python",
     "css",
     "html",
     "bash",
@@ -28,6 +29,7 @@
     "aws",
     "vercel",
     "netlify",
+    "render",
     "heroku"
   ]
 }

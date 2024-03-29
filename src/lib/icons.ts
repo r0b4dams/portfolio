@@ -188,4 +188,12 @@ export const icons: IconMap = {
     name: 'Codepen',
     path: loc('codepen'),
   },
+  python: {
+    name: 'Python',
+    path: loc('python'),
+  },
+  render: {
+    name: 'Render',
+    path: loc('render'),
+  },
 };
