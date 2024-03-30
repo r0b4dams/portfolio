@@ -1,8 +1,8 @@
-import skills from './skills.json';
 import { Metadata } from 'next/types';
 import { Avatar, ResumeSpring } from '.';
 import { BadgeList, Page } from '@/components';
 import { CONFIG } from '@/config';
+import skills from '@/lib/skills.json';
 
 const { RESUME_URL } = CONFIG;
 

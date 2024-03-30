@@ -5,195 +5,199 @@ interface IconMap {
   };
 }
 
-const loc = (name: string) => `/icons/${name}.svg`;
+const url = (name: string) => `/icons/${name}.svg`;
 
 export const icons: IconMap = {
   avionics: {
     name: 'Avionics',
-    path: loc('avionics'),
+    path: url('avionics'),
   },
   aws: {
     name: 'Amazon Web Services',
-    path: loc('aws'),
+    path: url('aws'),
   },
   bash: {
     name: 'Bash',
-    path: loc('bash'),
+    path: url('bash'),
   },
   bootstrap: {
     name: 'Bootstrap',
-    path: loc('bootstrap'),
+    path: url('bootstrap'),
   },
   css: {
     name: 'CSS',
-    path: loc('css'),
+    path: url('css'),
   },
   cypress: {
     name: 'Cypress',
-    path: loc('cypress'),
+    path: url('cypress'),
   },
   docker: {
     name: 'Docker',
-    path: loc('docker'),
+    path: url('docker'),
   },
   drone: {
     name: 'Drone',
-    path: loc('drone'),
+    path: url('drone'),
   },
   express: {
     name: 'Express',
-    path: loc('express'),
+    path: url('express'),
   },
   git: {
     name: 'Git',
-    path: loc('git'),
+    path: url('git'),
   },
   github: {
     name: 'GitHub',
-    path: loc('github'),
+    path: url('github'),
   },
   gmail: {
     name: 'Gmail',
-    path: loc('gmail'),
+    path: url('gmail'),
   },
   graphql: {
     name: 'GraphQL',
-    path: loc('graphql'),
+    path: url('graphql'),
   },
   handlebars: {
     name: 'Handlebars',
-    path: loc('handlebars'),
+    path: url('handlebars'),
   },
   heroku: {
     name: 'Heroku',
-    path: loc('heroku'),
+    path: url('heroku'),
   },
   html: {
     name: 'HTML',
-    path: loc('html'),
+    path: url('html'),
   },
   javascript: {
     name: 'JavaScript',
-    path: loc('javascript'),
+    path: url('javascript'),
   },
   jest: {
     name: 'Jest',
-    path: loc('jest'),
+    path: url('jest'),
   },
   jfrog: {
     name: 'jFrog',
-    path: loc('jfrog'),
+    path: url('jfrog'),
   },
   jquery: {
     name: 'jQuery',
-    path: loc('jquery'),
+    path: url('jquery'),
   },
   kubernetes: {
     name: 'Kubernetes',
-    path: loc('kubernetes'),
+    path: url('kubernetes'),
   },
   link: {
     name: 'Link',
-    path: loc('link'),
+    path: url('link'),
   },
   linkedin: {
     name: 'LinkedIn',
-    path: loc('linkedin'),
+    path: url('linkedin'),
   },
   materialize: {
     name: 'Materialize',
-    path: loc('materialize'),
+    path: url('materialize'),
   },
   mongodb: {
     name: 'MongoDB',
-    path: loc('mongodb'),
+    path: url('mongodb'),
   },
   mongoose: {
     name: 'Mongoose',
-    path: loc('mongoose'),
+    path: url('mongoose'),
   },
   mui: {
     name: 'MUI',
-    path: loc('mui'),
+    path: url('mui'),
   },
   mysql: {
     name: 'MySQL',
-    path: loc('mysql'),
+    path: url('mysql'),
   },
   netlify: {
     name: 'Netlify',
-    path: loc('netlify'),
+    path: url('netlify'),
   },
   next: {
     name: 'Next',
-    path: loc('next'),
+    path: url('next'),
   },
   node: {
     name: 'Node',
-    path: loc('node'),
+    path: url('node'),
   },
   pillar: {
     name: 'Pillar',
-    path: loc('pillar'),
+    path: url('pillar'),
   },
   postgresql: {
     name: 'Postgresql',
-    path: loc('postgresql'),
+    path: url('postgresql'),
   },
   react: {
     name: 'React',
-    path: loc('react'),
+    path: url('react'),
   },
   redux: {
     name: 'Redux',
-    path: loc('redux'),
+    path: url('redux'),
   },
   sequelize: {
     name: 'Sequelize',
-    path: loc('sequelize'),
+    path: url('sequelize'),
   },
   tailwind: {
     name: 'Tailwind',
-    path: loc('tailwind'),
+    path: url('tailwind'),
   },
   typescript: {
     name: 'TypeScript',
-    path: loc('typescript'),
+    path: url('typescript'),
   },
   uw: {
     name: 'UW',
-    path: loc('uw'),
+    path: url('uw'),
   },
   vercel: {
     name: 'Vercel',
-    path: loc('vercel'),
+    path: url('vercel'),
   },
   vite: {
     name: 'Vite',
-    path: loc('vite'),
+    path: url('vite'),
   },
   mocha: {
     name: 'Mocha',
-    path: loc('mocha'),
+    path: url('mocha'),
   },
   chai: {
     name: 'Chai',
-    path: loc('chai'),
+    path: url('chai'),
   },
   webpack: {
     name: 'Webpack',
-    path: loc('webpack'),
+    path: url('webpack'),
   },
   codepen: {
     name: 'Codepen',
-    path: loc('codepen'),
+    path: url('codepen'),
   },
   python: {
     name: 'Python',
-    path: loc('python'),
+    path: url('python'),
+  },
+  flask: {
+    name: 'Flask',
+    path: url('flask'),
   },
   render: {
     name: 'Render',
-    path: loc('render'),
+    path: url('render'),
   },
 };

@@ -1,12 +1,13 @@
 {
   "languages_frameworks": [
+    "python",
     "typescript",
     "javascript",
     "node",
-    "python",
     "css",
     "html",
     "bash",
+    "flask",
     "react",
     "redux",
     "graphql",
