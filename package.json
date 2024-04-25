@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:build": "docker build -t r0b4dams/portfolio:$(node -p \"require('./package.json').version\") .",
+    "docker:run": "docker run -p 3000:3000 --name portfolio r0b4dams/portfolio:$(node -p \"require('./package.json').version\")",
+    "docker:push": ""
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",
